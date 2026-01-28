@@ -952,6 +952,36 @@ h1 .bold {
   text-align: center;
 }
 
+.footer-bg{
+  width: 100%;
+  position: relative;
+}
+
+
+.footer-bg>img{
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* media codes------------------------*/
 
 @media (max-width: 500px) {
@@ -1104,6 +1134,11 @@ h1 .bold {
   margin-bottom: 32px;
 }
 
+
+#tournaments {
+padding: 60px 0 0 0;
+}
+
 .t-content{
   width: 100%;
 }
@@ -1111,7 +1146,7 @@ h1 .bold {
 .t-stats{
   width: 100%;
   display: flex;
-  justify-content: space-around;
+gap: 24px;
   align-items: center;
 }
 
@@ -1123,6 +1158,41 @@ h1 .bold {
 .t-card{
   width: 100%;
 }
+
+
+.footer-columns{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footer-content{
+
+  display: flex;
+  flex-direction: column;
+}
+
+.social-links{
+  width: 100%;
+  justify-content: space-between;
+}
+
+.footer-socials{
+  margin-top: 72px;
+}
+
+
+.social-title{
+  font-size: 24px;
+}
+
+.footer-bg>img{
+  width: 100%;
+  position: static;
+
+}
+
+
 
 
 
