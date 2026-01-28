@@ -427,6 +427,7 @@ h3 {
 }
 
 .match-teams {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1008,7 +1009,7 @@ h1 .bold {
 
 
   .hero-content {
-    padding: 100px 16px 0;
+    padding: 150px 16px 0;
   }
 
   .hero-title {
@@ -1017,6 +1018,8 @@ h1 .bold {
 
   .hero-subtitle {
     font-size: 16px;
+    margin-top: 12px;
+    margin-bottom: 24px;
   }
 
   .hero-btn {
@@ -1114,6 +1117,21 @@ h1 .bold {
   width: 100%;
 }
 
+.card-content {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  bottom: 40px;
+  left: 24px;
+  z-index: 2;
+}
+
+
+.card-bg>img{
+width: 100%;
+object-fit: cover;  
+}
 
 .leaderboard{
   width: 100%;
@@ -1125,13 +1143,27 @@ h1 .bold {
   width: 100%;
 }
 
+.games-layout{
+  width: 100%;
+}
+
+.match-list {
+width: 100%;
+margin-bottom: 56px;
+}
+
+.match-teams {
+width: 100%;
+justify-content: space-between;
+}
+
 
 .container-tournaments{
   padding: 0 0 0 16px;
 }
 
 .section-title{
-  margin-bottom: 32px;
+  margin: 32px 0;
 }
 
 
@@ -1190,6 +1222,11 @@ gap: 24px;
   width: 100%;
   position: static;
 
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: 800;
 }
 
 
