@@ -268,7 +268,7 @@
   </section>
   <section id="promo-section">
     <div class="container promo-grid">
-      <swiper-container style="width: 50%;">
+      <swiper-container class="promo-slider">
         <swiper-slide>
           <div class="promo-card">
             <div class="card-bg">
@@ -389,10 +389,17 @@
         <!-- Players -->
         <div class="players-wrapper">
           <swiper-container style="width:100%" class="mySwiper" effect="coverflow" slides-per-view="2"
-            coverflow-effect-rotate="0"  coverflow-effect-depth="0"   space-between="46"
+            coverflow-effect-rotate="0" coverflow-effect-depth="0" space-between="46" coverflow-effect-modifier="2"
+            breakpoints='{
+"0": {
+"slidesPerView": 1
+},
+"500": {
+"slidesPerView": 2
+}
+}'>
 
-            coverflow-effect-modifier="2">
-            <swiper-slide >
+            <swiper-slide>
               <div class="player-card side">
                 <div class="player-image-mask">
                   <img src="images/0e7ab6134d1384bbfbdb2bb1d4dafb9a562321f9.png" alt="Player">
@@ -403,7 +410,7 @@
                 </div>
               </div>
             </swiper-slide>
-            <swiper-slide >
+            <swiper-slide>
               <div class="player-card center">
                 <div class="player-image-mask ">
                   <img src="images/7040c11a284ceb7bef064914282b9f5e30b3fe37.png" alt="Player">
@@ -414,7 +421,7 @@
                 </div>
               </div>
             </swiper-slide>
-            <swiper-slide >  
+            <swiper-slide>
               <div class="player-card center">
                 <div class="player-image-mask ">
                   <img src="images/7040c11a284ceb7bef064914282b9f5e30b3fe37.png" alt="Player">
@@ -425,7 +432,7 @@
                 </div>
               </div>
             </swiper-slide>
-            <swiper-slide >
+            <swiper-slide>
               <div class="player-card center">
                 <div class="player-image-mask ">
                   <img src="images/7040c11a284ceb7bef064914282b9f5e30b3fe37.png" alt="Player">
@@ -612,7 +619,7 @@
         </div>
       </div>
 
-      
+
     </footer>
   </section>
 </body>
