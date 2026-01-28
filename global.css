@@ -529,6 +529,7 @@ h3 {
   z-index: 1;
 }
 
+
 .vector-bg {
   position: absolute;
   top: 50%;
@@ -795,6 +796,10 @@ h1 .bold {
   display: flex;
   justify-content: center;
   gap: 32px;
+}
+
+.tour-card{
+  width: 489px;
 }
 
 .container-tournaments {
@@ -1066,6 +1071,9 @@ h1 .bold {
   padding: 0 16px;
 }
 
+#top-players{
+  padding: 80px 0 0 0;
+}
 
 .players-wrapper{
   width: 100%;
@@ -1091,10 +1099,25 @@ h1 .bold {
   margin-bottom: 32px;
 }
 
+.t-content{
+  width: 100%;
+}
+
+.t-stats{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
 
 
+.tour-card{
+  width: 100%;
+}
 
-
+.t-card{
+  width: 100%;
+}
 
 
 

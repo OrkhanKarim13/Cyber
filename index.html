@@ -467,8 +467,15 @@
       <div class="tournaments-grid">
 
 
-        <swiper-container style="width: 100%;" slides-per-view="3" mousewheel-force-to-axis="true" space-between="32">
-          <swiper-slide style="width: 489px;"> <!-- Card 1 -->
+        <swiper-container style="width: 100%;" slides-per-view="3"  mousewheel-force-to-axis="true" space-between="32" breakpoints='{
+"0": {
+"slidesPerView": 1
+},
+"500": {
+"slidesPerView": 3
+}
+}'>
+          <swiper-slide class="tour-card"> <!-- Card 1 -->
             <div class="t-card">
               <div class="t-header">
                 <div class="t-badge">
@@ -495,7 +502,7 @@
               </div>
             </div>
           </swiper-slide>
-          <swiper-slide> <!-- Card 2 -->
+          <swiper-slide class="tour-card"> <!-- Card 2 -->
             <div class="t-card">
               <div class="t-header">
                 <div class="t-badge">
@@ -522,7 +529,7 @@
               </div>
             </div>
           </swiper-slide>
-          <swiper-slide>
+          <swiper-slide class="tour-card">
 
             <!-- Card 3 -->
             <div class="t-card">
