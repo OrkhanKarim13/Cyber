@@ -995,7 +995,7 @@ h1 .bold {
 
   .hero-bg > img {
 
-    object-fit: contain;
+   display: none;
    
   }
 
@@ -1023,6 +1023,11 @@ h1 .bold {
 
   #hero-section{
     height: auto;
+    background-image: url("./images/607376f6d0189997ab1e94e06311611f8aabf883.png");
+    background-position: 40%;
+    background-repeat: no-repeat;
+    background-size: cover;
+
   }
 
 
