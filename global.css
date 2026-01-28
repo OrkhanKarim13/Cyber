@@ -967,7 +967,18 @@ h1 .bold {
 }
 
 
+.burger-menu{
+  width: 42px;
+  height: 44px;
+  display: none;
+  justify-content: center;
+  align-items: center;
 
+  background: rgba(255, 255, 255, 0.2);
+backdrop-filter: blur(10px);
+-webkit-backdrop-filter: blur(10px);
+border-radius: 8px;
+}
 
 
 
@@ -996,11 +1007,17 @@ h1 .bold {
 
   .header-content {
     padding: 21px 0;
+    display: flex;
+    justify-content: space-between;
   }
 
 
   .container{
     padding: 0 16px;
+  }
+
+  .burger-menu{
+    display: flex;
   }
 
   .hero-section{
@@ -1062,6 +1079,12 @@ h1 .bold {
     background-size: cover;
 
   }
+
+
+
+  .link-title {
+  font-size: 14px;
+}
 
 
 .hero-info-card{
