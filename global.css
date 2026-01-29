@@ -279,9 +279,6 @@ h3 {
   border-radius: 10px;
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35);
   clip-path: polygon(0 0, 100% 0, 100% 70%, 90% 100%, 0 100%);
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
 }
 
 .hero-links {
@@ -409,7 +406,7 @@ h3 {
   margin-bottom: 60px;
 }
 
-.promo-slider{
+.promo-slider {
   width: 50%;
 }
 
@@ -529,7 +526,6 @@ h3 {
   pointer-events: none;
   z-index: 1;
 }
-
 
 .vector-bg {
   position: absolute;
@@ -799,7 +795,7 @@ h1 .bold {
   gap: 32px;
 }
 
-.tour-card{
+.tour-card {
   width: 489px;
 }
 
@@ -870,7 +866,6 @@ h1 .bold {
 /* CSS for section section:Footer */
 #footer {
   background-color: #000000;
-  padding-top: 60px;
   position: relative;
   overflow: hidden;
 }
@@ -878,9 +873,9 @@ h1 .bold {
 .footer-content {
   display: flex;
   justify-content: space-between;
-  padding: 0 72px 120px;
   position: relative;
   z-index: 2;
+  padding: 0 72px 50px 72px;
 }
 
 .footer-columns {
@@ -953,21 +948,20 @@ h1 .bold {
   text-align: center;
 }
 
-.footer-bg{
-  width: 100%;
-  position: relative;
-}
-
-
-.footer-bg>img{
+.footer-bg {
   width: 100%;
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: -115px;
+  height: 300px;
 }
 
+.footer-bg > img {
+  width: 100%;
+  object-fit: contain;
+}
 
-.burger-menu{
+.burger-menu {
   width: 42px;
   height: 44px;
   display: none;
@@ -975,24 +969,109 @@ h1 .bold {
   align-items: center;
 
   background: rgba(255, 255, 255, 0.2);
-backdrop-filter: blur(10px);
--webkit-backdrop-filter: blur(10px);
-border-radius: 8px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 8px;
 }
 
+.contact-cover {
+  width: 100%;
+  height: 384px;
+  background-image: url("./images/cs2.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 
+.contact-container {
+  width: 100%;
+  height: 384px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+.main-page {
+  color: #ffffff9a;
+}
 
+.contact-title {
+  font-size: 72px;
+}
+.contact-text {
+  font-size: 16px;
+  margin-bottom: 63px;
+}
 
+.contact-heading {
+  padding-bottom: 24px;
+}
+.contact-nav {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
 
+.contact-btn {
+  color: #fff;
+}
 
+.contact-us {
+  height: 559px;
+  padding: 72px 0 0 0;
+  background-image: url("./images/contact-map.png");
+}
 
+.contact-us-title {
+  font-size: 74px;
+}
 
+.contact-details {
+  width: 42%;
+  font-size: 24px;
+  line-height: 125%;
+  color: #ffffff9a;
+}
 
+.contact-us-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
 
+.contact-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 
+.button-content {
+  padding: 28px 50px;
+  background-color: #ffffff1f;
+  border-radius: 10px;
+  text-align: center;
+}
 
+.button-content > a {
+  color: #fff;
+  font-size: 24px;
+}
 
+.social-icons {
+  display: flex;
+  width: 100%;
+  gap: 16px;
+}
 
+.social-button {
+  width: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border: 1px solid #ffffff1f;
+  border-radius: 10px;
+}
 
 /* media codes------------------------*/
 
@@ -1011,19 +1090,17 @@ border-radius: 8px;
     justify-content: space-between;
   }
 
-
-  .container{
+  .container {
     padding: 0 16px;
   }
 
-  .burger-menu{
+  .burger-menu {
     display: flex;
   }
 
-  .hero-section{
+  .hero-section {
     height: auto;
   }
-
 
   .hero-content {
     padding: 150px 16px 0;
@@ -1044,9 +1121,7 @@ border-radius: 8px;
   }
 
   .hero-bg > img {
-
-   display: none;
-   
+    display: none;
   }
 
   .hero-gradient-overlay {
@@ -1070,190 +1145,168 @@ border-radius: 8px;
     align-items: flex-end;
   }
 
-
-  #hero-section{
+  #hero-section {
     height: auto;
     background-image: url("./images/607376f6d0189997ab1e94e06311611f8aabf883.png");
     background-position: 40%;
     background-repeat: no-repeat;
     background-size: cover;
-
   }
-
-
 
   .link-title {
-  font-size: 14px;
-}
+    font-size: 14px;
+  }
 
+  .hero-info-card {
+    width: 100%;
+    margin-top: 52px;
+  }
 
-.hero-info-card{
-  width: 100%;  
-  margin-top: 52px;
-}
-
-  .info-text
-  {
+  .info-text {
     width: 100%;
   }
 
-
-  .games-layout{
+  .games-layout {
     width: 100%;
   }
-  .featured-match{
+  .featured-match {
     display: none;
   }
 
   #latest-games {
-  padding: 0;
-}
+    padding: 0;
+  }
 
-.promo-slider{
-  width: 100%;
-}
-.promo-grid{
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
+  .promo-slider {
+    width: 100%;
+  }
+  .promo-grid {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
 
-#promo-section>.container{
-  padding: 0 8px;
-}
+  #promo-section > .container {
+    padding: 0 8px;
+  }
 
-#promo-section{
-  padding: 0;
-}
+  #promo-section {
+    padding: 0;
+  }
 
-.container-players{
-  display: flex;
-  flex-direction: column;
-  padding: 0 16px;
-}
+  .container-players {
+    display: flex;
+    flex-direction: column;
+    padding: 0 16px;
+  }
 
-#top-players{
-  padding: 80px 0 0 0;
-}
+  #top-players {
+    padding: 80px 0 0 0;
+  }
 
-.players-wrapper{
-  width: 100%;
-}
+  .players-wrapper {
+    width: 100%;
+  }
 
-.card-content {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  bottom: 40px;
-  left: 24px;
-  z-index: 2;
-}
+  .card-content {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    bottom: 40px;
+    left: 24px;
+    z-index: 2;
+  }
 
+  .card-bg > img {
+    width: 100%;
+    object-fit: cover;
+  }
 
-.card-bg>img{
-width: 100%;
-object-fit: cover;  
-}
+  .leaderboard {
+    width: 100%;
+    padding: 0;
+  }
 
-.leaderboard{
-  width: 100%;
-  padding: 0;
-}
+  .players-wrapper > swiper-slide {
+    width: 100%;
+  }
 
+  .games-layout {
+    width: 100%;
+  }
 
-.players-wrapper>swiper-slide{
-  width: 100%;
-}
+  .match-list {
+    width: 100%;
+    margin-bottom: 56px;
+  }
 
-.games-layout{
-  width: 100%;
-}
+  .match-teams {
+    width: 100%;
+    justify-content: space-between;
+  }
 
-.match-list {
-width: 100%;
-margin-bottom: 56px;
-}
+  .container-tournaments {
+    padding: 0 0 0 16px;
+  }
 
-.match-teams {
-width: 100%;
-justify-content: space-between;
-}
+  .section-title {
+    margin: 32px 0;
+  }
 
+  #tournaments {
+    padding: 60px 0 0 0;
+  }
 
-.container-tournaments{
-  padding: 0 0 0 16px;
-}
+  .t-content {
+    width: 100%;
+  }
 
-.section-title{
-  margin: 32px 0;
-}
+  .t-stats {
+    width: 100%;
+    display: flex;
+    gap: 24px;
+    align-items: center;
+  }
 
+  .tour-card {
+    width: 100%;
+  }
 
-#tournaments {
-padding: 60px 0 0 0;
-}
+  .t-card {
+    width: 100%;
+  }
 
-.t-content{
-  width: 100%;
-}
+  .footer-columns {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
 
-.t-stats{
-  width: 100%;
-  display: flex;
-gap: 24px;
-  align-items: center;
-}
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+  }
 
+  .social-links {
+    width: 100%;
+    justify-content: space-between;
+  }
 
-.tour-card{
-  width: 100%;
-}
+  .footer-socials {
+    margin-top: 72px;
+  }
 
-.t-card{
-  width: 100%;
-}
+  .social-title {
+    font-size: 24px;
+  }
 
+  .footer-bg > img {
+    width: 100%;
+  }
 
-.footer-columns{
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.footer-content{
-
-  display: flex;
-  flex-direction: column;
-}
-
-.social-links{
-  width: 100%;
-  justify-content: space-between;
-}
-
-.footer-socials{
-  margin-top: 72px;
-}
-
-
-.social-title{
-  font-size: 24px;
-}
-
-.footer-bg>img{
-  width: 100%;
-  position: static;
-
-}
-
-.card-title {
-  font-size: 18px;
-  font-weight: 800;
-}
-
-
-
-
-
+  .card-title {
+    font-size: 18px;
+    font-weight: 800;
+  }
 }
