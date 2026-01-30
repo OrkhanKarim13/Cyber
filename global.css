@@ -1342,4 +1342,8 @@ h1 .bold {
     font-size: 18px;
     font-weight: 800;
   }
+
+  .social-links{
+                padding-bottom:75px;
+            }
 }
