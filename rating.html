@@ -12,6 +12,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="global.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-element-bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/85a60fd075.js" crossorigin="anonymous"></script>
+    <script src="global.js" defer></script>
     <style id="sections-styles">
         /* CSS for section section:Header */
         #header-section {
@@ -189,7 +192,7 @@
             bottom: -8px;
         }
 
-        .cta-inner-icon-r {
+        container .cta-inner-icon-r {
             position: absolute;
             right: 15px;
             bottom: -8px;
@@ -253,6 +256,13 @@
             border-radius: 6px;
         }
 
+
+        .footer-socials {
+            display: flex;
+            flex-direction: column;
+            gap: 36px;
+        }
+
         .premium-inner-icon {
             position: absolute;
             right: 0;
@@ -279,6 +289,8 @@
             font-weight: 500;
         }
 
+
+
         .lang-selector {
             width: 42px;
             height: 43px;
@@ -300,11 +312,7 @@
                 gap: 16px;
             }
 
-            .logo {
-                width: 150px;
-                height: 150px;
-                margin-top: -40px;
-            }
+
         }
 
         @media (max-width: 768px) {
@@ -315,8 +323,21 @@
                 display: none;
             }
 
+
+
+
+
+
+            .header-container {
+                padding: 0 16px;
+            }
+
             .main-header {
                 justify-content: center;
+            }
+
+            .hero-bg-img {
+                height: 500px;
             }
         }
 
@@ -346,7 +367,7 @@
         .hero-bg-img {
             display: flex;
             align-items: flex-end;
-            padding: 100px 72px 24px 72px ;
+            padding: 100px 72px 24px 72px;
             position: relative;
             background-image: url("./images/rating-bg.png");
             height: 384px;
@@ -368,7 +389,7 @@
             height: 420px;
         }
 
-        .hero-title {
+        .hero-title2 {
             font-size: 72px;
             font-weight: 700;
             margin: 0 0 24px 0;
@@ -382,12 +403,16 @@
             display: flex;
             align-items: center;
             gap: 12px;
-           margin-top: 65px;
+            margin-top: 65px;
             font-size: 15px;
         }
 
         .crumb-inactive {
             opacity: 0.5;
+        }
+
+        .crumb-inactive>a {
+            color: #fff;
         }
 
         .crumb-active {
@@ -658,104 +683,103 @@
             }
         }
 
+
         /* CSS for section section:Footer */
-        #footer-section {
-            background-color: #000;
-            padding-top: 120px;
-            padding-bottom: 60px;
+        footer {
+            background-color: #000000;
             position: relative;
             overflow: hidden;
-        }
-
-        .footer-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .footer-cta {
-            font-size: 48px;
-            font-weight: 700;
-            text-align: center;
-            background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 30%, #FFFFFF 70%, rgba(255, 255, 255, 0) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 80px;
-            width: 100%;
         }
 
         .footer-content {
             display: flex;
             justify-content: space-between;
-            width: 100%;
-            max-width: 1296px;
             position: relative;
             z-index: 2;
+            padding: 0 72px 50px 72px;
         }
 
-        .footer-links-group {
+        .footer-columns {
             display: flex;
             gap: 96px;
         }
 
-        .link-col {
+        .f-col {
             display: flex;
             flex-direction: column;
             gap: 16px;
         }
 
-        .link-col a {
-            color: #fff;
+        .f-link {
+            color: white;
             text-decoration: none;
             font-size: 16px;
+            transition: opacity 0.2s;
+        }
+
+        .f-link:hover {
+            opacity: 0.7;
         }
 
         .footer-socials {
-            display: flex;
-            gap: 72px;
-        }
-
-        .social-col {
             display: flex;
             flex-direction: column;
             gap: 36px;
         }
 
-        .social-col span {
-            color: rgba(255, 255, 255, 0.5);
+        .social-title {
+            opacity: 0.5;
             font-size: 16px;
         }
 
         .social-links {
             display: flex;
+            gap: 72px;
+        }
+
+        .s-col {
+            display: flex;
             flex-direction: column;
             gap: 16px;
         }
 
-        .social-links a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 16px;
-        }
-
         .footer-watermark {
-            position: absolute;
-            bottom: 0;
-            left: 0;
             width: 100%;
-            height: 300px;
+            height: 285px;
+            position: relative;
             display: flex;
-            justify-content: center;
             align-items: flex-end;
-            pointer-events: none;
+            justify-content: center;
             opacity: 0.1;
-            mix-blend-mode: hard-light;
         }
 
-        .watermark-img {
+        .watermark-text {
+            font-size: 200px;
+            font-weight: 900;
+            line-height: 1;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            /* Using an image for the complex gradient/texture if available, otherwise CSS text */
+            background-image: url("images/953c24b0b63e09c59bacb9e5a82338ee0ae8f1b9.png");
+            background-size: cover;
+            background-clip: text;
+            color: transparent;
             width: 100%;
-            height: auto;
-            object-fit: cover;
+            text-align: center;
+        }
+
+        .footer-bg {
+            width: 100%;
+            position: absolute;
+            left: 0;
+            bottom: -115px;
+            height: 300px;
+        }
+
+        .footer-bg>img {
+            width: 100%;
+            object-fit: contain;
         }
 
         @media (max-width: 768px) {
@@ -777,6 +801,43 @@
 
             .footer-cta {
                 font-size: 24px;
+            }
+
+        }
+
+         @media (min-width: 550px) {
+
+            .hero-desc-mobile{
+                display: none;
+            }
+         }
+
+
+        @media (max-width: 550px) {
+            .hero-title2 {
+                font-size: 32px
+            }
+
+
+            .hero-content2{
+                z-index: 100;
+            }
+
+            .hero-bg-img {
+                width: 100%;
+                padding-left: 16px;
+                padding-top: 50px;
+                height: 500px;
+                display: flex;
+                align-items: center;
+            }
+
+            .rating-cup-img>img {
+                width: 260px;
+                height: 260px;
+            }
+            .hero-description{
+                display: none;
             }
 
         }
@@ -828,15 +889,17 @@
     <section id="hero-section2">
         <div class="hero-bg-img">
             <div class="hero-content2">
-                <h1 class="hero-title">Reytinq</h1>
+                <h1 class="hero-title2">Reytinq</h1>
 
-                
+
                 <p class="hero-description">
                     Oyunçularla rəqabət aparın və reytinq sistemi ilə rütbənizi artırın! Mövsümi liderlər cədvəli hər
                     ayın 1-də yenilənir.
                 </p>
+                <p class="hero-desc-mobile">Turnirlərə qoşul mükafatlar qazan!</p>
+
                 <div class="breadcrumbs">
-                    <span class="crumb-inactive">Əsas səhifə</span>
+                    <span class="crumb-inactive"><a href="./index.html">Əsas səhifə</a></span>
                     <img src="images/753_2925.svg" class="crumb-sep" alt="">
                     <span class="crumb-active">Reytinq</span>
                 </div>
@@ -848,7 +911,7 @@
         <div class="container hero-container">
             <!-- Background Images -->
 
-            
+
 
 
         </div>
@@ -1087,47 +1150,42 @@
             </div>
         </div>
     </section>
-    <section id="footer-section">
-        <div class="container footer-container">
-            <div class="footer-top">
-                <h2 class="footer-cta">Total 85239 players are in the game, you?</h2>
-            </div>
-
-            <div class="footer-content">
-                <div class="footer-links-group">
-                    <div class="link-col">
-                        <a href="#">Turnirlər</a>
-                        <a href="#">Reytinq</a>
-                        <a href="#">Oyunçular</a>
+    <section id="footer">
+        <footer class="site-footer">
+            <div class="container footer-content">
+                <div class="footer-columns">
+                    <div class="f-col">
+                        <a href="#" class="f-link">Turnirlər</a>
+                        <a href="#" class="f-link">Reytinq</a>
+                        <a href="#" class="f-link">Oyunçular</a>
                     </div>
-                    <div class="link-col">
-                        <a href="#">Haqqımızda</a>
-                        <a href="#">Ən yaxşı oyunçular</a>
-                        <a href="#">Yeniliklər</a>
+                    <div class="f-col">
+                        <a href="#" class="f-link">Haqqımızda</a>
+                        <a href="#" class="f-link">Ən yaxşı oyunçular</a>
+                        <a href="#" class="f-link">Yeniliklər</a>
                     </div>
                 </div>
 
                 <div class="footer-socials">
-                    <div class="social-col">
-                        <span>Bizi izləyin</span>
-                        <div class="social-links">
-                            <a href="#">facebook</a>
-                            <a href="#">instagram</a>
+                    <span class="social-title">Bizi izləyin</span>
+                    <div class="social-links">
+                        <div class="s-col">
+                            <a href="#" class="f-link">facebook</a>
+                            <a href="#" class="f-link">instagram</a>
                         </div>
-                    </div>
-                    <div class="social-col">
-                        <div class="social-links" style="margin-top: 34px;">
-                            <a href="#">X</a>
-                            <a href="#">linkedin</a>
+                        <div class="s-col">
+                            <a href="#" class="f-link">X</a>
+                            <a href="#" class="f-link">linkedin</a>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div class="footer-watermark">
-                <img src="images/953c24b0b63e09c59bacb9e5a82338ee0ae8f1b9.png" class="watermark-img">
+            <div class="footer-bg">
+                <img src="./images/cyber-footer.svg" alt="footer-bg">
             </div>
-        </div>
+
+
+        </footer>
     </section>
 </body>
 
