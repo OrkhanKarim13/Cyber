@@ -381,6 +381,18 @@ h3 {
   padding: 20px;
 }
 
+.hero-info-card-mob{
+  margin-top: 8px;
+   width: 100%;;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(4px);
+  border-radius: 12px;
+  padding: 20px;
+  border-top: 1px solid white;
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+}
+
 .info-text {
   font-size: 16px;
   line-height: 1.5;
@@ -402,6 +414,15 @@ h3 {
   font-size: 72px;
   font-weight: 700;
   text-align: left;
+}
+
+.section-mobile-title {
+  font-size: 32px;
+  margin: 32px 0;
+  background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0.5) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .promo-slider {
@@ -1088,24 +1109,16 @@ h1 .bold {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* media codes------------------------*/
+
+@media (min-width: 500px) {
+  .section-mobile-title {
+    display: none;
+  }
+  .hero-info-card-mob{
+display: none;
+}
+}
 
 @media (max-width: 500px) {
   .header {
@@ -1136,6 +1149,10 @@ h1 .bold {
 
   .hero-content {
     padding: 150px 16px 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   .hero-title {
@@ -1160,6 +1177,7 @@ h1 .bold {
     position: absolute;
     left: 0;
     bottom: 0;
+
   }
 
   .hero-bottom {
@@ -1175,10 +1193,12 @@ h1 .bold {
     width: 100%;
     display: flex;
     align-items: flex-end;
+    margin-bottom: 48px;
   }
 
   #hero-section {
     height: auto;
+    height: 812px;
     background-image: url("./images/607376f6d0189997ab1e94e06311611f8aabf883.png");
     background-position: 40%;
     background-repeat: no-repeat;
@@ -1190,8 +1210,21 @@ h1 .bold {
   }
 
   .hero-info-card {
+display: none;
+  }
+
+  .hero-info-card2 {
     width: 100%;
     margin-top: 52px;
+  }
+  .card-title.large {
+    font-size: 18px;
+  }
+
+
+
+  .card-subtitle {
+    font-size: 14px;
   }
 
   .info-text {
@@ -1208,7 +1241,13 @@ h1 .bold {
   #latest-games {
     padding: 0;
   }
-
+.promo-card {
+  position: relative;
+  width: 100%;
+  height: 359px;
+  border-radius: 8px;
+  overflow: hidden;
+}
   .promo-slider {
     width: 100%;
   }
@@ -1244,7 +1283,7 @@ h1 .bold {
     position: absolute;
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 8px;
     bottom: 40px;
     left: 24px;
     z-index: 2;
@@ -1256,8 +1295,8 @@ h1 .bold {
   }
 
   .players-display {
-width: 100%;
-}
+    width: 100%;
+  }
 
   .leaderboard {
     width: 100%;
@@ -1268,7 +1307,8 @@ width: 100%;
     width: 100%;
   }
 
-  .light, .bold{
+  .light,
+  .bold {
     font-size: 32px;
     line-height: 1;
   }
@@ -1293,6 +1333,7 @@ width: 100%;
 
   .section-title {
     margin: 32px 0;
+    display: none;
   }
 
   #tournaments {
@@ -1319,6 +1360,7 @@ width: 100%;
   }
 
   .footer-columns {
+    margin-top: 72px;
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -1351,7 +1393,7 @@ width: 100%;
     font-weight: 800;
   }
 
-  .social-links{
-                padding-bottom:75px;
-            }
+  .social-links {
+    padding-bottom: 75px;
+  }
 }
