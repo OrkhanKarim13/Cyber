@@ -12,7 +12,7 @@ firstBar.style.width = '0%';
 secondBar.style.width = '0%';
 
 
-// 2️⃣ Reflow (çox vacibdir)
+
 firstBar.offsetHeight;
 secondBar.offsetHeight;
 
@@ -25,11 +25,11 @@ secondBar.style.animation = 'loadBarsec 6s linear forwards 6s';
 
 
 
-// İlk dəfə başlasın
+
 startBars();
 
 
-// Hər 12 saniyədən bir TAM reset + restart
+
 setInterval(startBars,  12000);
 
 
