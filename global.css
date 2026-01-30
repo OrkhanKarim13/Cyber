@@ -399,10 +399,9 @@ h3 {
 }
 
 .section-title {
-  font-size: 48px;
+  font-size: 72px;
   font-weight: 700;
   text-align: left;
-  margin-bottom: 60px;
 }
 
 .promo-slider {
@@ -670,12 +669,12 @@ h1 {
 }
 
 h1 .light {
-  font-weight: 600;
+  font-weight: 700;
   color: #fff;
 }
 
 h1 .bold {
-  font-weight: 800;
+  font-weight: 700;
   color: #cfcfcf;
 }
 
@@ -1234,7 +1233,7 @@ h1 .bold {
   }
 
   #top-players {
-    padding: 80px 0 0 0;
+    padding: 50px 0 0 0;
   }
 
   .players-wrapper {
@@ -1256,6 +1255,10 @@ h1 .bold {
     object-fit: cover;
   }
 
+  .players-display {
+width: 100%;
+}
+
   .leaderboard {
     width: 100%;
     padding: 0;
@@ -1263,6 +1266,11 @@ h1 .bold {
 
   .players-wrapper > swiper-slide {
     width: 100%;
+  }
+
+  .light, .bold{
+    font-size: 32px;
+    line-height: 1;
   }
 
   .games-layout {
