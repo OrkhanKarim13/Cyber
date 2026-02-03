@@ -1408,12 +1408,13 @@ display: none;
   }
 
   .card-content {
-    position: absolute;
+
     display: flex;
     flex-direction: column;
     gap: 8px;
     bottom: 40px;
     left: 24px;
+    right: 24px;
     z-index: 2;
   }
 
