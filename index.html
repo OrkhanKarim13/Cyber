@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="global.css">
   <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-element-bundle.min.js"></script>
 <script src="https://kit.fontawesome.com/85a60fd075.js" crossorigin="anonymous"></script>
-  <script src="global.js" defer></script>
+
 </head>
 
 <body>
@@ -58,7 +58,32 @@
       </div>
     </div>
   </header>
-  <swiper-container slides-per-view="1" speed="500" loop="true" css-mode="true" >
+  <!-- MOBILE MENU OVERLAY -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-inner">
+
+    <ul class="mobile-nav-list">
+      <li><a href="#">Turnirlər</a></li>
+      <li><a href="./rating.html">Reytinq</a></li>
+      <li><a href="#">Mağaza</a></li>
+      <li><a href="./contact.html">Əlaqə</a></li>
+    </ul>
+
+    <div class="mobile-buttons">
+      <button class="buy-btn-mob">Cyber+ Premium</button>
+      <button class="buy-btn-mob">Oyna</button>
+    </div>
+
+    <div class="mobile-lang">
+      <span>AZ</span>
+      <span>EN</span>
+      <span>RU</span>
+    </div>
+
+  </div>
+</div>
+
+  <swiper-container auto-play="6000" slides-per-view="1" speed="500" loop="true" css-mode="true" >
     <swiper-slide>
 
       <section id="hero-section">
@@ -648,6 +673,7 @@
 
     </footer>
   </section>
+    <script src="global.js" defer></script>
 </body>
 
 </html>
