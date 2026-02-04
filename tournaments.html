@@ -304,6 +304,7 @@
 
             .filters-wrapper {
                 width: max-content;
+                padding: 0;
             }
 
             .hero-title2 {
@@ -320,7 +321,7 @@
         .tournament-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 96px;
+            gap: 56px;
         }
 
         .card {
@@ -505,6 +506,13 @@
         }
 
         @media (max-width: 768px) {
+            .hero-bg-img {
+                background-image: url("./images/tournament-mob.png");
+                padding: 120px 16px 16px 16px;
+             background-size: cover;
+                background-position: center;
+            }
+
             .footer-container {
                 padding: 20px;
             }
@@ -512,6 +520,7 @@
             .footer-content {
                 flex-direction: column;
                 gap: 40px;
+                padding-bottom: 0;
             }
 
             .footer-links {
