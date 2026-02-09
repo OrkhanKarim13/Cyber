@@ -128,7 +128,7 @@ h3 {
 }
 
 .header.scrolled {
-  background-color: #000; /* qara fon */
+  background-color: #000; 
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
@@ -234,7 +234,7 @@ h3 {
 /* Mobile */
 @media (max-width: 992px) {
 
-  /* Desktop nav gizlə */
+  
   .nav-bar {
     display: none;
   }
@@ -245,19 +245,17 @@ h3 {
     color: #fff;
   }
 
-  /* HEADER HÜNDÜRLÜYÜ:
-     header-top (~48px) + əsas header (~80px)
-     ehtiyat üçün 130px verdik */
+
   .mobile-menu {
     position: fixed;
       border-radius: 12px;
       border-top: 1px solid #fff;
-    top: 130px;               /* 🔥 ƏSAS FƏRQ */
+    top: 130px;               
     left: 0%  ;
     width: 100%;
    
     height: calc(100vh - 130px);
- background: rgba(70, 65, 160, 0.65); /* şəffaf bənövşəyi */
+ background: rgba(70, 65, 160, 0.65); 
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
     z-index: 1100;
@@ -266,9 +264,9 @@ h3 {
     transition: transform 0.45s ease;
   }
 
-  .mobile-menu.active {
+  /* .mobile-menu.active {
     transform: translateY(0);
-  }
+  } */
 
   .mobile-menu-inner {
     height: 100%;
@@ -279,7 +277,7 @@ h3 {
   
   }
 
-  /* Links */
+
   .mobile-nav-list {
     display: flex;
     flex-direction: column;
@@ -299,14 +297,13 @@ h3 {
     color: #fff;    
   }
 
-  /* Buttons */
+
   .mobile-buttons {
     display: flex;
     flex-direction: column;
     gap: 16px;
   }
 
-  /* Language */
   .mobile-lang {
     display: flex;
     justify-content: center;
@@ -828,7 +825,6 @@ h1 .bold {
 .avatar {
   width: 56px;
   height: 56px;
-
   background: linear-gradient(145deg, #444, #222);
   clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
 }
@@ -888,7 +884,6 @@ h1 .bold {
 .player-image-mask {
   height: 450px;
   overflow: hidden;
-  /* Using clip-path to simulate the complex vector mask if needed, or just border-radius */
   clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%);
   background: #222;
 }
@@ -1078,7 +1073,6 @@ h1 .bold {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  /* Using an image for the complex gradient/texture if available, otherwise CSS text */
   background-image: url("images/953c24b0b63e09c59bacb9e5a82338ee0ae8f1b9.png");
   background-size: cover;
   background-clip: text;
@@ -1518,7 +1512,7 @@ display: none;
   .footer-socials {
     margin-top: 72px;
   }
-
+        
   .social-title {
     font-size: 24px;
   }

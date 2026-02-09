@@ -673,7 +673,31 @@
 
     </footer>
   </section>
-    <script src="global.js" defer></script>
+    <script >document.addEventListener("DOMContentLoaded", () => {
+
+const firstBar = document.querySelector('.bar-fill');
+const secondBar = document.querySelector('.bar-fill-sec');
+
+function startBars() {
+
+firstBar.style.animation = 'none';
+secondBar.style.animation = 'none';
+
+firstBar.style.width = '0%';
+secondBar.style.width = '0%';
+
+firstBar.offsetHeight;
+secondBar.offsetHeight;
+
+firstBar.style.animation = 'loadBar 6s linear forwards';
+secondBar.style.animation = 'loadBarsec 6s linear forwards 6s';
+}
+
+startBars();
+setInterval(startBars, 12000);
+
+});
+</script>
 </body>
 
 </html>
