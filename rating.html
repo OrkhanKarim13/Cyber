@@ -65,22 +65,6 @@
             width: 100%;
         }
 
-        .top-strip {
-            height: 50px;
-            width: 100%;
-            background: linear-gradient(180deg, #0D1424 0%, rgba(13, 20, 36, 0) 100%);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .discount-text {
-            color: #ffffff;
-            font-size: 14px;
-            font-weight: 500;
-        }
-
         .main-header {
             display: flex;
             justify-content: space-between;
@@ -107,11 +91,6 @@
             padding: 0 72px;
         }
 
-        .nav-actions {
-            display: flex;
-            align-items: center;
-            gap: 32px;
-        }
 
 
 
@@ -136,25 +115,19 @@
                 color: #fff;
             }
 
-            /* HEADER HÜNDÜRLÜYÜ:
-     header-top (~48px) + əsas header (~80px)
-     ehtiyat üçün 130px verdik */
+
             .mobile-menu {
                 position: fixed;
                 border-radius: 12px;
                 border-top: 1px solid #fff;
                 top: 130px;
-                /* 🔥 ƏSAS FƏRQ */
                 left: 0%;
                 width: 100%;
-
                 height: calc(100vh - 130px);
                 background: rgba(70, 65, 160, 0.65);
-                /* şəffaf bənövşəyi */
                 backdrop-filter: blur(18px);
                 -webkit-backdrop-filter: blur(18px);
                 z-index: 1100;
-
                 transform: translateX(100%);
                 transition: transform 0.45s ease;
             }
@@ -209,16 +182,6 @@
         }
 
 
-
-
-
-
-
-
-
-
-
-
         .buy-btn {
             position: relative;
             padding: 12px 24px;
@@ -236,154 +199,12 @@
                 box-shadow 0.2s ease;
         }
 
-        /* CTA Button Styles */
-        .cta-button {
-            position: relative;
-            width: 101px;
-            height: 43px;
-            cursor: pointer;
-        }
-
-        .cta-bg {
-            position: absolute;
-            width: 100%;
-            height: 38px;
-            top: 5px;
-            background-color: #ae943f;
-            border-radius: 6px;
-        }
-
-        .cta-layer-1 {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(217, 217, 217, 0.35);
-        }
-
-        .cta-icon-l {
-            position: absolute;
-            left: 20px;
-            bottom: -18px;
-        }
-
-        .cta-icon-r {
-            position: absolute;
-            right: 0;
-            bottom: -18px;
-        }
-
-        .cta-content {
-            position: absolute;
-            top: 0;
-            width: 100%;
-            height: 40px;
-            background-color: #d6bc67;
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0px 2px 12px rgba(228, 148, 27, 0.5);
-        }
-
-        .cta-inner-bg {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(217, 217, 217, 0.35);
-            border-radius: 6px;
-        }
-
-        .cta-inner-icon-l {
-            position: absolute;
-            left: 15px;
-            bottom: -8px;
-        }
-
-        container .cta-inner-icon-r {
-            position: absolute;
-            right: 15px;
-            bottom: -8px;
-        }
-
-        .cta-text {
-            position: relative;
-            z-index: 2;
-            font-weight: 700;
-            font-size: 14px;
-        }
-
-        /* Premium Button Styles */
-        .premium-btn {
-            position: relative;
-            width: 186px;
-            height: 43px;
-            cursor: pointer;
-        }
-
-        .premium-bg {
-            position: absolute;
-            width: 100%;
-            height: 38px;
-            top: 5px;
-            background-color: #c67600;
-            border-radius: 6px;
-        }
-
-        .premium-layer {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(217, 217, 217, 0.35);
-        }
-
-        .premium-icon-r {
-            position: absolute;
-            right: 0;
-            bottom: -18px;
-        }
-
-        .premium-content {
-            position: absolute;
-            top: 0;
-            width: 100%;
-            height: 40px;
-            background-color: #e4941b;
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: inset 0px -2px 2px rgba(198, 118, 0, 0.9);
-        }
-
-        .premium-inner {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(217, 217, 217, 0.35);
-            border-radius: 6px;
-        }
-
-
         .footer-socials {
             display: flex;
             flex-direction: column;
             gap: 36px;
         }
 
-        .premium-inner-icon {
-            position: absolute;
-            right: 0;
-            bottom: -8px;
-        }
-
-        .premium-text {
-            position: relative;
-            z-index: 2;
-            font-weight: 700;
-            font-size: 14px;
-        }
 
         .nav-links {
             display: flex;
@@ -420,22 +241,13 @@
             .nav-links {
                 gap: 16px;
             }
-
-
         }
 
         @media (max-width: 768px) {
 
-            .nav-links a,
-            .premium-btn,
-            .cta-button {
+            .nav-links a{
                 display: none;
             }
-
-
-
-
-
 
             .header-container {
                 padding: 0 16px;
@@ -450,11 +262,8 @@
             }
         }
 
-        /* CSS for section section:Hero */
         #hero-section2 {
             position: relative;
-
-
             overflow: hidden;
         }
 
@@ -462,15 +271,6 @@
             display: flex;
             flex-direction: column;
             padding-left: 72px;
-
-        }
-
-        .hero-bg-left,
-        .hero-bg-right {
-            position: absolute;
-            top: 0;
-            z-index: -1;
-            opacity: 0.5;
         }
 
         .hero-bg-img {
@@ -485,12 +285,10 @@
             background-position: center;
         }
 
-
         .rating-cup-img {
             position: absolute;
             left: 35%;
             bottom: -50px;
-
         }
 
         .rating-cup-img>img {
@@ -535,15 +333,6 @@
             margin: 0;
         }
 
-
-
-        .trophy-img {
-            width: 266px;
-            /* Scaled 0.5 */
-            height: 265px;
-            mix-blend-mode: luminosity;
-        }
-
         @media (max-width: 1024px) {
             .hero-container {
                 padding-left: 20px;
@@ -558,7 +347,6 @@
             }
         }
 
-        /* CSS for section section:Leaderboard */
         #leaderboard-section {
             position: relative;
             padding-bottom: 80px;
@@ -597,7 +385,6 @@
             display: flex;
             justify-content: center;
             margin-bottom: 48px;
-            /* Align with table start */
         }
 
         .tab-item {
@@ -692,7 +479,6 @@
             width: 116px;
         }
 
-        /* Specific Styles for Top 3 Ranks */
         .rank-1 {
             background-color: #fd8d0c;
             border-color: rgba(255, 255, 255, 0.12);
@@ -791,8 +577,6 @@
             }
         }
 
-
-        /* CSS for section section:Footer */
         footer {
             background-color: #000000;
             position: relative;
@@ -851,51 +635,11 @@
             gap: 16px;
         }
 
-        .footer-watermark {
-            width: 100%;
-            height: 285px;
-            position: relative;
-            display: flex;
-            align-items: flex-end;
-            justify-content: center;
-            opacity: 0.1;
-        }
-
-        .watermark-text {
-            font-size: 200px;
-            font-weight: 900;
-            line-height: 1;
-            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            /* Using an image for the complex gradient/texture if available, otherwise CSS text */
-            background-image: url("images/953c24b0b63e09c59bacb9e5a82338ee0ae8f1b9.png");
-            background-size: cover;
-            background-clip: text;
-            color: transparent;
-            width: 100%;
-            text-align: center;
-        }
-
-        .footer-bg {
-            width: 100%;
-            position: absolute;
-            left: 0;
-            bottom: -115px;
-            height: 300px;
-        }
-
-        .footer-bg>img {
-            width: 100%;
-            object-fit: contain;
-        }
 
         @media (max-width: 768px) {
             .footer-content {
                 flex-direction: column;
                 gap: 40px;
-
-
             }
 
             .footer-links-group {
@@ -910,11 +654,9 @@
             .footer-cta {
                 font-size: 24px;
             }
-
         }
 
         @media (min-width: 550px) {
-
             .hero-desc-mobile {
                 display: none;
             }
@@ -928,7 +670,6 @@
             .hero-title2 {
                 font-size: 32px
             }
-
 
             .container {
                 padding: 0 16px;
@@ -975,7 +716,6 @@
             }
         }
     </style>
-    <script src="global.js" defer></script>
 </head>
 
 <body>
@@ -1009,15 +749,14 @@
                             <a href="./contact.html">Əlaqə</a>
                         </li>
                     </ul>
-                            <div class="lang-selector">
-  <span class="current-lang">AZ</span>
-
-  <div class="lang-dropdown">
-    <div data-lang="az">AZ</div>
-    <div data-lang="en">EN</div>
-    <div data-lang="ru">RU</div>
-  </div>
-</div>
+                    <div class="lang-selector">
+                        <span class="current-lang">AZ</span>
+                        <div class="lang-dropdown">
+                            <div data-lang="az">AZ</div>
+                            <div data-lang="en">EN</div>
+                            <div data-lang="ru">RU</div>
+                        </div>
+                    </div>
                 </nav>
                 <div class="burger-menu">
                     <i class="fa-solid fa-bars"></i>
@@ -1028,39 +767,32 @@
     <!-- MOBILE MENU OVERLAY -->
     <div class="mobile-menu" id="mobileMenu">
         <div class="mobile-menu-inner">
-
             <ul class="mobile-nav-list">
                 <li><a href="tournaments.html">Turnirlər</a></li>
                 <li><a href="./rating.html">Reytinq</a></li>
                 <li><a href="shop.html">Mağaza</a></li>
                 <li><a href="./contact.html">Əlaqə</a></li>
             </ul>
-
             <div class="mobile-buttons">
                 <button class="buy-btn-mob">Cyber+ Premium</button>
                 <button class="buy-btn-mob">Oyna</button>
             </div>
-
             <div class="mobile-lang">
                 <span>AZ</span>
                 <span>EN</span>
                 <span>RU</span>
             </div>
-
         </div>
     </div>
     <section id="hero-section2">
         <div class="hero-bg-img">
             <div class="hero-content2">
                 <h1 class="hero-title2">Reytinq</h1>
-
-
                 <p class="hero-description">
                     Oyunçularla rəqabət aparın və reytinq sistemi ilə rütbənizi artırın! Mövsümi liderlər cədvəli hər
                     ayın 1-də yenilənir.
                 </p>
                 <p class="hero-desc-mobile">Turnirlərə qoşul mükafatlar qazan!</p>
-
                 <div class="breadcrumbs">
                     <span class="crumb-inactive"><a href="./index.html">Əsas səhifə</a></span>
                     <img src="images/753_2925.svg" class="crumb-sep" alt="">
@@ -1073,10 +805,6 @@
         </div>
         <div class="container hero-container">
             <!-- Background Images -->
-
-
-
-
         </div>
     </section>
     <section id="leaderboard-section">
@@ -1126,7 +854,6 @@
                         <div class="cell-body"><span class="rank-num">...</span></div>
                         <div class="cell-body"><span class="rank-num">85239</span></div>
                     </div>
-
                     <!-- Column: Player -->
                     <div class="table-col col-player">
                         <div class="cell-header">
@@ -1194,7 +921,6 @@
                             </div>
                         </div>
                     </div>
-
                     <!-- Column: Kills -->
                     <div class="table-col col-kills">
                         <div class="cell-header"><span class="header-text">Kills</span></div>
@@ -1211,7 +937,6 @@
                         <div class="cell-body"><span>220</span></div>
                         <div class="cell-body"><span>9999</span></div>
                     </div>
-
                     <!-- Column: WR % -->
                     <div class="table-col col-wr">
                         <div class="cell-header"><span class="header-text">WR %</span></div>
@@ -1228,7 +953,6 @@
                         <div class="cell-body"><span>85%</span></div>
                         <div class="cell-body"><span>85%</span></div>
                     </div>
-
                     <!-- Column: TM -->
                     <div class="table-col col-tm">
                         <div class="cell-header"><span class="header-text">TM</span></div>
@@ -1245,7 +969,6 @@
                         <div class="cell-body"><span>1.76</span></div>
                         <div class="cell-body"><span>1.76</span></div>
                     </div>
-
                     <!-- Column: Playtime -->
                     <div class="table-col col-playtime">
                         <div class="cell-header"><span class="header-text">Playtime</span></div>
@@ -1262,7 +985,6 @@
                         <div class="cell-body"><span>240 h.</span></div>
                         <div class="cell-body"><span>240 h.</span></div>
                     </div>
-
                     <!-- Column: Rank -->
                     <div class="table-col col-rank">
                         <div class="cell-header"><span class="header-text">Rank</span></div>
@@ -1291,7 +1013,6 @@
                         <div class="cell-body"><img src="images/f52c75d521db6b6e3894f410456af88a7383168e.png"
                                 class="rank-icon"></div>
                     </div>
-
                     <!-- Column: Points -->
                     <div class="table-col col-points">
                         <div class="cell-header"><span class="header-text">Points</span></div>
@@ -1308,7 +1029,6 @@
                         <div class="cell-body"><span>25,640</span></div>
                         <div class="cell-body"><span>25,640</span></div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -1346,13 +1066,8 @@
             <div class="footer-bg">
                 <img src="./images/cyber-footer.svg" alt="footer-bg">
             </div>
-
-
         </footer>
     </section>
-
     <script src="/global.js"></script>
-
 </body>
-
 </html>
