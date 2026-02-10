@@ -5,12 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CYBER+ / Home</title>
-  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="global.css">
+
   <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-element-bundle.min.js"></script>
 <script src="https://kit.fontawesome.com/85a60fd075.js" crossorigin="anonymous"></script>
 
@@ -47,10 +47,16 @@
             <li class="navItem">
               <a href="./contact.html">Əlaqə</a>
             </li>
-            <div class="lang-selector">
-              <span>AZ</span>
-            </div>
           </ul>
+         <div class="lang-selector">
+  <span class="current-lang">AZ</span>
+
+  <div class="lang-dropdown">
+    <div data-lang="az">AZ</div>
+    <div data-lang="en">EN</div>
+    <div data-lang="ru">RU</div>
+  </div>
+</div>
         </nav>
         <div class="burger-menu">
           <i class="fa-solid fa-bars"></i>
@@ -108,7 +114,7 @@
             <div class="hero-links swiper-slide">
               <div class="hero-link-group">
                 <div class="link-header">
-                  <span class="link-title">CS2 Turnİrlərİ</span>
+                  <span class="link-title">CS2 Turnirləri</span>
                   <span class="link-desc">Showcase your skills in our one step evaluation</span>
                 </div>
                 <div class="link-bar">
@@ -119,7 +125,7 @@
 
               <div class="hero-link-group">
                 <div class="link-header">
-                  <span class="link-title">Valorant Turnİrlərİ</span>
+                  <span class="link-title">Valorant Turnirləri</span>
                   <span class="link-desc">Showcase your skills in our one step evaluation</span>
                 </div>
                 <div class="link-bar">
@@ -164,7 +170,7 @@
             <div class="hero-links">
               <div class="hero-link-group">
                 <div class="link-header">
-                  <span class="link-title">CS2 Turnİrlərİ</span>
+                  <span class="link-title">CS2 Turnirləri</span>
                   <span class="link-desc">Showcase your skills in our one step evaluation</span>
                 </div>
                 <div class="link-bar">
@@ -175,7 +181,7 @@
 
               <div class="hero-link-group">
                 <div class="link-header">
-                  <span class="link-title">Valorant Turnİrlərİ</span>
+                  <span class="link-title">Valorant Turnirləri</span>
                   <span class="link-desc">Showcase your skills in our one step evaluation</span>
                 </div>
                 <div class="link-bar">
@@ -697,6 +703,64 @@ startBars();
 setInterval(startBars, 12000);
 
 });
+
+
+
+
+
+const burger = document.querySelector('.burger-menu');
+const mobileMenu = document.getElementById('mobileMenu');
+const icon = burger.querySelector('i');
+
+burger.addEventListener('click', () => {
+  mobileMenu.classList.toggle('active');
+
+  icon.classList.toggle('fa-bars');
+  icon.classList.toggle('fa-xmark');
+});
+
+
+const langSelector = document.querySelector('.lang-selector');
+const currentLang = document.querySelector('.current-lang');
+const langOptions = document.querySelectorAll('.lang-dropdown div');
+
+
+// dropdown aç/bağla
+langSelector.addEventListener('click', () => {
+  langSelector.classList.toggle('active');
+});
+
+
+// dil dəyişmək
+langOptions.forEach(option => {
+  option.addEventListener('click', (e) => {
+
+    const selectedLang = e.target.dataset.lang;
+
+    currentLang.textContent = selectedLang.toUpperCase();
+
+    // localStorage save
+    localStorage.setItem("siteLang", selectedLang);
+
+    // dropdown bağla
+    langSelector.classList.remove('active');
+
+    // DEMO üçün reload (real layihədə translation olacaq)
+    location.reload();
+
+  });
+});
+
+
+// səhifə açılarkən dili load et
+const savedLang = localStorage.getItem("siteLang");
+
+if(savedLang){
+  currentLang.textContent = savedLang.toUpperCase();
+}
+
+
+
 </script>
 </body>
 
