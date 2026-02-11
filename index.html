@@ -73,10 +73,13 @@
         <button class="buy-btn-mob">Cyber+ Premium</button>
         <button class="buy-btn-mob">Oyna</button>
       </div>
-      <div class="mobile-lang">
-        <span>AZ</span>
-        <span>EN</span>
-        <span>RU</span>
+      <div class="lang-selector">
+        <span class="current-lang">AZ</span>
+        <div class="lang-dropdown">
+          <div data-lang="az">AZ</div>
+          <div data-lang="en">EN</div>
+          <div data-lang="ru">RU</div>
+        </div>
       </div>
     </div>
   </div>
@@ -577,7 +580,7 @@
     </footer>
   </section>
   <script>
-      document.addEventListener("DOMContentLoaded", () => {
+    document.addEventListener("DOMContentLoaded", () => {
 
       const firstBar = document.querySelector('.bar-fill');
       const secondBar = document.querySelector('.bar-fill-sec');
@@ -608,13 +611,13 @@
 
     const header = document.querySelector('.header');
 
-window.addEventListener('scroll', () => {
-if (window.scrollY > 50) {
-header.classList.add('scrolled');
-} else {
-header.classList.remove('scrolled');
-}
-});
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
 
 
     const burger = document.querySelector('.burger-menu');

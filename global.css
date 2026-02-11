@@ -195,6 +195,10 @@ h3 {
     border-radius: 8px;
 }
 
+
+
+
+
 .lang-dropdown div {
   padding: 6px 10px;
   color: color;
@@ -1324,6 +1328,29 @@ display: none;
   .burger-menu {
     display: flex;
   }
+   .lang-selector{
+    background: none;
+  }
+  .lang-dropdown{
+    position: static;
+    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+     background: none;
+     backdrop-filter:none;
+  }
+  .current-lang{
+    display: none;
+  }
+  .lang-dropdown div {
+  padding: 6px 10px;
+  color: color;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(4px);
+    border-radius: 8px;
+}
 
   .hero-section {
     height: auto;
