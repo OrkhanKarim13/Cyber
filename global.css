@@ -178,25 +178,32 @@ h3 {
   cursor: pointer;
   user-select: none;
   font-weight: 600;
+
 }
 
 .lang-dropdown {
   position: absolute;
-  top: 100%;
+  top: 110%;
   left: 0;
   background: white;
   border: 1px solid #ddd;
   display: none;
   min-width: 60px;
+  background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(4px);
+    border: none;
+    border-radius: 8px;
 }
 
 .lang-dropdown div {
   padding: 6px 10px;
-  color: black;
+  color: color;
 }
 
 .lang-dropdown div:hover {
   background: #f2f2f2;
+  color: #000;
+  border-radius: 8px;
 }
 
 .lang-selector.active .lang-dropdown {
