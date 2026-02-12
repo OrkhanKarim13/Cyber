@@ -23,6 +23,11 @@ body {
   text-decoration: none;
 }
 
+
+.hide{
+  display: none;
+}
+
 img {
   display: block;
   max-width: 100%;
@@ -126,8 +131,9 @@ h3 {
 }
 
 .header.scrolled {
-  background-color: #000;
+  backdrop-filter: blur(44px);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    
 }
 
 .header-top {
@@ -368,7 +374,7 @@ h3 {
 
 .hero-gradient-overlay {
   position: absolute;
-  bottom: 50px;
+  bottom: 0px;
   left: 0;
   width: 100%;
   height: 182px;
@@ -420,7 +426,7 @@ h3 {
 }
 
 .hero-link-group {
-  width: 186px;
+  width: 200px;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -590,7 +596,7 @@ h3 {
   width: 100px;
 }
 
-.team-logo {
+.team--main-logo {
   width: 72px;
   height: 72px;
   border-radius: 50%;
@@ -639,6 +645,123 @@ h3 {
   position: relative;
   z-index: 2;
 }
+
+.featured-team-left{
+  width: 280px;
+  position: relative;
+  height: 590px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+
+
+
+
+
+
+
+
+.battle-wrapper{
+  display:flex;
+  justify-content:center;  gap:80px;
+  background:black;
+  padding:80px 0;
+}
+
+/* TEAM CARD */
+
+.team-card{
+  position:relative;
+  width:280px;
+  height:590px;
+  text-align:center;
+}
+
+
+.team-card:nth-child(2){
+height: 460px;  
+}
+
+/* GOLD VECTOR FRAME */
+
+.team-card .frame{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  pointer-events:none;
+}
+
+/* TEAM NAME */
+
+.team-name{
+  position:absolute;
+  top:-40px;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:28px;
+  font-weight:700;
+  color:#dcdcdc;
+}
+
+/* LOGO */
+
+.team-logo{
+  position:absolute;
+  top:120px;
+  left:50%;
+  transform:translateX(-50%);
+}
+
+.team-logo img{
+  width:120px;
+}
+
+/* red glow effect (2ci team kimi) */
+
+.team-logo.red{
+
+}
+
+/* SCORE */
+
+.team-score{    
+  position:absolute;
+  bottom:80px;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:80px;
+  font-weight:800;
+  color:#dcdcdc;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .f-team-name {
   font-size: 20px;

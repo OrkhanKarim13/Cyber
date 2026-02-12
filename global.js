@@ -1,8 +1,10 @@
 const header = document.querySelector('.header');
+const headerTop = document.querySelector(".header-top")
 
 window.addEventListener('scroll', () => {
 if (window.scrollY > 50) {
 header.classList.add('scrolled');
+headerTop.classList.add("hide");
 } else {
 header.classList.remove('scrolled');
 }
