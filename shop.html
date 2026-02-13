@@ -30,7 +30,7 @@
             height: 384px;
             background-repeat: no-repeat;
             background-size: contain;
-            
+
         }
 
         .breadcrumbs {
@@ -95,11 +95,7 @@
         }
 
         .lang-selector {
-            background: rgba(255, 255, 255, 0.12);
-            padding: 10px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: 600;
+            background: none;
         }
 
         /* Custom Buttons */
@@ -213,18 +209,18 @@
         }
 
 
-        .shop-btn{
+        .shop-btn {
             padding: 22px 148px;
             background: linear-gradient(90deg, #466AFB 0%, #2A3F95 100%);
             border: none;
             color: #fff;
             font-size: 14px;
             line-height: 100%;
-              border-radius: 6px;
-              clip-path: polygon(0 0, 100% 0, 100% 70%, 90% 100%, 0 100%);
+            border-radius: 6px;
+            clip-path: polygon(0 0, 100% 0, 100% 70%, 90% 100%, 0 100%);
         }
 
-        .second-shop-btn{
+        .second-shop-btn {
             padding: 23px 36px;
             background: linear-gradient(90deg, #FB863E 0%, #8F3B06 100%);
             color: #fff;
@@ -320,17 +316,17 @@
                 overflow-x: auto;
             }
 
-            .card-stats{
+            .card-stats {
                 display: flex;
                 justify-content: space-between;
             }
 
-            .shop-btn{
+            .shop-btn {
                 width: 70%;
                 padding: 22px 0;
             }
 
-            .second-shop-btn{
+            .second-shop-btn {
                 width: 25%;
                 padding: 22px 0;
             }
@@ -551,9 +547,9 @@
 
         @media (max-width: 768px) {
             .hero-bg-img {
-                
+
                 padding: 120px 16px 16px 16px;
-             background-size: cover;
+                background-size: cover;
                 background-position: center;
             }
 
@@ -582,7 +578,7 @@
 <body>
     <header class="header">
         <div class="header-top">
-            <a href="#">Yeni istifadəçilər üçün CYBER+ 30% endirimlə!</a>
+            <a data-translate="promoTop" href="#">Yeni istifadəçilər üçün CYBER+ 30% endirimlə!</a>
         </div>
         <div class="container header-container">
             <div class="header-content">
@@ -593,32 +589,32 @@
                 </div>
                 <nav class="nav-bar">
                     <div class="header-buttons">
-                        <button class="buy-btn">Oyna</button>
+                        <button data-translate="playBtn" class="buy-btn">Oyna</button>
                         <button class="buy-btn">Cyber+ Premium</button>
                     </div>
                     <ul class="nav-list">
                         <li class="navItem">
-                            <a href="./tournaments.html">Turnirlər</a>
+                            <a data-translate="navTournaments" href="./tournaments.html">Turnirlər</a>
                         </li>
                         <li class="navItem">
-                            <a href="./rating.html">Reytinq</a>
+                            <a data-translate="navRating" href="./rating.html">Reytinq</a>
                         </li>
                         <li class="navItem">
-                            <a href="shop.html">Mağaza</a>
+                            <a data-translate="navShop" href="shop.html">Mağaza</a>
                         </li>
                         <li class="navItem">
-                            <a href="./contact.html">Əlaqə</a>
+                            <a data-translate="navContact" href="./contact.html">Əlaqə</a>
                         </li>
                     </ul>
-                             <div class="lang-selector">
-  <span class="current-lang">AZ</span>
+                    <div class="lang-selector">
+                        <span class="current-lang">AZ</span>
 
-  <div class="lang-dropdown">
-    <div data-lang="az">AZ</div>
-    <div data-lang="en">EN</div>
-    <div data-lang="ru">RU</div>
-  </div>
-</div>
+                        <div class="lang-dropdown">
+                            <div data-lang="az">AZ</div>
+                            <div data-lang="en">EN</div>
+                            <div data-lang="ru">RU</div>
+                        </div>
+                    </div>
                 </nav>
                 <div class="burger-menu">
                     <i class="fa-solid fa-bars"></i>
@@ -629,59 +625,62 @@
     <!-- MOBILE MENU OVERLAY -->
     <div class="mobile-menu" id="mobileMenu">
         <div class="mobile-menu-inner">
-
             <ul class="mobile-nav-list">
-                <li><a href="./tournaments.html">Turnirlər</a></li>
-                <li><a href="./rating.html">Reytinq</a></li>
-                <li><a href="shop.html">Mağaza</a></li>
-                <li><a href="./contact.html">Əlaqə</a></li>
+                <li><a data-translate="navTournaments" href="tournaments.html">Turnirlər</a></li>
+                <li style="padding: 0;" class="border"></li>
+                <li><a data-translate="navRating" href="./rating.html">Reytinq</a></li>
+                <li style="padding: 0;" class="border"></li>
+                <li><a data-translate="navShop" href="./shop.html">Mağaza</a></li>
+                <li style="padding: 0;" class="border"></li>
+                <li><a data-translate="navContact" href="./contact.html">Əlaqə</a></li>
+                <li style="padding: 0;" class="border"></li>
             </ul>
-
             <div class="mobile-buttons">
                 <button class="buy-btn-mob">Cyber+ Premium</button>
-                <button class="buy-btn-mob">Oyna</button>
+                <button data-translate="playBtn" class="play-btn-mob">Oyna</button>
             </div>
-
-            <div class="mobile-lang">
-                <span>AZ</span>
-                <span>EN</span>
-                <span>RU</span>
+            <div class="lang-selector">
+                <span class="current-lang">AZ</span>
+                <div class="lang-dropdown">
+                    <div data-lang="az">AZ</div>
+                    <div data-lang="en">EN</div>
+                    <div data-lang="ru">RU</div>
+                </div>
             </div>
-
         </div>
     </div>
     <section id="section-filters">
 
         <div class="hero-bg-img">
             <div class="hero-content2">
-                <h1 class="hero-title2">Mağaza</h1>
+                <h1 data-translate="navShop" class="hero-title2">Mağaza</h1>
 
 
-                <p class="hero-description">
+                <p data-translate="shopText" class="hero-description">
                     Sənin oyun zonan. Premium funksiyalar, paketlər və xüsusi təkliflər.
                 </p>
 
 
                 <div class="breadcrumbs">
-                    <span class="crumb-inactive"><a href="./index.html">Əsas səhifə</a></span>
+                    <span class="crumb-inactive"><a data-translate="mainPage" href="./index.html">Əsas səhifə</a></span>
                     <img src="images/753_2925.svg" class="crumb-sep" alt="">
-                    <span class="crumb-active">Mağaza</span>
+                    <span data-translate="navShop" class="crumb-active">Mağaza</span>
                 </div>
             </div>
 
         </div>
         <div class="filters-wrapper">
             <div class="filter-tab active">
-                <span>Hamısı</span>
+                <span data-translate="all">Hamısı</span>
             </div>
             <div class="filter-tab">
-                <span>Bonuslar</span>
+                <span data-translate="bonuses">Bonuslar</span>
             </div>
             <div class="filter-tab">
-                <span>VIP paketlər</span>
+                <span data-translate="packages">VIP paketlər</span>
             </div>
             <div class="filter-tab">
-                <span>Premium+</span>
+                <span data-translate="premium">Premium+</span>
             </div>
         </div>
 
@@ -692,7 +691,7 @@
 
             <!-- Card 1 -->
             <article class="card">
-              
+
                 <div class="card-image">
                     <img src="./images/shop-card.png" alt="Tournament Image">
                 </div>
@@ -710,7 +709,7 @@
 
             <!-- Card 2 -->
             <article class="card">
-              
+
                 <div class="card-image">
                     <img src="./images/shop-card.png" alt="Tournament Image">
                 </div>
@@ -728,7 +727,7 @@
 
             <!-- Card 3 -->
             <article class="card">
-               
+
                 <div class="card-image">
                     <img src="./images/shop-card.png" alt="Tournament Image">
                 </div>
@@ -746,7 +745,7 @@
 
             <!-- Card 4 -->
             <article class="card">
-                
+
                 <div class="card-image">
                     <img src="./images/shop-card.png" alt="Tournament Image">
                 </div>
@@ -764,7 +763,7 @@
 
             <!-- Card 5 -->
             <article class="card">
-               
+
                 <div class="card-image">
                     <img src="./images/shop-card.png" alt="Tournament Image">
                 </div>
@@ -781,7 +780,7 @@
             </article>
 
             <!-- Card 6 -->
-            
+
 
         </div>
 
@@ -824,7 +823,7 @@
         </footer>
     </section>
     <script src="./global.js">
-       
+
     </script>
 </body>
 

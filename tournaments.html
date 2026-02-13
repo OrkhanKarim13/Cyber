@@ -538,7 +538,7 @@
 <body>
     <header class="header">
         <div class="header-top">
-            <a href="#">Yeni istifadəçilər üçün CYBER+ 30% endirimlə!</a>
+            <a data-translate="promoTop" href="#">Yeni istifadəçilər üçün CYBER+ 30% endirimlə!</a>
         </div>
         <div class="container header-container">
             <div class="header-content">
@@ -549,21 +549,21 @@
                 </div>
                 <nav class="nav-bar">
                     <div class="header-buttons">
-                        <button class="buy-btn">Oyna</button>
+                        <button data-translate="playBtn" class="buy-btn">Oyna</button>
                         <button class="buy-btn">Cyber+ Premium</button>
                     </div>
                     <ul class="nav-list">
                         <li class="navItem">
-                            <a href="./tournaments.html">Turnirlər</a>
+                            <a data-translate="navTournaments" href="./tournaments.html">Turnirlər</a>
                         </li>
                         <li class="navItem">
-                            <a href="./rating.html">Reytinq</a>
+                            <a data-translate="navRating" href="./rating.html">Reytinq</a>
                         </li>
                         <li class="navItem">
-                            <a href="./shop.html">Mağaza</a>
+                            <a data-translate="navShop" href="./shop.html">Mağaza</a>
                         </li>
                         <li class="navItem">
-                            <a href="./contact.html">Əlaqə</a>
+                            <a data-translate="navContact" href="./contact.html">Əlaqə</a>
                         </li>
                     </ul>
                              <div class="lang-selector">
@@ -583,61 +583,64 @@
         </div>
     </header>
     <!-- MOBILE MENU OVERLAY -->
-    <div class="mobile-menu" id="mobileMenu">
-        <div class="mobile-menu-inner">
-
-            <ul class="mobile-nav-list">
-                <li><a href="./tournaments.html">Turnirlər</a></li>
-                <li><a href="./rating.html">Reytinq</a></li>
-                <li><a href="./shop.html">Mağaza</a></li>
-                <li><a href="./contact.html">Əlaqə</a></li>
-            </ul>
-
-            <div class="mobile-buttons">
-                <button class="buy-btn-mob">Cyber+ Premium</button>
-                <button class="buy-btn-mob">Oyna</button>
-            </div>
-
-            <div class="mobile-lang">
-                <span>AZ</span>
-                <span>EN</span>
-                <span>RU</span>
-            </div>
-
+      <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-inner">
+      <ul class="mobile-nav-list">
+        <li><a data-translate="navTournaments" href="tournaments.html">Turnirlər</a></li>
+        <li style="padding: 0;" class="border"></li>
+        <li><a data-translate="navRating" href="./rating.html">Reytinq</a></li>
+        <li style="padding: 0;" class="border"></li>
+        <li><a data-translate="navShop" href="./shop.html">Mağaza</a></li>
+        <li style="padding: 0;" class="border"></li>
+        <li><a data-translate="navContact" href="./contact.html">Əlaqə</a></li>
+        <li style="padding: 0;" class="border"></li>
+      </ul>
+      <div class="mobile-buttons">
+        <button class="buy-btn-mob">Cyber+ Premium</button>
+        <button data-translate="playBtn" class="play-btn-mob">Oyna</button>
+      </div>
+      <div class="lang-selector">
+        <span class="current-lang">AZ</span>
+        <div class="lang-dropdown">
+          <div data-lang="az">AZ</div>
+          <div data-lang="en">EN</div>
+          <div data-lang="ru">RU</div>
         </div>
+      </div>
     </div>
+  </div>
     <section id="section-filters">
 
         <div class="hero-bg-img">
             <div class="hero-content2">
-                <h1 class="hero-title2">Turnirlər</h1>
+                <h1 data-translate="navTournaments" class="hero-title2">Turnirlər</h1>
 
 
-                <p class="hero-description">
+                <p data-translate="heroSubtitle" class="hero-description">
                     Turnirlərə qoşul mükafatlar qazan!
                 </p>
 
 
                 <div class="breadcrumbs">
-                    <span class="crumb-inactive"><a href="./index.html">Əsas səhifə</a></span>
+                    <span class="crumb-inactive"><a data-translate="mainPage"  href="./index.html">Əsas səhifə</a></span>
                     <img src="images/753_2925.svg" class="crumb-sep" alt="">
-                    <span class="crumb-active">Turnirlər</span>
+                    <span data-translate="navTournaments" class="crumb-active">Turnirlər</span>
                 </div>
             </div>
 
         </div>
         <div class="filters-wrapper">
             <div class="filter-tab active">
-                <span>Hamısı</span>
+                <span data-translate="all">Hamısı</span>
             </div>
             <div class="filter-tab">
-                <span>Aktiv</span>
+                <span data-translate="active">Aktiv</span>
             </div>
             <div class="filter-tab">
-                <span>Başlamamış</span>
+                <span data-translate="notStart">Başlamamış</span>
             </div>
             <div class="filter-tab">
-                <span>Bitmiş</span>
+                <span data-translate="finished">Bitmiş</span>
             </div>
         </div>
 
@@ -659,8 +662,8 @@
                 </div>
                 <div class="card-content3">
                     <div class="card-titles">
-                        <h3>Şöhrət Arenası</h3>
-                        <p>Komandaların mübarizəsi</p>
+                        <h3 data-translate="arenaFame">Şöhrət Arenası</h3>
+                        <p data-translate="battleTeams">Komandaların mübarizəsi</p>
                     </div>
                     <div class="card-stats">
                         <div class="stat-item">
@@ -669,7 +672,7 @@
                         </div>
                         <div class="stat-item">
                             <img src="images/polygon-icon.svg" alt="icon">
-                            <span>2 oyunçu</span>
+                            <span>2 <span data-translate="player">oyunçu</span></span>
                         </div>
                     </div>
                 </div>
@@ -689,7 +692,7 @@
                 <div class="card-content3">
                     <div class="card-titles">
                         <h3>CYBER+ 2025 Sezon - 1</h3>
-                        <p>Komandaların mübarizəsi</p>
+                        <p data-translate="battleTeams">Komandaların mübarizəsi</p>
                     </div>
                     <div class="card-stats">
                         <div class="stat-item">
@@ -698,7 +701,7 @@
                         </div>
                         <div class="stat-item">
                             <img src="images/polygon-icon.svg" alt="icon">
-                            <span>2 oyunçu</span>
+                            <span>2 <span data-translate="player">oyunçu</span></span>
                         </div>
                     </div>
                 </div>
@@ -718,7 +721,7 @@
                 <div class="card-content3">
                     <div class="card-titles">
                         <h3>Counter-Strike 2</h3>
-                        <p>Komandaların mübarizəsi</p>
+                        <p data-translate="battleTeams">Komandaların mübarizəsi</p>
                     </div>
                     <div class="card-stats">
                         <div class="stat-item">
@@ -727,7 +730,7 @@
                         </div>
                         <div class="stat-item">
                             <img src="images/polygon-icon.svg" alt="icon">
-                            <span>2 oyunçu</span>
+                            <span>2 <span data-translate="player">oyunçu</span></span>
                         </div>
                     </div>
                 </div>
@@ -747,7 +750,7 @@
                 <div class="card-content3">
                     <div class="card-titles">
                         <h3>Victory - Valorant</h3>
-                        <p>Komandaların mübarizəsi</p>
+                        <p data-translate="battleTeams">Komandaların mübarizəsi</p>
                     </div>
                     <div class="card-stats">
                         <div class="stat-item">
@@ -756,7 +759,7 @@
                         </div>
                         <div class="stat-item">
                             <img src="images/polygon-icon.svg" alt="icon">
-                            <span>2 oyunçu</span>
+                            <span>2 <span data-translate="player">oyunçu</span></span>
                         </div>
                     </div>
                 </div>
@@ -776,7 +779,7 @@
                 <div class="card-content3">
                     <div class="card-titles">
                         <h3>Valorant</h3>
-                        <p>Komandaların mübarizəsi</p>
+                        <p data-translate="battleTeams">Komandaların mübarizəsi</p>
                     </div>
                     <div class="card-stats">
                         <div class="stat-item">
@@ -785,7 +788,7 @@
                         </div>
                         <div class="stat-item">
                             <img src="images/polygon-icon.svg" alt="icon">
-                            <span>2 oyunçu</span>
+                            <span>2 <span data-translate="player">oyunçu</span></span>
                         </div>
                     </div>
                 </div>
@@ -805,7 +808,7 @@
                 <div class="card-content3">
                     <div class="card-titles">
                         <h3>Counter-Strike 2</h3>
-                        <p>Komandaların mübarizəsi</p>
+                        <p data-translate="battleTeams">Komandaların mübarizəsi</p>
                     </div>
                     <div class="card-stats">
                         <div class="stat-item">
@@ -814,7 +817,7 @@
                         </div>
                         <div class="stat-item">
                             <img src="images/polygon-icon.svg" alt="icon">
-                            <span>2 oyunçu</span>
+                            <span>2 <span data-translate="player">oyunçu</span></span>
                         </div>
                     </div>
                 </div>
@@ -828,19 +831,19 @@
             <div class="container footer-content">
                 <div class="footer-columns">
                     <div class="f-col">
-                        <a href="#" class="f-link">Turnirlər</a>
-                        <a href="./rating.html" class="f-link">Reytinq</a>
-                        <a href="#" class="f-link">Oyunçular</a>
+                        <a data-translate="navTournaments" href="./tournaments.html" class="f-link">Turnirlər</a>
+                        <a data-translate="navRating" href="./rating.html" class="f-link">Reytinq</a>
+                        <a data-translate="players" href="#" class="f-link">Oyunçular</a>
                     </div>
                     <div class="f-col">
-                        <a href="#" class="f-link">Haqqımızda</a>
-                        <a href="#" class="f-link">Ən yaxşı oyunçular</a>
-                        <a href="#" class="f-link">Yeniliklər</a>
+                        <a data-translate="about" href="#" class="f-link">Haqqımızda</a>
+                        <a data-translate="topPlayer" href="#" class="f-link">Ən yaxşı oyunçular</a>
+                        <a data-translate="whatsNew" href="#" class="f-link">Yeniliklər</a>
                     </div>
                 </div>
 
                 <div class="footer-socials">
-                    <span class="social-title">Bizi izləyin</span>
+                    <span data-translate="followUs" class="social-title">Bizi izləyin</span>
                     <div class="social-links">
                         <div class="s-col">
                             <a href="#" class="f-link">facebook</a>
