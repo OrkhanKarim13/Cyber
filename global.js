@@ -285,10 +285,12 @@ document.addEventListener("DOMContentLoaded", () => {
       whatsNew: "Yeniliklər",
       followUs: "Bizi izləyin",
       ratingText: "Oyunçularla rəqabət aparın və reytinq sistemi ilə rütbənizi artırın! Mövsümi liderlər cədvəli hər ayın 1-də yenilənir.",
-      shopText:"Sənin oyun zonan. Premium funksiyalar, paketlər və xüsusi təkliflər.",
-      bonuses:"Bonuslar",
-      packages:"VIP paketlər",
-      premium:"Premium+",
+      shopText: "Sənin oyun zonan. Premium funksiyalar, paketlər və xüsusi təkliflər.",
+      bonuses: "Bonuslar",
+      packages: "VIP paketlər",
+      premium: "Premium+",
+      contactUs: "Bizimlə əlaqə",
+      contactText: "Cyber+ komandası ilə əlaqə saxlayın — suallarınız, təklifləriniz və əməkdaşlıq imkanları üçün hər zaman açığıq."
 
     },
     en: {
@@ -324,10 +326,12 @@ document.addEventListener("DOMContentLoaded", () => {
       whatsNew: "What's new?",
       followUs: "Follow us",
       ratingText: "Compete with players and increase your rank with the ranking system! Seasonal leaderboards are updated on the 1st of every month.",
-      shopText:"Your gaming zone. Premium features, packages and special offers.",
-      bonuses:"Bonuses",
-          packages:"VIP packages",
-               premium:"Premium+",
+      shopText: "Your gaming zone. Premium features, packages and special offers.",
+      bonuses: "Bonuses",
+      packages: "VIP packages",
+      premium: "Premium+",
+      contactUs: "Contact us",
+      contactText: "Contact the Cyber+ team — we are always open to your questions, suggestions, and collaboration opportunities."
     },
     ru: {
       heroTitle: "Играй, выигрывай, наслаждайся!",
@@ -361,11 +365,13 @@ document.addEventListener("DOMContentLoaded", () => {
       topPlayer: "Лучшие игроки",
       whatsNew: "Что нового?",
       followUs: "Подписывайтесь на нас",
-       ratingText: "Соревнуйтесь с другими игроками и повышайте свой рейтинг с помощью рейтинговой системы! Сезонные таблицы лидеров обновляются 1-го числа каждого месяца.",
-        shopText:"Ваша игровая зона. Премиум-функции, пакеты и специальные предложения.",
-        bonuses:"бонусы",
-         packages:"VIP-пакеты",
-              premium:"Премиум+",
+      ratingText: "Соревнуйтесь с другими игроками и повышайте свой рейтинг с помощью рейтинговой системы! Сезонные таблицы лидеров обновляются 1-го числа каждого месяца.",
+      shopText: "Ваша игровая зона. Премиум-функции, пакеты и специальные предложения.",
+      bonuses: "бонусы",
+      packages: "VIP-пакеты",
+      premium: "Премиум+",
+      contactUs: "Связаться с нами",
+      contactText: "Свяжитесь с командой Cyber+ — мы всегда открыты для ваших вопросов, предложений и возможностей для сотрудничества."
 
     }
   };
