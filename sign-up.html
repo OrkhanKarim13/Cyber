@@ -193,6 +193,16 @@
             border-radius: 6px;
             clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
         }
+                .chamfer-btn:nth-child(2){
+border-radius: 6px;
+         clip-path: polygon(
+  0 0,
+  100% 0,
+  100% 100%,
+  20px 100%,
+  0 calc(100% - 20px)
+);
+        }
 
         .game-btn.active {
             background: linear-gradient(135deg, #4361ee, #3a0ca3);
