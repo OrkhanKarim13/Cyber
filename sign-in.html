@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber+ Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Orbitron:wght@600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: #4361ee;
+            --card-bg: rgba(30, 41, 89, 0.85);
+            /* Darker blue, slightly transparent */
+            --input-bg: rgba(255, 255, 255, 0.15);
+            --text-white: #ffffff;
+            --text-gray: #b0b8d1;
+            --accent-blue: #4cc9f0;
+            --btn-primary: #3a6df0;
+            /* A brighter blue for the button */
+            --hover-effect: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-image: url("./images/sign-in.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: var(--text-white);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo {
+            position: absolute;
+            top: 40px;
+            left: 72px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: white;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 420px;
+            padding: 20px;
+        }
+
+        .login-card {
+            backdrop-filter: blur(44px);
+            background: #03040859;;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+
+        /* Form Styles */
+        .form-row {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .full-width {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 0.8rem;
+            color: var(--text-gray);
+            margin-bottom: 8px;
+            margin-left: 5px;
+        }
+
+        /* Input Wrappers & Chamfer Effect */
+        .input-wrapper,
+        .select-wrapper {
+            position: relative;
+            background: var(--input-bg);
+            height: 50px;
+            display: flex;
+            align-items: center;
+            padding: 0 15px;
+            transition: background 0.3s;
+        }
+
+        .input-wrapper:focus-within {
+            background: rgba(255, 255, 255, 0.25);
+        }
+        .chamfer-input {
+            clip-path: polygon(10px 0, 100% 0,
+                    100% calc(100% - 10px), calc(100% - 10px) 100%,
+                    0 100%,
+                    0 10px);
+            border-radius: 4px;
+        }
+
+        .select-wrapper {
+            border-radius: 8px;
+            clip-path: polygon(8px 0, 100% 0,
+                    100% calc(100% - 8px), calc(100% - 8px) 100%,
+                    0 100%,
+                    0 8px);
+        }
+
+        input,
+        select {
+            background: transparent;
+            border: none;
+            color: white;
+            width: 100%;
+            outline: none;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+        }
+
+        input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .input-wrapper i {
+            margin-right: 10px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        select {
+            appearance: none;
+            cursor: pointer;
+        }
+
+
+        .select-wrapper::after {
+            content: '\f0d7';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            right: 15px;
+            color: rgba(255, 255, 255, 0.7);
+            pointer-events: none;
+        }
+
+
+        .game-selector {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .game-btn {
+            flex: 1;
+            height: 45px;
+            border: none;
+            color: white;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            background: var(--input-bg);
+   
+            clip-path: polygon(15px 0, 100% 0,
+                    100% calc(100% - 15px), calc(100% - 15px) 100%,
+                    0 100%,
+                    0 15px);
+            transition: all 0.3s ease;
+        }
+
+        .game-btn.active {
+            background: linear-gradient(135deg, #4361ee, #3a0ca3);
+            box-shadow: 0 0 15px rgba(67, 97, 238, 0.5);
+        }
+
+        .submit-btn {
+            width: 100%;
+            height: 55px;
+            border: none;
+            background: linear-gradient(90deg, #4361ee, #4cc9f0);
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 10px;
+
+            clip-path: polygon(0 0, 100% 0,
+                    100% calc(100% - 20px), calc(100% - 20px) 100%,
+                    0 100%);
+            clip-path: polygon(5px 0, 100% 0,
+                    100% calc(100% - 20px), calc(100% - 20px) 100%,
+                    0 100%,
+                    0 5px);
+        }
+
+        .submit-btn:hover {
+            filter: brightness(1.1);
+        }
+
+        .divider {
+            text-align: center;
+            margin: 25px 0;
+            position: relative;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 40%;
+            height: 1px;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 50%, rgba(255, 255, 255, 0) 100%);
+
+        }
+
+        .divider::before {
+            left: 0;
+        }
+
+        .divider::after {
+            right: 0;
+        }
+
+        .divider span {
+            font-size: 0.7rem;
+            color: var(--text-gray);
+            text-transform: uppercase;
+            background: transparent;
+            padding: 0 10px;
+        }
+
+        .social-btn {
+            width: 100%;
+            background: transparent;
+            border: none;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .social-btn i {
+            font-size: 1.2rem;
+        }
+
+
+        .footer-text {
+            text-align: center;
+            font-size: 0.8rem;
+            margin-top: 20px;
+            color: var(--text-white);
+        }
+
+        .footer-text a {
+            color: white;
+            font-weight: 600;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="logo">
+          <a href="./index.html">
+            <img src="./images/cyberplus-logo.svg" alt="logo">
+          </a>
+        </div>
+
+    <div class="container">
+        <div class="login-card">
+            <h1>Welcome to</h1>
+
+            <form>
+                <div class="form-row">
+                    <div class="input-group">
+                        <label>Username</label>
+                        <div class="input-wrapper chamfer-input">
+                            <i class="fa-regular fa-circle-user"></i>
+                            <input type="text" placeholder="Username">
+                        </div>
+                    </div>
+                    
+                </div>
+              
+               
+                <div class="input-group full-width">
+                     <label>Password</label>
+                    <div class="input-wrapper chamfer-input">
+                        <i class="fa-regular fa-circle-user"></i>
+                        <input type="password" placeholder="********">
+                    </div>
+                </div>
+                <button type="submit" class="submit-btn chamfer-btn-large">SIGN IN</button>
+                <div class="divider">
+                    <span>OR</span>
+                </div>
+                <p class="footer-text">
+                    Don’t have an account? <a href="./sign-up.html">Sign Up</a>
+                </p>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
