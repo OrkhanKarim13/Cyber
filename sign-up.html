@@ -65,11 +65,20 @@
         .login-card {
             backdrop-filter: blur(44px);
             background: #03040859;
-            ;
             padding: 40px 30px;
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 
+        }
+
+
+        @media(max-width:500px){
+             .login-card {
+padding: 0;
+        }
+        .logo{
+            position: static;
+        }
         }
 
         h1 {
@@ -103,14 +112,12 @@
             margin-bottom: 8px;
             margin-left: 5px;
         }
-
         /* Input Wrappers & Chamfer Effect */
         .input-wrapper,
         .select-wrapper {
             position: relative;
             background: #D9D9D959;
             backdrop-filter: blur(24px);
-            
             height: 50px;
             display: flex;
             align-items: center;
@@ -301,13 +308,14 @@ border-radius: 6px;
 </head>
 
 <body>
-     <div class="logo">
+     
+
+    <div class="container">
+        <div class="logo">
           <a href="./index.html">
             <img src="./images/cyberplus-logo.svg" alt="logo">
           </a>
         </div>
-
-    <div class="container">
         <div class="login-card">
             <h1>Sign Up</h1>
 
