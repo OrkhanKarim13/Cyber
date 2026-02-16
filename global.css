@@ -70,9 +70,7 @@ img {
   border-radius: 10px;
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35);
   clip-path: polygon(0 0, 100% 0, 100% 70%, 90% 100%, 0 100%);
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+  transition: 0.3s all
 }
 
 .btn-blue {
@@ -86,6 +84,13 @@ img {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+
+.buy-btn:hover, 
+.btn-gold:hover{
+ background-image: linear-gradient(144deg,#e4941b 50%, #FFB239);
+ transition: all 0.3s;
 }
 
 h1,
@@ -152,6 +157,7 @@ h3 {
 }
 
 .header-content {
+  padding: 16px 0;
   display: flex;
   align-items: center;
   width: 100%;
@@ -226,9 +232,18 @@ h3 {
   border-radius: 10px;
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35);
   clip-path: polygon(0 0, 100% 0, 100% 70%, 90% 100%, 0 100%);
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+  transition: 0.3s all,
+}
+
+
+.buy-btn:nth-child(1){
+  background-color: #D6BC67;
+}
+
+.buy-btn:nth-child(1):hover{
+  background-color: #D6BC67;
+  background-image: linear-gradient(144deg,#D6BC67 50%, #FFB239);
+ transition: all 0.3s;
 }
 
 .buy-btn:hover {
