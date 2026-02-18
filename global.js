@@ -213,17 +213,16 @@ document.addEventListener("DOMContentLoaded", () => {
   // ================= HEADER SCROLL =================
 
   const header = document.querySelector('.header');
-  const headerTop = document.querySelector(".header-top")
   const headerContent = document.querySelector(".header-content")
 
   window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
       header.classList.add('scrolled');
-      headerTop.style.display = "none";
+
       headerContent.style.padding = "16px 0"
     } else {
       header.classList.remove('scrolled');
-      headerTop.style.display = "flex";
+
     }
   });
 

@@ -817,16 +817,14 @@
         </div>
 
         <div class="tabs-container">
-            <div class="tab-item active">
-                <span data-translate="all">Hamısı</span>
-            </div>
-            <div class="tab-item">
+        
+            <div class="tab-item" data-game="cs2">
                 <span>Counter Strike 2</span>
             </div>
-            <div class="tab-item">
+            <div class="tab-item" data-game="valorant">
                 <span>Valorant</span>
             </div>
-            <div class="tab-item">
+            <div class="tab-item" data-game="pubg">
                 <span>PUBG Mobile</span>
             </div>
         </div>
@@ -835,7 +833,7 @@
 
             <!-- Leaderboard Table -->
             <div class="table-wrapper">
-                <div class="table-grid">
+                <div class="table-grid" id="leaderboardTable">
 
                     <!-- Column: No -->
                     <div class="table-col col-no">
@@ -1071,6 +1069,145 @@
         </footer>
     </section>
     <script src="/global.js"></script>
+    <script>
+
+const tabs = document.querySelectorAll(".tab-item");
+const table = document.getElementById("leaderboardTable");
+
+
+// 🔥 hər oyun üçün fərqli data
+const leaderboardData = {
+
+    all: [
+        {rank:1, player:"King of CSGO", kills:220, wr:"85%", tm:"1.76", play:"240h", points:"25640"},
+        {rank:2, player:"Omega Squad", kills:210, wr:"84%", tm:"1.50", play:"120h", points:"21500"},
+        {rank:3, player:"Tech Titans", kills:200, wr:"83%", tm:"1.45", play:"100h", points:"21000"},
+        {rank:4, player:"Tech Titans", kills:200, wr:"83%", tm:"1.45", play:"100h", points:"21000"}
+    ],
+
+    cs2: [
+        {rank:1, player:"CS2 Master", kills:500, wr:"90%", tm:"2.10", play:"300h", points:"30000"},
+        {rank:2, player:"Omega Squad", kills:210, wr:"84%", tm:"1.50", play:"120h", points:"21500"},
+        {rank:3, player:"Headshot King", kills:420, wr:"88%", tm:"1.90", play:"260h", points:"28000"},
+        {rank:4, player:"Tech Titans", kills:200, wr:"83%", tm:"1.45", play:"100h", points:"21000"}
+    ],
+
+    valorant: [
+        {rank:1, player:"Radiant Pro", kills:350, wr:"92%", tm:"2.00", play:"200h", points:"27000"},
+        {rank:2, player:"Omega Squad", kills:210, wr:"84%", tm:"1.50", play:"120h", points:"21500"},
+        {rank:3, player:"Spike Lord", kills:300, wr:"86%", tm:"1.70", play:"180h", points:"24000"},
+        {rank:4, player:"Tech Titans", kills:200, wr:"83%", tm:"1.45", play:"100h", points:"21000"}
+    ],
+
+    pubg: [
+        {rank:1, player:"Chicken Winner", kills:600, wr:"75%", tm:"1.40", play:"500h", points:"22000"},
+        {rank:2, player:"Omega Squad", kills:210, wr:"84%", tm:"1.50", play:"120h", points:"21500"},
+        {rank:3, player:"Sniper Elite", kills:550, wr:"70%", tm:"1.35", play:"450h", points:"21000"},
+        {rank:4, player:"Tech Titans", kills:200, wr:"83%", tm:"1.45", play:"100h", points:"21000"}
+    ]
+
+};
+
+
+// 🔥 table render function
+function renderTable(game){
+
+    const data = leaderboardData[game];
+
+    // köhnə cell-ləri sil
+    const bodies = table.querySelectorAll(".cell-body");
+    bodies.forEach(el => el.remove());
+
+    const colNo = table.querySelector(".col-no");
+    const colPlayer = table.querySelector(".col-player");
+    const colKills = table.querySelector(".col-kills");
+    const colWr = table.querySelector(".col-wr");
+    const colTm = table.querySelector(".col-tm");
+    const colPlay = table.querySelector(".col-playtime");
+    const colRank = table.querySelector(".col-rank");
+    const colPoints = table.querySelector(".col-points");
+
+
+    data.forEach((item,index) => {
+
+        // 🔥 TOP 3 style detect
+        let rankClass = "";
+        let rankBorder = "";
+        let rankHTML = `<span class="rank-num">${item.rank}</span>`;
+
+        if(index === 0){
+            rankClass = "rank-1";
+            rankBorder = "rank-1-border";
+            rankHTML = `<span class="rank-num">1</span>
+                        <img src="images/753_2944.svg" class="rank-bg">`;
+        }
+        else if(index === 1){
+            rankClass = "rank-2";
+            rankBorder = "rank-2-border";
+            rankHTML = `<span class="rank-num">2</span>
+                        <img src="images/753_2947.svg" class="rank-bg">`;
+        }
+        else if(index === 2){
+            rankClass = "rank-3";
+            rankBorder = "rank-3-border";
+            rankHTML = `<span class="rank-num">3</span>
+                        <img src="images/753_2950.svg" class="rank-bg">`;
+        }
+
+        // NO column
+        colNo.innerHTML += `
+        <div class="cell-body ${rankClass}">
+            ${rankHTML}
+        </div>`;
+
+
+        // PLAYER
+        colPlayer.innerHTML += `
+        <div class="cell-body ${rankBorder}">
+            <div class="player-info">
+                <div class="poly-icon"></div>
+                <span>${item.player}</span>
+            </div>
+        </div>`;
+
+
+        colKills.innerHTML += `<div class="cell-body ${rankBorder}"><span>${item.kills}</span></div>`;
+        colWr.innerHTML += `<div class="cell-body ${rankBorder}"><span>${item.wr}</span></div>`;
+        colTm.innerHTML += `<div class="cell-body ${rankBorder}"><span>${item.tm}</span></div>`;
+        colPlay.innerHTML += `<div class="cell-body ${rankBorder}"><span>${item.play}</span></div>`;
+
+        colRank.innerHTML += `
+        <div class="cell-body ${rankBorder}">
+            <img src="images/f52c75d521db6b6e3894f410456af88a7383168e.png" class="rank-icon">
+        </div>`;
+
+        colPoints.innerHTML += `<div class="cell-body ${rankBorder}"><span>${item.points}</span></div>`;
+
+    });
+
+}
+
+
+
+// 🔥 tab click
+tabs.forEach(tab => {
+
+    tab.addEventListener("click", ()=>{
+
+        tabs.forEach(t=>t.classList.remove("active"));
+        tab.classList.add("active");
+
+        const game = tab.dataset.game;
+
+        renderTable(game);
+
+    });
+
+});
+
+</script>
+
+    
 </body>
 
 </html>
