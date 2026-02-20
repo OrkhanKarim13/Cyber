@@ -5,7 +5,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CYBER+ / Home</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -84,7 +83,7 @@
       </div>
     </div>
   </div>
-  <swiper-container init="false"  slides-per-view="1" loop="true" speed="500"  css-mode="true">
+  <swiper-container autoplay-delay="6000" init="false"  slides-per-view="1" loop="true" speed="500"  css-mode="true">
     <swiper-slide>
       <section id="hero-section">
         <div class="hero-bg">
@@ -688,7 +687,6 @@
         loop: true
       });
 
-      swiperEl.initialize();
 
 
 
@@ -880,7 +878,9 @@
 
     cardContents.forEach(card => {
       card.addEventListener('click', function () {
-        swiperEl.swiper.slideNext();
+        if (swiperEl && swiperEl.swiper) {
+  swiperEl.swiper.slideNext();
+}
       });
     });
 

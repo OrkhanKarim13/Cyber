@@ -9,17 +9,6 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-element-bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/85a60fd075.js" crossorigin="anonymous"></script>
     <style>
-        /* CSS for section section:Header */
-
-
-
-        .stack-sans-text {
-            font-family: "Stack Sans Text", sans-serif;
-            font-optical-sizing: auto;
-            font-weight: 400;
-            font-style: normal;
-        }
-
 
         .hero-bg-img {
             display: flex;
@@ -33,127 +22,13 @@
 
         }
 
-        .breadcrumbs {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-top: 65px;
-            font-size: 15px;
-        }
+
 
 
         .crumb-inactive>a {
             color: #ffffff9a;
         }
 
-        .bg-main {
-
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.5;
-        }
-
-        .bg-character {
-            position: absolute;
-            right: 0;
-            top: 0;
-            height: 100%;
-            width: auto;
-            object-fit: contain;
-            mask-image: linear-gradient(to left, black 60%, transparent 100%);
-            -webkit-mask-image: linear-gradient(to left, black 60%, transparent 100%);
-        }
-
-        /* Navigation */
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 24px 72px;
-            z-index: 10;
-        }
-
-        .nav-left {
-            display: flex;
-            gap: 32px;
-            align-items: center;
-        }
-
-        .nav-right {
-            display: flex;
-            gap: 32px;
-            align-items: center;
-        }
-
-        .nav-link {
-            color: var(--text-color);
-            text-decoration: none;
-            font-size: 16px;
-            font-weight: 500;
-        }
-
-      
-
-        /* Custom Buttons */
-        .btn-custom {
-            position: relative;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            padding: 0 16px;
-            cursor: pointer;
-            border-radius: 6px;
-            overflow: hidden;
-        }
-
-        .btn-gold .btn-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: var(--accent-gold);
-            z-index: 0;
-        }
-
-        .btn-orange .btn-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: var(--accent-orange);
-            z-index: 0;
-        }
-
-        .btn-text {
-            position: relative;
-            z-index: 1;
-            font-weight: 600;
-            margin-right: 8px;
-        }
-
-        .btn-icon-group {
-            position: relative;
-            z-index: 1;
-            display: flex;
-            gap: 4px;
-        }
-
-        .btn-icon {
-            width: 16px;
-            height: 16px;
-        }
-
-        /* Hero Content */
-        .hero-content {
-            padding: 40px 72px;
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
 
         .breadcrumbs {
             display: flex;
@@ -170,41 +45,6 @@
             opacity: 0.5;
         }
 
-        .hero-title {
-            font-size: 64px;
-            font-weight: 700;
-            margin: 0;
-            background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.5) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-fill-color: transparent;
-        }
-
-        .hero-subtitle-row {
-            display: flex;
-            align-items: center;
-            gap: 24px;
-        }
-
-        .icon-box {
-            width: 28px;
-            height: 28px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .hero-icon {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
-        .hero-subtitle {
-            font-size: 18px;
-            margin: 0;
-        }
 
 
         .shop-btn {
@@ -228,30 +68,6 @@
             border-radius: 6px;
         }
 
-
-
-
-
-
-
-
-        /* Notification Bar */
-        .notification-bar {
-            margin-top: auto;
-            width: 100%;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(90deg, rgba(13, 20, 36, 1) 0%, rgba(13, 20, 36, 0) 100%);
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .notification-bar p {
-            margin: 0;
-            font-weight: 600;
-        }
 
         @media (max-width: 1024px) {
             .navbar {
@@ -449,13 +265,7 @@
             overflow: hidden;
         }
 
-        .footer-container {
-            position: relative;
-            min-height: 400px;
-            display: flex;
-            align-items: flex-end;
-            padding: 0 72px;
-        }
+
 
         .footer-bg {
             position: absolute;
@@ -465,27 +275,6 @@
             height: 100%;
             z-index: 0;
             pointer-events: none;
-        }
-
-        .footer-gradient {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
-            z-index: 1;
-        }
-
-        .footer-watermark {
-            position: absolute;
-            bottom: -100px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100%;
-            max-width: 1440px;
-            opacity: 0.1;
-            mix-blend-mode: hard-light;
         }
 
         .footer-content {
@@ -498,16 +287,6 @@
             padding-bottom: 60px;
         }
 
-        .footer-links {
-            display: flex;
-            gap: 96px;
-        }
-
-        .link-column {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
 
         .link-column a {
             color: var(--text-color);
@@ -526,23 +305,6 @@
             font-size: 16px;
         }
 
-        .social-grid {
-            display: flex;
-            gap: 72px;
-        }
-
-        .social-col {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-
-        .social-col a {
-            color: var(--text-color);
-            text-decoration: none;
-            font-size: 16px;
-        }
-
         @media (max-width: 768px) {
             .hero-bg-img {
 
@@ -551,23 +313,11 @@
                 background-position: center;
             }
 
-            .footer-container {
-                padding: 20px;
-            }
 
             .footer-content {
                 flex-direction: column;
                 gap: 40px;
                 padding-bottom: 0;
-            }
-
-            .footer-links {
-                flex-direction: column;
-                gap: 40px;
-            }
-
-            .social-grid {
-                gap: 40px;
             }
         }
     </style>
@@ -575,7 +325,6 @@
 
 <body>
     <header class="header">
-       
         <div class="container header-container">
             <div class="header-content">
                 <div class="logo">

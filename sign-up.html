@@ -14,14 +14,7 @@
 
     <style>
         :root {
-            --bg-color: #4361ee;
-            --card-bg: rgba(30, 41, 89, 0.85);
-            --input-bg: rgba(255, 255, 255, 0.15);
             --text-white: #ffffff;
-            --text-gray: #b0b8d1;
-            --accent-blue: #4cc9f0;
-            --btn-primary: #3a6df0;
-            --hover-effect: rgba(255, 255, 255, 0.1);
         }
 
         * {
@@ -178,7 +171,6 @@
 
         option {
             color: #000;
-            height: 100px;
         }
 
         .game-selector {
@@ -225,9 +217,6 @@ border-radius: 6px;
             font-size: 1.1rem;
             font-weight: 600;
             cursor: pointer;
-            clip-path: polygon(0 0, 100% 0,
-                    100% calc(100% - 20px), calc(100% - 20px) 100%,
-                    0 100%);
             clip-path: polygon(5px 0, 100% 0,
                     100% calc(100% - 20px), calc(100% - 20px) 100%,
                     0 100%,
@@ -271,25 +260,6 @@ border-radius: 6px;
             padding: 0 10px;
         }
 
-        .social-btn {
-            width: 100%;
-            background: transparent;
-            border: none;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            margin-bottom: 20px;
-        }
-
-        .social-btn i {
-            font-size: 1.2rem;
-        }
-
-
         .footer-text {
             text-align: center;
             font-size: 0.8rem;
@@ -308,7 +278,6 @@ border-radius: 6px;
 
                @media(max-width:500px){
              body {
-            background-image: url("./images/signupbg.png");
             background-repeat: no-repeat;
             background-position: center;
             background-size: cover;

@@ -8,18 +8,7 @@
     <link rel="stylesheet" href="./global.css">
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-element-bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/85a60fd075.js" crossorigin="anonymous"></script>
-    <style>
-        /* CSS for section section:Header */
-
-
-
-        .stack-sans-text {
-            font-family: "Stack Sans Text", sans-serif;
-            font-optical-sizing: auto;
-            font-weight: 400;
-            font-style: normal;
-        }
-
+    <style>     
 
         .hero-bg-img {
             display: flex;
@@ -33,65 +22,8 @@
             background-position: top;
         }
 
-        .breadcrumbs {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-top: 65px;
-            font-size: 15px;
-        }
-
-
         .crumb-inactive>a {
             color: #fff;
-        }
-
-        .bg-main {
-
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.5;
-        }
-
-        .bg-character {
-            position: absolute;
-            right: 0;
-            top: 0;
-            height: 100%;
-            width: auto;
-            object-fit: contain;
-            mask-image: linear-gradient(to left, black 60%, transparent 100%);
-            -webkit-mask-image: linear-gradient(to left, black 60%, transparent 100%);
-        }
-
-        /* Navigation */
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 24px 72px;
-            z-index: 10;
-        }
-
-        .nav-left {
-            display: flex;
-            gap: 32px;
-            align-items: center;
-        }
-
-        .nav-right {
-            display: flex;
-            gap: 32px;
-            align-items: center;
-        }
-
-        .nav-link {
-            color: var(--text-color);
-            text-decoration: none;
-            font-size: 16px;
-            font-weight: 500;
         }
 
         .lang-selector {
@@ -99,65 +31,6 @@
             padding: 10px;
             border-radius: 8px;
             cursor: pointer;
-        }
-
-        /* Custom Buttons */
-        .btn-custom {
-            position: relative;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            padding: 0 16px;
-            cursor: pointer;
-            border-radius: 6px;
-            overflow: hidden;
-        }
-
-        .btn-gold .btn-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: var(--accent-gold);
-            z-index: 0;
-        }
-
-        .btn-orange .btn-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: var(--accent-orange);
-            z-index: 0;
-        }
-
-        .btn-text {
-            position: relative;
-            z-index: 1;
-            font-weight: 600;
-            margin-right: 8px;
-        }
-
-        .btn-icon-group {
-            position: relative;
-            z-index: 1;
-            display: flex;
-            gap: 4px;
-        }
-
-        .btn-icon {
-            width: 16px;
-            height: 16px;
-        }
-
-        /* Hero Content */
-        .hero-content {
-            padding: 40px 72px;
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
         }
 
         .breadcrumbs {
@@ -175,59 +48,6 @@
             opacity: 0.5;
         }
 
-        .hero-title {
-            font-size: 64px;
-            font-weight: 700;
-            margin: 0;
-            background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.5) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-fill-color: transparent;
-        }
-
-        .hero-subtitle-row {
-            display: flex;
-            align-items: center;
-            gap: 24px;
-        }
-
-        .icon-box {
-            width: 28px;
-            height: 28px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .hero-icon {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
-        .hero-subtitle {
-            font-size: 18px;
-            margin: 0;
-        }
-
-        /* Notification Bar */
-        .notification-bar {
-            margin-top: auto;
-            width: 100%;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(90deg, rgba(13, 20, 36, 1) 0%, rgba(13, 20, 36, 0) 100%);
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .notification-bar p {
-            margin: 0;
-            font-weight: 600;
-        }
 
         @media (max-width: 1024px) {
             .navbar {
@@ -239,22 +59,12 @@
             .hero-content {
                 padding: 20px;
             }
-
-            .hero-title {
-                font-size: 48px;
-            }
-        }
-
-        /* CSS for section section:Filters */
-        #section-filters {
-            /* padding: 150px 72px 24px 72px; */
         }
 
         .filters-wrapper {
             display: flex;
             gap: 0;
             padding: 0 72px
-                /* Items are adjacent in design */
         }
 
         .filter-tab {
@@ -298,7 +108,6 @@
                 padding-top: 130px;
                 background-position: 40%;
                 background-size: auto;
-
             }
 
             .filters-wrapper {
@@ -311,7 +120,6 @@
             }
         }
 
-        /* CSS for section section:Tournaments */
         #section-tournaments {
             padding: 32px 72px;
             padding-bottom: 120px;
