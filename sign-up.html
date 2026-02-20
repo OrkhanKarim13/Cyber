@@ -70,38 +70,10 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 
         }
-        @media(min-width:500px){
-            .logo-card{
-                display: none;
-            }
-        }
+      
 
 
-        @media(max-width:500px){
-             body {
-            background-image: url("./images/signupbg.png");
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
-            color: var(--text-white);
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-        }
-             .login-card {
-padding: 12px 9px;
-        }
-        .container{
-            padding: 20px 20px 40px 20px;
-        }
-
-        .logo{
-            display: none;
-        }
-        }
+ 
 
 .logo-card{
     display: flex;
@@ -109,7 +81,7 @@ padding: 12px 9px;
     margin-bottom: 20px;
 }
 
-        h1 {
+        .sign-title {
             text-align: center;
             margin-bottom: 30px;
             font-size: 1.8rem;
@@ -135,10 +107,10 @@ padding: 12px 9px;
         }
 
         label {
-            font-size: 0.8rem;
+            font-size: 14px;
             color: #fff;
             margin-bottom: 8px;
-            margin-left: 5px;
+         
         }
         /* Input Wrappers & Chamfer Effect */
         .input-wrapper,
@@ -253,8 +225,6 @@ border-radius: 6px;
             font-size: 1.1rem;
             font-weight: 600;
             cursor: pointer;
-            margin-top: 10px;
-
             clip-path: polygon(0 0, 100% 0,
                     100% calc(100% - 20px), calc(100% - 20px) 100%,
                     0 100%);
@@ -332,6 +302,48 @@ border-radius: 6px;
             font-weight: 600;
             text-decoration: underline;
         }
+
+
+
+
+               @media(max-width:500px){
+             body {
+            background-image: url("./images/signupbg.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            color: var(--text-white);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+             .login-card {
+padding: 12px 9px;
+        }
+        .container{
+            padding: 20px 20px 40px 20px;
+        }
+
+        .logo{
+            display: none;
+        }
+         .sign-title {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 20px;
+            font-weight: 500;
+        }
+        }
+
+
+          @media(min-width:500px){
+            .logo-card{
+                display: none;
+            }
+        }
     </style>
 </head>
 
@@ -350,7 +362,7 @@ border-radius: 6px;
             <img src="./images/cyberplus-logo.svg" alt="logo">
           </a>
         </div>
-            <h1>Sign Up</h1>
+            <h1 class="sign-title">Sign Up</h1>
 
             <form>
                 <div class="form-row">

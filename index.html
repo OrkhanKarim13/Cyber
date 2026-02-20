@@ -315,7 +315,7 @@
   </section>
   <section id="promo-section">
     <div class="container promo-grid">
-      <swiper-container class="promo-slider">
+      <swiper-container class="promo-slider" loop="true">
         <swiper-slide>
           <div class="promo-card">
             <div class="card-bg">
@@ -871,6 +871,22 @@
       applyLanguage(savedLang);
 
     });
+
+    // second slider
+  document.addEventListener("DOMContentLoaded", function () {
+
+    const swiperEl = document.querySelector('.promo-slider');
+    const cardContents = document.querySelectorAll('.promo-slider .card-content');
+
+    cardContents.forEach(card => {
+      card.addEventListener('click', function () {
+        swiperEl.swiper.slideNext();
+      });
+    });
+
+  });
+
+
   </script>
 </body>
 
