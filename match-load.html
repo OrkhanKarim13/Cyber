@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            text-decoration: none;
+            list-style: none;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+
+        body {
+            background-color: #000;
+        }
+
+        .header {
+            width: 100%;
+            padding-top: 40px;
+        }
+
+        .container {
+            padding: 0 72px;
+        }
+
+
+        .header-content {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .lang-selector {
+            position: relative;
+            cursor: pointer;
+            user-select: none;
+            font-weight: 600;
+            background: rgba(255, 255, 255, 0.12);
+            padding: 10px;
+            color: #fff;
+            border-radius: 8px;
+        }
+
+        .lang-dropdown {
+            position: absolute;
+            top: 110%;
+            left: 0;
+            background: white;
+            border: 1px solid #ddd;
+            display: none;
+            min-width: 60px;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(4px);
+            border: none;
+            border-radius: 8px;
+        }
+
+        .lang-dropdown div {
+            padding: 6px 10px;
+            color: color;
+        }
+
+        .lang-dropdown div:hover {
+            background: #f2f2f2;    
+            color: #000;
+            border-radius: 8px;
+        }
+
+        .lang-selector.active .lang-dropdown {
+            display: block;
+        }
+
+        .right-buttons {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+        }
+        .lang-selector.active .lang-dropdown {
+  display: block;
+}
+
+        .username {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.12);
+            padding: 10px;
+            color: #fff;
+            border-radius: 8px;
+            gap: 8px;
+
+        }
+
+        .username>img {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+        }
+
+        .match-box {
+            width: 30%;
+            text-align: center;
+        }
+
+        .match-title {
+            color: #fff;
+            font-size: 32px;
+            margin-bottom: 40px;
+        }
+
+        /* ===== Loader Wrapper ===== */
+
+        .loader-wrapper {
+            position: relative;
+            width: 260px;
+            height: 260px;
+            margin: 0 auto 30px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* PERFECT CENTER NUMBER */
+
+        .count-number {
+            position: absolute;
+            color: #fff;
+            font-size: 96px;
+            font-weight: 900;
+            font-family: 'Orbitron', sans-serif;
+            line-height: 1;
+        }
+
+        /* ===== Right Side Segmented Loader ===== */
+
+        .loader {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .tick {
+            position: absolute;
+            width: 4px;
+            height: 20px;
+            background: #333;
+            bottom: 40%;
+            left: 50%;
+            transform-origin: center -100px;
+            border-radius: 2px;
+            opacity: .25;
+            animation: activate 5s linear infinite;
+        }
+
+        @keyframes activate {
+            to {
+                background: white;
+                opacity: 1;
+            }
+        }
+
+        /* Text */
+
+        .players-text {
+            color: #fff;
+            font-size: 20px;
+            letter-spacing: 0%;
+            margin-bottom: 30px;
+            opacity: .8;
+        }
+
+        /* Button */
+
+        .accept-btn {
+            background: linear-gradient(180deg, #5b7cff, #4f75ff);
+            border: none;
+            padding: 18px 80px;
+            font-size: 18px;
+            color: white;
+            cursor: pointer;
+            font-weight: 500;
+             clip-path: polygon(
+        0% 0%, 
+        100% 0%, 
+        100% 75%, 
+        92% 100%, 
+        8% 100%, 
+        0% 75%
+    );
+
+            transition: .3s;
+        }
+
+        .accept-btn:hover {
+            box-shadow: 0 0 25px rgba(79, 117, 255, .8);
+        }
+
+
+        .match-load {
+            width: 100%;
+        }
+
+        .match-load-content {
+            width: 100%;
+            display: flex;
+
+        }
+
+        .left-video {
+            width: 35%;
+            max-height: 620px;
+        }
+
+        .left-video>video {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .right-video {
+            width: 35%;
+               max-height: 620px;
+               z-index: -100;
+        }
+
+        .right-video>video {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+
+        @media(max-width:500px){
+            .header{
+                display: none;
+            }
+
+            .container{
+                padding: 0 16px;
+            }
+            .right-video{
+                display: none;
+            }
+
+            .left-video{
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                z-index: -100;
+            }
+
+            .left-video>video{
+                width: 100%;
+                height: auto;
+            }
+
+            .match-load-content{
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .match-title{
+                width: 100%;
+                text-align: center;
+            }
+            
+        .match-box {
+            width: 100%;
+            text-align: center;
+            margin-top: 100px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            backdrop-filter: blur(54px);
+        }
+
+        .loader{
+            backdrop-filter: blur(54px);
+      width: 100%;
+            height: 100%;
+        }
+
+        .loader-wrapper{
+              backdrop-filter: blur(54px);
+      width: 100%;
+            height: 100%;
+        }
+
+        .tick {
+            position: absolute;
+            width: 4px;
+            height: 20px;
+            background: #333;
+            top: 42%;
+            left: 55%;
+            transform-origin: center -100px;
+            border-radius: 2px;
+            opacity: .25;
+            animation: activate 5s linear infinite;
+        }
+
+        .accept-btn{
+            margin-top: 100px;
+        }
+        .match-title{
+            margin-bottom: 120px;
+        }
+
+        .players-text{
+            display: none;
+        }
+        }
+
+
+
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="./index.html">
+                        <img src="./images/cyberplus-logo.svg" alt="logo">
+                    </a>
+                </div>
+                <div class="right-buttons">
+                    <div class="lang-selector">
+                        <span class="current-lang">AZ</span>
+                        <div class="lang-dropdown">
+                            <div data-lang="az">AZ</div>
+                            <div data-lang="en">EN</div>
+                            <div data-lang="ru">RU</div>
+                        </div>
+                    </div>
+                    <div class="username">
+                        <img src="./images/userprofil.png" alt="user profil">
+                        <p class="profil-name">username</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="match-load">
+            <div class="container">
+                <div class="match-load-content">
+                    <div class="left-video">
+                        <video muted autoplay loop src="./videos/knife.mp4"></video>
+                    </div>
+                    <div class="match-box">
+
+
+                        <div data-translate="match" class="match-title">Match found</div>
+
+                        <div class="loader-wrapper">
+
+                            <div class="loader">
+
+                            </div>
+
+                            <div class="count-number">2</div>
+
+                        </div>
+
+                        <div data-translate="players" class="players-text">0/10 Players are ready</div>
+
+                        <button class="accept-btn">Accept</button>
+
+                    </div>
+                    <div class="right-video">
+                        <video muted autoplay loop src="./videos/knife.mp4"></video>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+    <script>
+        const loader = document.currentScript.parentElement;
+        const total = 16; // only right half
+
+        for (let i = 0; i <= total; i++) {
+
+            const tick = document.createElement('div');
+            tick.classList.add('tick');
+
+            // RIGHT SIDE only: -90° (top) → +90° (bottom)
+            let angle = 180 + (i * (180 / total));
+
+            tick.style.transform = `rotate(${angle}deg)`;
+
+            // TOP → DOWN animation order
+            tick.style.animationDelay = `${i * (5 / total)}s`;
+
+            loader.appendChild(tick);
+        }
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+
+
+
+
+
+
+
+  // ================= LANGUAGE SYSTEM =================
+
+  const langSelector = document.querySelector('.lang-selector');
+  const currentLang = document.querySelector('.current-lang');
+  const langOptions = document.querySelectorAll('.lang-dropdown div');
+
+  const translations = {
+    az: {
+      match:"Qarşılaşma tapıldı"
+
+    },
+    en: {
+     match:"Match found"
+    },
+    ru: {
+      match:"Матч найден"
+
+    }
+  };
+
+  function applyLanguage(lang) {
+
+    const elements = document.querySelectorAll("[data-translate]");
+
+    elements.forEach(el => {
+
+      const key = el.dataset.translate;
+
+      if (translations[lang] && translations[lang][key]) {
+        el.textContent = translations[lang][key];
+      }
+
+    });
+  }
+
+
+  if (langSelector) {
+
+    langSelector.addEventListener('click', () => {
+      langSelector.classList.toggle('active');
+    });
+
+    langOptions.forEach(option => {
+      option.addEventListener('click', (e) => {
+
+        const selectedLang = e.target.dataset.lang;
+
+        currentLang.textContent = selectedLang.toUpperCase();
+
+        localStorage.setItem("siteLang", selectedLang);
+
+        langSelector.classList.remove('active');
+
+        applyLanguage(selectedLang);
+      });
+    });
+
+  }
+
+  // səhifə açılarkən dili load et
+
+  const savedLang = localStorage.getItem("siteLang") || "az";
+
+  if (currentLang) {
+    currentLang.textContent = savedLang.toUpperCase();
+  }
+
+  applyLanguage(savedLang);
+
+});
+
+
+
+        
+    </script>
+</body>
+
+</html>
