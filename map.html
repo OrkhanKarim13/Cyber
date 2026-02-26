@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber + Map</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            text-decoration: none;
+            list-style: none;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+
+        body {
+            background-color: #000;
+        }
+
+        .header {
+            width: 100%;
+            padding-top: 24px;
+            position: fixed;
+            background-color: transparent;
+        }
+
+        .container {
+            padding: 0 72px;
+        }
+
+
+        .header-content {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+
+        .steam-btn {
+            background-color: #466AFB;
+            padding: 10px 24px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            clip-path: polygon(0 0, 100% 0, 100% 70%, 90% 100%, 0 100%);
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+
+        .steam-btn>a {
+            color: #fff;
+            ;
+        }
+
+        .lang-selector {
+            position: relative;
+            cursor: pointer;
+            user-select: none;
+            font-weight: 600;
+            background: rgba(255, 255, 255, 0.12);
+            padding: 10px 9px;
+            color: #fff;
+            border-radius: 8px;
+        }
+
+        .lang-dropdown {
+            position: absolute;
+            top: 110%;
+            left: 0;
+            background: white;
+            border: 1px solid #ddd;
+            display: none;
+            min-width: 60px;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(4px);
+            border: none;
+            border-radius: 8px;
+        }
+
+        .lang-dropdown div {
+            padding: 6px 10px;
+            color: color;
+        }
+
+        .lang-dropdown div:hover {
+            background: #f2f2f2;
+            color: #000;
+            border-radius: 8px;
+        }
+
+        .lang-selector.active .lang-dropdown {
+            display: block;
+        }
+
+        .right-buttons {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+        }
+
+        .lang-selector.active .lang-dropdown {
+            display: block;
+        }
+
+        .username {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.12);
+            padding: 10px 16px;
+            color: #fff;
+            border-radius: 8px;
+            gap: 8px;
+            cursor: pointer;
+
+        }
+
+        .username>img {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+        }
+
+
+        .chat-btn {
+            background-color: #466AFB;
+            padding: 10px 32px 10px 35px;
+            color: #fff;
+            border-radius: 6px;
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 20px 100%, 0 calc(100% - 20px));
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .voting {
+            width: 100%;
+            height: 100vh;
+            background-image: url("./images/cs2.png");
+            background-repeat: no-repeat;
+            background-position: top;
+            background-size: cover;
+        }
+
+        .voting {
+            width: 100%;
+        }
+
+        .teams {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            border-radius: 20px;
+            padding: 90px 0 0 0;
+        }
+
+
+        .teams-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            border: 1px solid #FFFFFF1F;
+            padding: 20px 32px;
+            border-radius: 20px;
+        }
+
+        .left-team>img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        .left-team {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #fff;
+            font-weight: 500;
+        }
+
+        .right-team>img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        .time {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 20px;
+            backdrop-filter: blur(24px);
+            background: #06011959;
+            border-radius: 50px;
+        }
+
+        .time>p {
+            color: #fff;
+        }
+
+        .right-team {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #fff;
+            font-weight: 500;
+        }
+
+
+
+        /*==============================lists========================= */
+
+        .teams-container {
+            display: flex;
+            gap: 8px;
+            width: 100%;
+        }
+
+
+        .column {
+            background: #0C0416;
+            border: 1px solid #332a44;
+            border-radius: 15px;
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .column:nth-child(1) {
+            width: 37.5%;
+        }
+
+
+        .column:nth-child(2) {
+            width: 350px;
+        }
+
+        .column:nth-child(3) {
+            width: 37.5%;
+        }
+
+        .row {
+            background: #FFFFFF40;
+            border-radius: 8px;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            height: 45px;
+            border: 1px solid #4a405e;
+            transition: transform 0.2s;
+        }
+
+
+        .gamer{
+            height: 60px;   
+        }
+
+        .row.empty {
+            background: rgba(30, 25, 40, 0.4);
+            border: 1px solid #2a2238;
+        }
+
+        .avatar {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            margin-right: 12px;
+            overflow: hidden;
+        }
+
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+
+        .player-username {
+            flex-grow: 1;
+            font-size: 14px;
+            font-weight: 500;
+            color: #e0e0e0;
+        }
+
+
+        .badge {
+            background: #1a1524;
+            border-radius: 4px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .badge>img {
+            width: 50px;
+            height: 20px;
+        }
+
+
+        .map-image{
+            border-radius: 0px;
+            width: 50px;
+            height: 30px;
+        }
+
+        .map-time{
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 12px ;
+        }   
+        .map-time>p{
+            color: #fff;
+        }
+
+        @media(max-width:500px) {
+
+            .username {
+                display: none;
+            }
+
+            .lang-selector {
+                display: none;
+            }
+
+            .left-team {
+                display: none;
+            }
+
+            .right-team {
+                display: none;
+            }
+
+            .time {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+            }
+
+
+            .container {
+                padding: 0 8px;
+            }
+
+            .teams-container {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .column:nth-child(1) {
+                width: 100%;
+            }
+
+            .column:nth-child(2) {
+                width: 100%;
+            }
+
+            .column:nth-child(3) {
+                width: 100%;
+            }
+
+            .header {
+                padding-left: 8px;
+                padding-right: 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="./index.html">
+                        <img src="./images/cyberplus-logo.svg" alt="logo">
+                    </a>
+                </div>
+                <div class="right-buttons">
+                    <a href="#" class="chat-btn">
+                        chat
+                        <img src="./images/steam-vector.svg" alt="steam-logo">
+                    </a>
+                    <div class="lang-selector">
+                        <span class="current-lang">AZ</span>
+                        <div class="lang-dropdown">
+                            <div data-lang="az">AZ</div>
+                            <div data-lang="en">EN</div>
+                            <div data-lang="ru">RU</div>
+                        </div>
+                    </div>
+                    <div class="username">
+                        <img src="./images/userprofil.png" alt="user profil">
+                        <p class="profil-name">username</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="voting">
+            <div class="container">
+                <div class="teams">
+                    <div class="teams-content">
+                        <div class="left-team">
+                            <img src="./images/team.png" alt="">
+                            <p> Team_Designervalo</p>
+                        </div>
+
+                        <div class="time">
+                            <p>5v5</p> <img src="./images/point.svg" alt="point">
+                            <p>EU </p><img src="./images/point.svg" alt="point"> <p>Voting...</p>
+                        </div>
+                        <div class="right-team">
+                            <img src="images/team2.png" alt="">
+                            <p>Team_Testbotalpha</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="teams-container">
+                    <div class="column">
+                        <div class="row gamer">
+                            <div class="avatar"><img src="./images/player-pf.png" alt=""></div>
+                            <div class="player-username">Gamer_one</div>
+                            <div class="badge"><img src="./images/eagle-icon.png" alt=""></div>
+                        </div>
+                        <div class="row gamer">
+                            <div class="avatar"><img src="./images/player-pf.png" alt=""></div>
+                            <div class="player-username">Gamer_two</div>
+                            <div class="badge"><img src="./images/eagle-icon.png" alt=""></div>
+                        </div>
+                        <div class="row gamer">
+                            <div class="avatar"><img src="./images/player-pf.png" alt=""></div>
+                            <div class="player-username">Gamer_three</div>
+                            <div class="badge"><img src="./images/eagle-icon.png" alt=""></div>
+                        </div>
+                        <div class="row gamer">
+                            <div class="avatar"><img src="./images/player-pf.png" alt=""></div>
+                            <div class="player-username">Gamer_four</div>
+                            <div class="badge"><img src="./images/eagle-icon.png" alt=""></div>
+                        </div>
+                        <div class="row gamer">
+                            <div class="avatar"><img src="./images/player-pf.png" alt=""></div>
+                            <div class="player-username">Gamer_five</div>
+                            <div class="badge"><img src="./images/eagle-icon.png" alt=""></div>
+                        </div>
+                    </div>
+
+                    <div class="column">
+                        <div class="map-time">
+                            <p>Your turn...</p><p>28 sec</p>
+                        </div>
+                        <div class="row">
+                            <div class="avatar map-image"><img src="./images/ancient-map.png" alt="map-image"></div>
+                            <div class="player-username">Ancient</div>
+                        
+                        </div>
+                        <div class="row">
+                            <div class="avatar map-image"><img src="./images/dust-2-map.png" alt="map-image   "></div>
+                            <div class="player-username">Dust II</div>
+                         
+                        </div>
+                        <div class="row">
+                            <div class="avatar map-image"><img src="./images/inferno-map.png" alt="map-image"></div>
+                            <div class="player-username">Inferno</div>
+                          
+                        </div>
+                        <div class="row">
+                            <div class="avatar map-image"><img src="./images/mirage-map.png" alt="map-image"></div>
+                            <div class="player-username">Mirage</div>
+                          
+                        </div>
+                        <div class="row">
+                            <div class="avatar map-image"><img src="./images/nuke-map.png" alt="map-image"></div>
+                            <div class="player-username">Nuke</div>
+                           
+                        </div>
+                        <div class="row">
+                            <div class="avatar map-image"><img src="./images/overpass-map.png" alt="map-image"></div>
+                            <div class="player-username">Overpass</div>
+                        
+                        </div>
+                        <div class="row">
+                            <div class="avatar map-image    "><img src="./images/train-map.png" alt="map-image"></div>
+                            <div class="player-username">Train</div>
+                           
+                        </div>
+                    </div>
+
+                    <div class="column">
+                        <div class="row gamer">
+                            <div class="avatar"><img src="./images/player-pf.png" alt=""></div>
+                            <div class="player-username">Gamer_six</div>
+                            <div class="badge"><img src="./images/eagle-icon.png" alt=""></div>
+                        </div>
+                        <div class="row gamer">
+                            <div class="avatar"><img src="./images/player-pf.png" alt=""></div>
+                            <div class="player-username">Gamer_seven</div>
+                            <div class="badge"><img src="./images/eagle-icon.png" alt=""></div>
+                        </div>
+                        <div class="row gamer">
+                            <div class="avatar"><img src="./images/player-pf.png" alt=""></div>
+                            <div class="player-username">Gamer_eight</div>
+                            <div class="badge"><img src="./images/eagle-icon.png" alt=""></div>
+                        </div>
+                        <div class="row gamer">
+                            <div class="avatar"><img src="./images/player-pf.png" alt=""></div>
+                            <div class="player-username">Gamer_nine</div>
+                            <div class="badge"><img src="./images/eagle-icon.png" alt=""></div>
+                        </div>
+                         <div class="row gamer">
+                            <div class="avatar"><img src="./images/player-pf.png" alt=""></div>
+                            <div class="player-username">Gamer_ten</div>
+                            <div class="badge"><img src="./images/eagle-icon.png" alt=""></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+    </footer>
+</body>
+
+</html>             

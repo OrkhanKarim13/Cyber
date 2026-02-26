@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cyber + Find match </title>
     <style>
         * {
             padding: 0;
@@ -43,7 +43,10 @@
             padding: 10px 24px;
             display: flex;
             align-items: center;
-            gap: 8;
+            gap: 8px;
+            clip-path: polygon(0 0, 100% 0, 100% 70%, 90% 100%, 0 100%); 
+            border-radius: 6px;
+            cursor: pointer;
         }
 
 
@@ -110,6 +113,7 @@
             color: #fff;
             border-radius: 8px;
             gap: 8px;
+            cursor: pointer;
 
         }
 
@@ -130,7 +134,6 @@
             margin-bottom: 40px;
         }
 
-        /* ===== Loader Wrapper ===== */
 
         .loader-wrapper {
             position: relative;
@@ -142,7 +145,7 @@
             align-items: center;
         }
 
-        /* PERFECT CENTER NUMBER */
+
 
         .count-number {
             position: absolute;
@@ -153,7 +156,6 @@
             line-height: 1;
         }
 
-        /* ===== Right Side Segmented Loader ===== */
 
         .loader {
             position: absolute;
@@ -181,7 +183,6 @@
             }
         }
 
-        /* Text */
 
         .players-text {
             color: #fff;
@@ -191,7 +192,6 @@
             opacity: .8;
         }
 
-        /* Button */
 
         .accept-btn {
             background: linear-gradient(180deg, #5b7cff, #4f75ff);
@@ -207,7 +207,6 @@
                     92% 100%,
                     8% 100%,
                     0% 75%);
-
             transition: .3s;
         }
 
@@ -258,7 +257,6 @@
             text-align: center;
         }
 
-        /* ================= TITLE ================= */
 
         .title {
             font-family: 'Orbitron', sans-serif;
@@ -269,7 +267,6 @@
             color: #fff;
         }
 
-        /* ================= PROGRESS BOX ================= */
 
         .progress-box {
            display: inline-block;
@@ -281,7 +278,6 @@
         .progress-inner {
             display: flex;
             gap: 4px;
-       
         }
 
         .bar {
@@ -295,7 +291,6 @@
             background: #d6b874;
         }
 
-        /* corner brackets */
         .progress-box::before,
         .progress-box::after {
             content: "";
@@ -347,7 +342,6 @@
             letter-spacing: 2px;
         }
 
-        /* ================= CARDS ================= */
 
         .cards {
             display: flex;
@@ -357,11 +351,9 @@
         }
 
         .card {
- 
             padding: 20px 28px 20px 28px;
             background: linear-gradient(145deg, #111111, #0c0c0c);
             border-radius: 12px;
-           
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -407,14 +399,12 @@
             justify-content: center;
             align-items: center;
             gap: 12px;
-
             clip-path: polygon(0% 0%,
                     100% 0%,
                     100% 75%,
                     94% 100%,
                     6% 100%,
                     0% 75%);
-
             box-shadow: 0 15px 0 #3657d6;
             transition: .3s;
         }
@@ -431,16 +421,13 @@
             fill: none;
         }
 
-
         .rank-img>img{
             width: 100%;
-
         }
 
         /* ================= RESPONSIVE ================= */
 
         @media(max-width:900px) {
-
             .progress-box {
                 width: 100%;
             }
@@ -631,24 +618,18 @@
                                     <div class="bar"></div>
                                     <div class="bar"></div>
                                     <div class="bar"></div>
-
                                 </div>
-
-                                
                                 <div class="progress-bottom-left"></div>
                                 <div class="progress-bottom-right"></div>
                                 
                             </div>
                             <div class="hh">75 HH</div>
                            </div>
-
                             <div class="cards">
-
                                 <div class="card">
                                     <div class="rank-img"><img src="./images/legendary-eagle.png" alt=""></div>
                                     <p>Legendary Eagle<br>Master</p>
                                 </div>
-
                                 <div class="card active">
                                     <div class="rank-img">
                                         <img src="./images/suprememaster.png" alt="">
