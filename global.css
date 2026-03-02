@@ -23,8 +23,7 @@ body {
   text-decoration: none;
 }
 
-
-.hide{
+.hide {
   display: none;
 }
 
@@ -70,7 +69,7 @@ img {
   border-radius: 10px;
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35);
   clip-path: polygon(0 0, 100% 0, 100% 70%, 90% 100%, 0 100%);
-  transition: 0.3s all
+  transition: 0.3s all;
 }
 
 .btn-blue {
@@ -86,11 +85,10 @@ img {
   background-clip: text;
 }
 
-
-.buy-btn:hover, 
-.btn-gold:hover{
- background-image: linear-gradient(144deg,#e4941b 50%, #FFB239);
- transition: all 0.3s;
+.buy-btn:hover,
+.btn-gold:hover {
+  background-image: linear-gradient(144deg, #e4941b 50%, #ffb239);
+  transition: all 0.3s;
 }
 
 h1,
@@ -138,7 +136,6 @@ h3 {
 .header.scrolled {
   backdrop-filter: blur(44px);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-    
 }
 
 .header-top {
@@ -232,19 +229,18 @@ h3 {
   border-radius: 10px;
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35);
   clip-path: polygon(0 0, 100% 0, 100% 70%, 90% 100%, 0 100%);
-  transition: 0.3s all,
+  transition: 0.3s all;
 }
 
-
-.buy-btn:nth-child(1){
-  background-color: #D6BC67;
-   transition: all 0.3s;
+.buy-btn:nth-child(1) {
+  background-color: #d6bc67;
+  transition: all 0.3s;
 }
 
-.buy-btn:nth-child(1):hover{
-  background-color: #D6BC67;
-  background-image: linear-gradient(144deg,#D6BC67 50%, #FFB239);
- transition: all 0.3s;
+.buy-btn:nth-child(1):hover {
+  background-color: #d6bc67;
+  background-image: linear-gradient(144deg, #d6bc67 50%, #ffb239);
+  transition: all 0.3s;
 }
 
 .buy-btn:hover {
@@ -275,6 +271,12 @@ h3 {
   font-weight: 600;
 }
 
+.games-cards > .mySwiper {
+  width: 100%;
+  padding: 0 72px 96px 72px;
+  height: 100%;
+}
+
 /* mobile-------------------------------------- */
 
 .burger-menu {
@@ -303,7 +305,7 @@ h3 {
     top: 75px;
     left: 0%;
     width: 100%;
-    height: 100vh ;
+    height: 100vh;
     background: rgba(70, 65, 160, 0.65);
     backdrop-filter: blur(44px);
     -webkit-backdrop-filter: blur(44px);
@@ -336,10 +338,10 @@ h3 {
     padding: 16px 0;
   }
 
-  .border{
+  .border {
     width: 100%;
     height: 1px;
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 50%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #ffffff 50%, rgba(255, 255, 255, 0) 100%);
   }
 
   .mobile-nav-list a {
@@ -664,7 +666,7 @@ h3 {
   z-index: 2;
 }
 
-.featured-team-left{
+.featured-team-left {
   width: 280px;
   position: relative;
   height: 590px;
@@ -673,113 +675,79 @@ h3 {
   background-size: contain;
 }
 
-
-
-
-
-
-
-
-
-.battle-wrapper{
-  display:flex;
-  justify-content:center;  gap:10px;
-  background:black;
-  padding:80px 0;
+.battle-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  background: black;
+  padding: 80px 0;
 }
 
 /* TEAM CARD */
 
-.team-card{
-  position:relative;
-  width:280px;
-  height:590px;
-  text-align:center;
+.team-card {
+  position: relative;
+  width: 280px;
+  height: 590px;
+  text-align: center;
 }
 
-
-.team-card:nth-child(2){
-height: 460px;  
+.team-card:nth-child(2) {
+  height: 460px;
 }
 
 /* GOLD VECTOR FRAME */
 
-.team-card .frame{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  object-fit:contain;
-  pointer-events:none;
+.team-card .frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
 }
 
 /* TEAM NAME */
 
-.team-name{
-  position:absolute;
-  top:-40px;
-  left:50%;
-  transform:translateX(-50%);
-  font-size:28px;
-  font-weight:700;
-  color:#dcdcdc;
+.team-name {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 28px;
+  font-weight: 700;
+  color: #dcdcdc;
 }
 
 /* LOGO */
 
-.team-logo{
-  position:absolute;
-  top:120px;
-  left:50%;
-  transform:translateX(-50%);
+.team-logo {
+  position: absolute;
+  top: 120px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-.team-logo img{
-  width:120px;
+.team-logo img {
+  width: 120px;
 }
 
 /* red glow effect (2ci team kimi) */
 
-.team-logo.red{
-
+.team-logo.red {
 }
 
 /* SCORE */
 
-.team-score{    
-  position:absolute;
-  bottom:80px;
-  left:50%;
-  transform:translateX(-50%);
-  font-size:80px;
-  font-weight:800;
-  color:#dcdcdc;
+.team-score {
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 80px;
+  font-weight: 800;
+  color: #dcdcdc;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .f-team-name {
   font-size: 20px;
@@ -971,7 +939,7 @@ h1 .bold {
   font-weight: 700;
   color: #cfcfcf;
 }
- 
+
 .player {
   display: flex;
   align-items: center;
@@ -982,8 +950,6 @@ h1 .bold {
 .avatar {
   width: 56px;
   height: 56px;
-
-  
 }
 
 .info .name {
@@ -1458,7 +1424,7 @@ h1 .bold {
   }
 
   .hero-content {
-    padding: 150px 16px 0;  
+    padding: 150px 16px 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -1701,5 +1667,9 @@ h1 .bold {
 
   .social-links {
     padding-bottom: 75px;
+  }
+
+  .games-cards > .mySwiper {
+    padding: 0 16px;
   }
 }

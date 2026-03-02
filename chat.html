@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber + Chat</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            text-decoration: none;
+            list-style: none;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+
+        body {
+            background-color: #000;
+        }
+
+        .header {
+            width: 100%;
+            padding-top: 24px;
+            position: fixed;
+            background-color: transparent;
+        }
+
+        .container {
+            padding: 0 72px;
+        }
+
+
+        .header-content {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+
+        .steam-btn {
+            background-color: #466AFB;
+            padding: 10px 24px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            clip-path: polygon(0 0, 100% 0, 100% 70%, 90% 100%, 0 100%);
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+
+        .steam-btn>a {
+            color: #fff;
+            ;
+        }
+
+        .lang-selector {
+            position: relative;
+            cursor: pointer;
+            user-select: none;
+            font-weight: 600;
+            background: rgba(255, 255, 255, 0.12);
+            padding: 10px 9px;
+            color: #fff;
+            border-radius: 8px;
+        }
+
+        .lang-dropdown {
+            position: absolute;
+            top: 110%;
+            left: 0;
+            background: white;
+            border: 1px solid #ddd;
+            display: none;
+            min-width: 60px;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(4px);
+            border: none;
+            border-radius: 8px;
+        }
+
+        .lang-dropdown div {
+            padding: 6px 10px;
+            color: color;
+        }
+
+        .lang-dropdown div:hover {
+            background: #f2f2f2;
+            color: #000;
+            border-radius: 8px;
+        }
+
+        .lang-selector.active .lang-dropdown {
+            display: block;
+        }
+
+        .right-buttons {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+        }
+
+        .lang-selector.active .lang-dropdown {
+            display: block;
+        }
+
+        .username {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.12);
+            padding: 10px 16px;
+            color: #fff;
+            border-radius: 8px;
+            gap: 8px;
+            cursor: pointer;
+
+        }
+
+        .username>img {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+        }
+
+
+        .chat-btn {
+            background-color: #466AFB;
+            padding: 10px 32px 10px 35px;
+            color: #fff;
+            border-radius: 6px;
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 20px 100%, 0 calc(100% - 20px));
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .chat {
+            width: 100%;
+            background-image: url("./images/cs2.png");
+            background-position: top;
+            background-size: cover;
+            padding: 0 0  20px 0;
+        }
+
+
+        .teams {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            border-radius: 20px;
+            padding: 90px 0 0 0;
+        }
+
+
+        .teams-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            border: 1px solid #FFFFFF1F;
+            padding: 20px 32px;
+            border-radius: 20px;
+        }
+
+        .left-team>img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        .left-team {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #fff;
+            font-weight: 500;
+        }
+
+        .right-team>img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        .time {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 20px;
+            background: #06011959;
+            backdrop-filter: blur(24px);
+            border-radius: 50px;
+        }
+
+        .time>p {
+            color: #fff;
+        }
+
+        .right-team {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #fff;
+            font-weight: 500;
+        }
+
+
+
+        /*==============================lists========================= */
+
+        .teams-container {
+            display: flex;
+            gap: 8px;
+            width: 100%;
+        }
+
+
+        .column {
+            width: 24%;
+            background: #0C0416;
+            border: 1px solid #332a44;
+            border-radius: 15px;
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+
+        .row {
+            background: #FFFFFF40;
+            border-radius: 8px;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            height: 45px;
+            border: 1px solid #4a405e;
+            transition: transform 0.2s;
+        }
+
+        .row.empty {
+            background: rgba(30, 25, 40, 0.4);
+            border: 1px solid #2a2238;
+        }
+
+        .avatar {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            margin-right: 12px;
+            overflow: hidden;
+        }
+
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+
+        .player-username {
+            flex-grow: 1;
+            font-size: 14px;
+            font-weight: 500;
+            color: #e0e0e0;
+        }
+
+
+        .badge {
+            background: #1a1524;
+            border-radius: 4px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .badge>img {
+            width: 50px;
+            height: 20px;
+        }
+
+
+        .chat-container {
+            width: 360px;
+
+            background-color: #0b0914;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            padding: 24px;
+            box-sizing: border-box;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .chat-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .chat-header h2 {
+            color: #ffffff;
+            margin: 0;
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .close-btn {
+            background: transparent;
+            border: none;
+            color: #ffffff;
+            cursor: pointer;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.2s;
+        }
+
+        .close-btn:hover {
+            opacity: 0.7;
+        }
+
+        .close-btn svg {
+            width: 26px;
+            height: 26px;
+            stroke: #ffffff;
+        }
+
+        .chat-body {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            overflow-y: auto;
+            margin-bottom: 20px;
+            padding-right: 4px;
+        }
+
+        .empty-state-container {
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .chat-icon {
+            width: 250px;
+            height: 250px;
+            object-fit: contain;
+            margin-bottom: 1px;
+        }
+
+        .empty-state-text {
+            color: #ffffff;
+            margin: 0;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+        .bold-text {
+            font-weight: 600;
+        }
+
+        .message {
+            display: flex;
+            flex-direction: column;
+            max-width: 80%;
+        }
+
+        .message.sent {
+            align-self: flex-end;
+            align-items: flex-end;
+        }
+
+        .message-bubble {
+            background-color: #ffffff;
+            padding: 12px 18px;
+            display: flex;
+            flex-direction: column;
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 30px 100%, 0 calc(100% - 30px));
+        }
+
+        .nickname {
+            font-size: 11px;
+            font-weight: 600;
+            color: #4b495c;
+            margin-bottom: 6px;
+            text-align: right;
+            width: 100%;
+        }
+
+        .message-text {
+            font-size: 15px;
+            margin: 0 0 8px 0;
+            font-weight: 500;
+            color: #1a1a1a;
+            line-height: 1.4;
+            text-align: right;
+            width: 100%;
+            word-break: break-word;
+        }
+
+        .timestamp {
+            font-size: 11px;
+            color: #a09eb0;
+            font-weight: 500;
+            text-align: right;
+            width: 100%;
+        }
+
+        .chat-body::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .chat-body::-webkit-scrollbar-thumb {
+            background-color: #2a2836;
+            border-radius: 4px;
+        }
+
+        .chat-footer {
+            margin-top: auto;
+        }
+
+        .input-wrapper {
+            display: flex;
+            align-items: center;
+            background-color: #1c1a26;
+            border-radius: 16px;
+            border-bottom-right-radius: 4px;
+            padding: 6px 6px 6px 16px;
+        }
+
+        .input-wrapper input {
+            flex-grow: 1;
+            background: transparent;
+            border: none;
+            color: #ffffff;
+            font-size: 14px;
+            outline: none;
+            font-family: inherit;
+        }
+
+        .input-wrapper input::placeholder {
+            color: #6b687a;
+        }
+
+        .send-btn {
+            background-color: #5b75ff;
+            border: none;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: #ffffff;
+            border-radius: 12px;
+            clip-path: polygon(0 0, 100% 0, 100% 65%, 65% 100%, 0 100%);
+            transition: background-color 0.2s, transform 0.1s;
+        }
+
+        .send-btn:hover {
+            background-color: #4a64eb;
+        }
+
+        .send-btn:active {
+            transform: scale(0.95);
+        }
+
+        .send-btn svg {
+            width: 18px;
+            height: 18px;
+            stroke: #ffffff;
+            margin-right: 2px;
+            margin-top: 2px;
+        }
+
+
+        @media(max-width:500px) {
+
+            .username {
+                display: none;
+            }
+
+            .lang-selector {
+                display: none;
+            }
+
+            .left-team {
+                display: none;
+            }
+
+            .right-team {
+                display: none;
+            }
+
+            .time {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+            }
+
+
+            .container {
+                padding: 0 8px;
+            }
+
+            .teams-container {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .column:nth-child(1) {
+                width: 100%;
+            }
+
+            .column:nth-child(2) {
+                width: 100%;
+            }
+
+            .column:nth-child(3) {
+                width: 100%;
+            }
+
+            .header {
+                padding-left: 8px;
+                padding-right: 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="./index.html">
+                        <img src="./images/cyberplus-logo.svg" alt="logo">
+                    </a>
+                </div>
+                <div class="right-buttons">
+                    <a href="#" class="chat-btn">
+                        chat
+                        <img src="./images/steam-vector.svg" alt="steam-logo">
+                    </a>
+                    <div class="lang-selector">
+                        <span class="current-lang">AZ</span>
+                        <div class="lang-dropdown">
+                            <div data-lang="az">AZ</div>
+                            <div data-lang="en">EN</div>
+                            <div data-lang="ru">RU</div>
+                        </div>
+                    </div>
+                    <div class="username">
+                        <img src="./images/userprofil.png" alt="user profil">
+                        <p class="profil-name">username</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="chat">
+            <div class="container">
+                <div class="teams">
+                    <div class="teams-content">
+                        <div class="left-team">
+                            <img src="./images/team.png" alt="">
+                            <p> Team_cs_one</p>
+                        </div>
+
+                        <div class="time">
+                            <p>Your Turn </p> <img src="./images/point.svg" alt="point">
+                            <p>28 sec. </p>
+                        </div>
+                        <div class="right-team">
+                            <img src="images/team2.png" alt="">
+                            <p>Team_one_two</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="teams-container">
+                    <div class="column">
+                        <div class="row">
+                            <div class="avatar"><img src="./images/player-pf.png" alt=""></div>
+                            <div class="player-username">Gamer_one</div>
+                            <div class="badge"><img src="./images/eagle-icon.png" alt=""></div>
+                        </div>
+                        <div class="row">
+                            <div class="avatar"><img src="./images/player-pf.png" alt=""></div>
+                            <div class="player-username">Gamer_two</div>
+                            <div class="badge"><img src="./images/eagle-icon.png" alt=""></div>
+                        </div>
+                        <div class="row">
+                            <div class="avatar"><img src="./images/player-pf.png" alt=""></div>
+                            <div class="player-username">Gamer_three</div>
+                            <div class="badge"><img src="./images/eagle-icon.png" alt=""></div>
+                        </div>
+                        <div class="row">
+                            <div class="avatar"><img src="./images/player-pf.png" alt=""></div>
+                            <div class="player-username">Gamer_four</div>
+                            <div class="badge"><img src="./images/eagle-icon.png" alt=""></div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="column">
+
+
+                        <div class="row">
+                            <div class="avatar"><img src="./images/player-pf.png" alt=""></div>
+                            <div class="player-username">Gamer_five</div>
+                            <div class="badge"><img src="./images/eagle-icon.png" alt=""></div>
+                        </div>
+
+                    </div>
+
+                    <div class="column">
+                        <div class="row">
+                            <div class="avatar"><img src="./images/player-pf.png" alt=""></div>
+                            <div class="player-username">Gamer_six</div>
+                            <div class="badge"><img src="./images/eagle-icon.png" alt=""></div>
+                        </div>
+                        <div class="row">
+                            <div class="avatar"><img src="./images/player-pf.png" alt=""></div>
+                            <div class="player-username">Gamer_seven</div>
+                            <div class="badge"><img src="./images/eagle-icon.png" alt=""></div>
+                        </div>
+                        <div class="row">
+                            <div class="avatar"><img src="./images/player-pf.png" alt=""></div>
+                            <div class="player-username">Gamer_eight</div>
+                            <div class="badge"><img src="./images/eagle-icon.png" alt=""></div>
+                        </div>
+                        <div class="row">
+                            <div class="avatar"><img src="./images/player-pf.png" alt=""></div>
+                            <div class="player-username">Gamer_nine</div>
+                            <div class="badge"><img src="./images/eagle-icon.png" alt=""></div>
+                        </div>
+
+                    </div>
+                    <div class="chat-container">
+                        <div class="chat-header">
+                            <h2>Match Chat</h2>
+                            <button class="close-btn" aria-label="Close">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <line x1="15" y1="9" x2="9" y2="15"></line>
+                                    <line x1="9" y1="9" x2="15" y2="15"></line>
+                                </svg>
+                            </button>
+                        </div>
+
+                        <div class="chat-body" id="chat-body">
+
+                            <div class="empty-state-container" id="empty-state">
+                                <img src="./images/icon.png" alt="Smiley" class="chat-icon">
+                                <p class="empty-state-text bold-text">No messages yet.</p>
+                                <p class="empty-state-text">Start the conversation...</p>
+                            </div>
+
+                            <div>
+
+                                <div class="chat-footer">
+                                    <div class="input-wrapper">
+                                        <input type="text" id="chat-input" placeholder="Type your message"
+                                            autocomplete="off">
+                                        <button class="send-btn" id="send-btn" aria-label="Send">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <line x1="22" y1="2" x2="11" y2="13"></line>
+                                                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        </section>
+    </main>
+    <footer>
+    </footer>
+    <script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const mainContent = document.getElementById('main-content');
+            const openChatBtn = document.getElementById('open-chat-btn');
+            const closeChatBtn = document.getElementById('close-chat-btn');
+            const chatPopup = document.getElementById('chat-popup');
+
+            const chatBody = document.getElementById('chat-body');
+            const chatInput = document.getElementById('chat-input');
+            const sendMsgBtn = document.getElementById('send-message-btn');
+            const emptyState = document.getElementById('empty-state');
+
+            openChatBtn.addEventListener('click', () => {
+                chatPopup.classList.add('active');
+                mainContent.classList.add('chat-open');
+            });
+
+            closeChatBtn.addEventListener('click', () => {
+                chatPopup.classList.remove('active');
+                mainContent.classList.remove('chat-open');
+            });
+
+            function sendMessage() {
+                const text = chatInput.value.trim();
+
+                if (text !== "") {
+                    if (emptyState.style.display !== 'none') {
+                        emptyState.style.display = 'none';
+                    }
+
+                    const messageDiv = document.createElement('div');
+                    messageDiv.classList.add('message', 'sent');
+
+                    const now = new Date();
+                    const timeString = now.getHours().toString().padStart(2, '0') + ':' +
+                        now.getMinutes().toString().padStart(2, '0');
+
+                    messageDiv.innerHTML = `
+                        <div class="message-bubble">
+                            <span class="nickname">@username</span>
+                            <p class="message-text">${text}</p>
+                            <span class="timestamp">${timeString}</span>
+                        </div>
+                    `;
+
+                    chatBody.appendChild(messageDiv);
+                    chatInput.value = '';
+                    chatBody.scrollTop = chatBody.scrollHeight;
+                }
+            }
+
+            sendMsgBtn.addEventListener('click', sendMessage);
+            chatInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+        });
+
+    </script>
+</body>
+
+</html>
