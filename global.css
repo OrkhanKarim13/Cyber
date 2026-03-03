@@ -308,7 +308,7 @@ swiper-container {
 }
 
 swiper-slide img {
-  width: 100%;
+
   border-radius: 12px;
   display: block;
 }
@@ -671,7 +671,7 @@ height: 750px;
 
 /* CSS for section section:LatestGames */
 #latest-games {
-  padding: 0 0 60px 0;
+  padding: 60px 0 60px 0;
   position: relative;
 }
 
