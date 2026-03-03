@@ -286,19 +286,14 @@ h3 {
   top: 50%;
   transform: translateY(-50%);
   z-index: 10;
-
   width: 48px;
   height: 48px;
-  border-radius: 50%;
 
-  border: none;
   cursor: pointer;
-
   background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(8px);
   color: #fff;
   font-size: 22px;
-
   transition: 0.3s;
 }
 .slider-wrapper {
@@ -327,9 +322,12 @@ swiper-slide img {
 .prev-btn {
   left: 80px;
    width: 50px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
   height: 50px;
 backdrop-filter: blur(44px);
-
+border: 1px solid rgba(255,255,255,0.4);
   color: #fff;
   font-size: 22px;
   cursor: pointer;
@@ -348,7 +346,10 @@ backdrop-filter: blur(44px);
   right: 80px;
    width: 50px;
   height: 50px;
-
+     display: flex;
+   align-items: center;
+   justify-content: center;
+border: 1px solid rgba(255,255,255,0.4);
 backdrop-filter: blur(44px);
   color: #fff;
   font-size: 22px;
@@ -473,7 +474,7 @@ backdrop-filter: blur(44px);
   position: relative;
   overflow: hidden;
   background-position: 30% 60%;
-height: 900px;
+height: 750px;
 
   width: 100%;
   background-image: url("images/607376f6d0189997ab1e94e06311611f8aabf883.png");
@@ -493,7 +494,7 @@ height: 900px;
 
 .hero-gradient-overlay {
   position: absolute;
-  bottom: -200px;
+  bottom: -150px;
   left: 0;
   width: 100%;
   height: 100px;
