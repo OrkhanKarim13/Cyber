@@ -1700,4 +1700,21 @@ h1 .bold {
   .games-cards > .mySwiper {
     padding: 0 16px;
   }
+
+  .games-cards-overlay{
+position: absolute;
+width: 200px;
+height: 100%;
+  right: 0;
+  top: 40%;
+  z-index: 1000;
+ background: linear-gradient(
+    to right,
+    rgba(0,0,0,0) 40%,
+    rgba(0,0,0,0.80) 75%,
+    rgba(0,0,0,0.95) 100%
+  );
+
+
+}
 }
