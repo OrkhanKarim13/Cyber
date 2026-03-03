@@ -192,40 +192,51 @@
     </swiper-slide>
 
   </swiper-container>
-<section class="games-cards">
-    <swiper-container class="mySwiper" slides-per-view="5"  space-between="24" free-mode="true">
-    <swiper-slide ><a href="">
-        <img style="border-radius: 12px;"  src="./images/volorant-card.png" alt="game-card">
-      </a></swiper-slide>
-    <swiper-slide ><a href="">
-        <img style="border-radius: 12px;" src="./images/l-l-card.png" alt="game-card">
-      </a></swiper-slide>
-    <swiper-slide >
-      <a href="">
-        <img style="border-radius: 12px;" src="./images/l-l-wild-card.png" alt="game-card">
-      </a></swiper-slide>
-    <swiper-slide ><a href="">
-        <img style="border-radius: 12px;" src="./images/clash-royal-card.png" alt="game-card">
-      </a></swiper-slide>
-    <swiper-slide >
-      <a href="">
-        <img style="border-radius: 12px;" src="./images/brawl-stars-card.png" alt="game-card">
-      </a></swiper-slide>
-    <swiper-slide ><a href="">
-        <img style="border-radius: 12px;" src="./images/l-l-wild-card.png" alt="game-card">
-      </a></swiper-slide>
-
-  </swiper-container> </section>
-  <section id="latest-games">
-    <div class="container">
-      <div class="hero-info-card-mob">
+  <section class="games-cards">
+    <div class="games-cards-overlay"></div>
+    <div class="hero-info-card-mob">
         <p data-translate="heroText" class="info-text">Bir addımlı qiymətləndirməmizdə bacarıqlarınızı nümayiş etdirin
           və 450 min dollara qədər
           simulyasiya kapitalı qazanın. Gələcək indidir.</p>
-        <a href="#" class="btn btn-gold btn-sm info-btn">
-          <span>CYBER+ PRO</span>
+        <a href="#" class=" info-btn">
+          <span><p>Ətraflı oxu</p> <img src="images/polygon-icon.svg" alt="">
+          </span>
         </a>
       </div>
+    <swiper-container class="mySwiper" slides-per-view="5" space-between="24" free-mode="true" breakpoints='{
+"0": {
+"slidesPerView": 1.5
+},
+"500": {
+"slidesPerView": 5
+}
+}'>
+      <swiper-slide><a href="">
+          <img style="border-radius: 12px;" src="./images/volorant-card.png" alt="game-card">
+        </a></swiper-slide>
+      <swiper-slide><a href="">
+          <img style="border-radius: 12px;" src="./images/l-l-card.png" alt="game-card">
+        </a></swiper-slide>
+      <swiper-slide>
+        <a href="">
+          <img style="border-radius: 12px;" src="./images/l-l-wild-card.png" alt="game-card">
+        </a></swiper-slide>
+      <swiper-slide><a href="">
+          <img style="border-radius: 12px;" src="./images/clash-royal-card.png" alt="game-card">
+        </a></swiper-slide>
+      <swiper-slide>
+        <a href="">
+          <img style="border-radius: 12px;" src="./images/brawl-stars-card.png" alt="game-card">
+        </a></swiper-slide>
+      <swiper-slide><a href="">
+          <img style="border-radius: 12px;" src="./images/l-l-wild-card.png" alt="game-card">
+        </a></swiper-slide>
+
+    </swiper-container>
+  </section>
+  <section id="latest-games">
+    <div class="container">
+      
       <h2 data-translate="latestGames" class="section-title text-gradient">Ən son oyunlar</h2>
       <h2 data-translate="heroTitle" class="section-mobile-title">Oyna, Qazan, Əylən!</h2>
       <div class="games-layout">

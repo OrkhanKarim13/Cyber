@@ -277,6 +277,27 @@ h3 {
   height: 100%;
 }
 
+.games-cards{
+  position: relative;
+}
+
+
+.games-cards-overlay{
+position: absolute;
+width: 400px;
+height: 100%;
+  right: 0;
+  top: 0;
+  z-index: 1000;
+ background: linear-gradient(
+    to right,
+    rgba(0,0,0,0) 40%,
+    rgba(0,0,0,0.80) 75%,
+    rgba(0,0,0,0.95) 100%
+  );
+
+
+}
 /* mobile-------------------------------------- */
 
 .burger-menu {
@@ -542,7 +563,7 @@ h3 {
 
 .hero-info-card-mob {
   margin-top: 8px;
-  width: 100%;
+margin: 16px 16px 32px 16px;
   background: rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(4px);
   border-radius: 12px;
@@ -559,9 +580,16 @@ h3 {
 }
 
 .info-btn {
-  display: flex;
-  justify-content: space-between;
+  color: #fff;
 }
+
+
+.info-btn>span{
+  display: flex;
+  gap: 6px;
+}
+
+
 
 /* CSS for section section:LatestGames */
 #latest-games {
@@ -1451,7 +1479,7 @@ h1 .bold {
   .hero-gradient-overlay {
     position: absolute;
     left: 0;
-    bottom: -163px;
+    bottom: -50px;
   }
 
   .hero-bottom {
@@ -1472,7 +1500,7 @@ h1 .bold {
 
   #hero-section {
     height: auto;
-    height: 812px;
+    /* height: 812px; */
     background-image: url("./images/607376f6d0189997ab1e94e06311611f8aabf883.png");
     background-position: 40%;
     background-repeat: no-repeat;
