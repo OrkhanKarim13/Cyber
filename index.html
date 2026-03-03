@@ -83,13 +83,10 @@
       </div>
     </div>
   </div>
-  <swiper-container autoplay-delay="6000" init="false" slides-per-view="1" loop="true" speed="500" css-mode="true">
+  <swiper-container  init="false" slides-per-view="1" loop="true" speed="500" css-mode="true">
     <swiper-slide>
       <section id="hero-section">
-        <div class="hero-bg">
-          <img src="images/607376f6d0189997ab1e94e06311611f8aabf883.png" alt="Hero Background">
-
-        </div>
+       
         <div class="container hero-content">
           <div>
             <h1 data-translate="heroTitle" class="hero-title text-gradient">Oyna, Qazan, Əylən!</h1>
@@ -203,36 +200,57 @@
           </span>
         </a>
       </div>
-    <swiper-container class="mySwiper" slides-per-view="5" space-between="24" free-mode="true" breakpoints='{
-"0": {
-"slidesPerView": 1.5
-},
-"500": {
-"slidesPerView": 5
-}
-}'>
-      <swiper-slide><a href="">
-          <img style="border-radius: 12px;" src="./images/volorant-card.png" alt="game-card">
-        </a></swiper-slide>
-      <swiper-slide><a href="">
-          <img style="border-radius: 12px;" src="./images/l-l-card.png" alt="game-card">
-        </a></swiper-slide>
-      <swiper-slide>
-        <a href="">
-          <img style="border-radius: 12px;" src="./images/l-l-wild-card.png" alt="game-card">
-        </a></swiper-slide>
-      <swiper-slide><a href="">
-          <img style="border-radius: 12px;" src="./images/clash-royal-card.png" alt="game-card">
-        </a></swiper-slide>
-      <swiper-slide>
-        <a href="">
-          <img style="border-radius: 12px;" src="./images/brawl-stars-card.png" alt="game-card">
-        </a></swiper-slide>
-      <swiper-slide><a href="">
-          <img style="border-radius: 12px;" src="./images/l-l-wild-card.png" alt="game-card">
-        </a></swiper-slide>
+<div class="slider-wrapper">
+  
+  <button class="slider-btn prev-btn">
+    &#10094;
+  </button>
 
-    </swiper-container>
+  <swiper-container 
+    class="mySwiper"
+    slides-per-view="5"
+    space-between="24"
+    free-mode="true"
+    navigation='{
+      "prevEl": ".prev-btn",
+      "nextEl": ".next-btn"
+    }'
+    breakpoints='{
+      "0": { "slidesPerView": 1.5 },
+      "500": { "slidesPerView": 5 }
+    }'>
+
+      <swiper-slide>
+        <a href=""><img src="./images/volorant-card.png" /></a>
+      </swiper-slide>
+
+      <swiper-slide>
+        <a href=""><img src="./images/l-l-card.png" /></a>
+      </swiper-slide>
+
+      <swiper-slide>
+        <a href=""><img src="./images/l-l-wild-card.png" /></a>
+      </swiper-slide>
+
+      <swiper-slide>
+        <a href=""><img src="./images/clash-royal-card.png" /></a>
+      </swiper-slide>
+
+      <swiper-slide>
+        <a href=""><img src="./images/brawl-stars-card.png" /></a>
+      </swiper-slide>
+
+      <swiper-slide>
+        <a href=""><img src="./images/l-l-wild-card.png" /></a>
+      </swiper-slide>
+
+  </swiper-container>
+
+  <button class="slider-btn next-btn">
+    &#10095;
+  </button>
+
+</div>
   </section>
   <section id="latest-games">
     <div class="container">
@@ -391,7 +409,7 @@
         </swiper-slide>
       </swiper-container>
       <!-- Right Card: Shop -->
-      <div class="promo-card">
+      <div class="promo-card second-promo">
         <div class="card-bg">
           <img src="images/fdd38812977da22ede120c917e308e5fb9db25c4.png" alt="Shop">
         </div>
@@ -405,6 +423,7 @@
   <section id="top-players">
     <video class="bg-video" src="./videos/valo.mp4" autoplay muted loop playsinline></video>
     <div class="container-players">
+      <div class="empty-box"></div>
       <div class="leaderboard">
         <h1>
           <span data-translate="bestPlayers" class="light">3 ən yaxşı oyunçu</span>
