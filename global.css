@@ -1235,6 +1235,9 @@ h1 .bold {
   justify-content: center;
 }
 
+.partners-slider>.logo-slider{
+  padding: 0 40px;
+}
 
 
 .slider-logo-link>img{
@@ -1244,7 +1247,9 @@ object-fit: contain;
 }
 
 
-
+.partners-slider{
+  margin-bottom: 120px;
+}
 
 
 
