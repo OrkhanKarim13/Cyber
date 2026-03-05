@@ -8,8 +8,7 @@
     <link rel="stylesheet" href="./global.css">
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-element-bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/85a60fd075.js" crossorigin="anonymous"></script>
-    <style>     
-
+    <style>
         .hero-bg-img {
             display: flex;
             align-items: flex-end;
@@ -20,6 +19,7 @@
             background-repeat: no-repeat;
             background-size: cover;
             background-position: top;
+
         }
 
         .crumb-inactive>a {
@@ -48,6 +48,9 @@
             opacity: 0.5;
         }
 
+        .hero-content2 {
+            z-index: 300;
+        }
 
         @media (max-width: 1024px) {
             .navbar {
@@ -59,6 +62,18 @@
             .hero-content {
                 padding: 20px;
             }
+        }
+
+
+        .overlay {
+            width: 100%;
+            position: absolute;
+            height: 150px;
+            left: 0;
+            bottom: -5px;
+            z-index: 100;
+            background: linear-gradient(180deg, rgba(13, 33, 89, 0) 0%, #000000 100%);
+
         }
 
         .filters-wrapper {
@@ -108,6 +123,7 @@
                 padding-top: 130px;
                 background-position: 40%;
                 background-size: auto;
+                position: relative;
             }
 
             .filters-wrapper {
@@ -316,7 +332,7 @@
             .hero-bg-img {
                 background-image: url("./images/tournament-mob.png");
                 padding: 120px 16px 16px 16px;
-             background-size: cover;
+                background-size: cover;
                 background-position: center;
             }
 
@@ -330,9 +346,9 @@
                 padding-bottom: 0;
             }
 
-             .lang-selector {
-    background: none;
-  }
+            .lang-selector {
+                background: none;
+            }
 
             .footer-links {
                 flex-direction: column;
@@ -348,7 +364,7 @@
 
 <body>
     <header class="header">
-       
+
         <div class="container header-container">
             <div class="header-content">
                 <div class="logo">
@@ -375,15 +391,15 @@
                             <a data-translate="navContact" href="./contact.html">Əlaqə</a>
                         </li>
                     </ul>
-                             <div class="lang-selector">
-  <span class="current-lang">AZ</span>
+                    <div class="lang-selector">
+                        <span class="current-lang">AZ</span>
 
-  <div class="lang-dropdown">
-    <div data-lang="az">AZ</div>
-    <div data-lang="en">EN</div>
-    <div data-lang="ru">RU</div>
-  </div>
-</div>
+                        <div class="lang-dropdown">
+                            <div data-lang="az">AZ</div>
+                            <div data-lang="en">EN</div>
+                            <div data-lang="ru">RU</div>
+                        </div>
+                    </div>
                 </nav>
                 <div class="burger-menu">
                     <i class="fa-solid fa-bars"></i>
@@ -392,35 +408,37 @@
         </div>
     </header>
     <!-- MOBILE MENU OVERLAY -->
-      <div class="mobile-menu" id="mobileMenu">
-    <div class="mobile-menu-inner">
-      <ul class="mobile-nav-list">
-        <li><a data-translate="navTournaments" href="tournaments.html">Turnirlər</a></li>
-        <li style="padding: 0;" class="border"></li>
-        <li><a data-translate="navRating" href="./rating.html">Reytinq</a></li>
-        <li style="padding: 0;" class="border"></li>
-        <li><a data-translate="navShop" href="./shop.html">Mağaza</a></li>
-        <li style="padding: 0;" class="border"></li>
-        <li><a data-translate="navContact" href="./contact.html">Əlaqə</a></li>
-        <li style="padding: 0;" class="border"></li>
-      </ul>
-      <div class="mobile-buttons">
-        <button class="buy-btn-mob">Cyber+ Premium</button>
-        <button data-translate="playBtn" class="play-btn-mob">Oyna</button>
-      </div>
-      <div class="lang-selector">
-        <span class="current-lang">AZ</span>
-        <div class="lang-dropdown">
-          <div data-lang="az">AZ</div>
-          <div data-lang="en">EN</div>
-          <div data-lang="ru">RU</div>
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-inner">
+            <ul class="mobile-nav-list">
+                <li><a data-translate="navTournaments" href="tournaments.html">Turnirlər</a></li>
+                <li style="padding: 0;" class="border"></li>
+                <li><a data-translate="navRating" href="./rating.html">Reytinq</a></li>
+                <li style="padding: 0;" class="border"></li>
+                <li><a data-translate="navShop" href="./shop.html">Mağaza</a></li>
+                <li style="padding: 0;" class="border"></li>
+                <li><a data-translate="navContact" href="./contact.html">Əlaqə</a></li>
+                <li style="padding: 0;" class="border"></li>
+            </ul>
+            <div class="mobile-buttons">
+                <button class="buy-btn-mob">Cyber+ Premium</button>
+                <button data-translate="playBtn" class="play-btn-mob">Oyna</button>
+            </div>
+            <div class="lang-selector">
+                <span class="current-lang">AZ</span>
+                <div class="lang-dropdown">
+                    <div data-lang="az">AZ</div>
+                    <div data-lang="en">EN</div>
+                    <div data-lang="ru">RU</div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
+    <div class="overlay"></div>
     <section id="section-filters">
 
         <div class="hero-bg-img">
+            <div class="overlay"></div>
             <div class="hero-content2">
                 <h1 data-translate="navTournaments" class="hero-title2">Turnirlər</h1>
 
@@ -431,7 +449,7 @@
 
 
                 <div class="breadcrumbs">
-                    <span class="crumb-inactive"><a data-translate="mainPage"  href="./index.html">Əsas səhifə</a></span>
+                    <span class="crumb-inactive"><a data-translate="mainPage" href="./index.html">Əsas səhifə</a></span>
                     <img src="images/753_2925.svg" class="crumb-sep" alt="">
                     <span data-translate="navTournaments" class="crumb-active">Turnirlər</span>
                 </div>
@@ -645,9 +663,9 @@
                         <a data-translate="players" href="#" class="f-link">Oyunçular</a>
                     </div>
                     <div class="f-col">
-            <a data-translate="navShop" href="./shop.html" class="f-link">Mağaza</a>
-            <a data-translate="topPlayer" href="#" class="f-link">Ən yaxşı oyunçular</a>
-            <a data-translate="navContact" href="./contact.html" class="f-link">Əlaqə</a>
+                        <a data-translate="navShop" href="./shop.html" class="f-link">Mağaza</a>
+                        <a data-translate="topPlayer" href="#" class="f-link">Ən yaxşı oyunçular</a>
+                        <a data-translate="navContact" href="./contact.html" class="f-link">Əlaqə</a>
                     </div>
                 </div>
 
@@ -673,7 +691,7 @@
         </footer>
     </section>
     <script src="./global.js">
-        
+
     </script>
 </body>
 

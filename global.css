@@ -1482,6 +1482,7 @@ h1 .bold {
 
 .contact-heading {
   padding-bottom: 24px;
+  z-index: 300  ;
 }
 .contact-nav {
   display: flex;
@@ -1523,14 +1524,15 @@ h1 .bold {
 }
 
 .button-content {
-  padding: 28px 50px;
   background-color: #ffffff1f;
   border-radius: 10px;
   text-align: center;
 }
 
 .button-content > a {
+   padding: 28px 50px;
   color: #fff;
+  display: block;
   font-size: 24px;
 }
 

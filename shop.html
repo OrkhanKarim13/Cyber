@@ -19,17 +19,22 @@
             height: 384px;
             background-repeat: no-repeat;
             background-size: contain;
-
+            position: relative;
         }
-
-
-
 
         .crumb-inactive>a {
             color: #ffffff9a;
         }
 
-
+        .overlay {
+            width: 100%;
+            position: absolute;
+            height: 150px;
+            left: 0;
+            bottom: -5px;
+            z-index: 100;
+            background: linear-gradient(180deg, rgba(13, 33, 89, 0) 0%, #000000 100%);
+        }
         .breadcrumbs {
             display: flex;
             align-items: center;
@@ -45,7 +50,9 @@
             opacity: 0.5;
         }
 
-
+.hero-content2{
+    z-index: 300;
+}
 
         .shop-btn {
             padding: 22px 148px;
@@ -397,22 +404,18 @@
     <section id="section-filters">
 
         <div class="hero-bg-img">
+            <div class="overlay"></div>
             <div class="hero-content2">
                 <h1 data-translate="navShop" class="hero-title2">Mağaza</h1>
-
-
                 <p data-translate="shopText" class="hero-description">
                     Sənin oyun zonan. Premium funksiyalar, paketlər və xüsusi təkliflər.
                 </p>
-
-
                 <div class="breadcrumbs">
                     <span class="crumb-inactive"><a data-translate="mainPage" href="./index.html">Əsas səhifə</a></span>
                     <img src="images/753_2925.svg" class="crumb-sep" alt="">
                     <span data-translate="navShop" class="crumb-active">Mağaza</span>
                 </div>
             </div>
-
         </div>
         <div class="filters-wrapper">
             <div class="filter-tab active">

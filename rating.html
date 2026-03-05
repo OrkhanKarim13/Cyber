@@ -225,15 +225,19 @@
             .nav-links a {
                 display: none;
             }
+
             .header-container {
                 padding: 0 16px;
             }
+
             .main-header {
                 justify-content: center;
             }
+
             .hero-bg-img {
                 height: 500px;
             }
+
             .lang-selector {
                 background: none;
                 width: 100%;
@@ -245,11 +249,26 @@
             overflow: hidden;
         }
 
+        .overlay {
+            width: 100%;
+            position: absolute;
+            height: 150px;
+            left: 0;
+            bottom: -5px;
+            z-index: 100;
+            background: linear-gradient(180deg, rgba(13, 33, 89, 0) 0%, #000000 100%);
+        }
+
         .hero-container {
             display: flex;
             flex-direction: column;
             padding-left: 72px;
-        }
+        }   
+
+              .hero-content2 {
+                z-index: 300;
+
+            }
 
         .hero-bg-img {
             display: flex;
@@ -382,53 +401,57 @@
         }
 
         .tab-content {
-    display: none;
-    opacity: 0;
-    transform: translateY(20px);
-}
+            display: none;
+            opacity: 0;
+            transform: translateY(20px);
+        }
 
-.tab-item.active {
-    display: block;
-    animation: tabFade 0.45s ease forwards;
-}
+        .tab-item.active {
+            display: block;
+            animation: tabFade 0.45s ease forwards;
+        }
 
-@keyframes tabFade {
-    0%{
-        opacity:0;
-        transform: translateY(20px);
-        box-shadow: 0 0 0 rgba(0,0,0,0);
-    }
-    100%{
-        opacity:1;
-        transform: translateY(0);
-        box-shadow: 0 20px 40px rgba(0,0,0,0.35);
-    }
-}
+        @keyframes tabFade {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+                box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+            }
+        }
 
 
-@keyframes tableFade{
-    from{
-        opacity:0;
-        transform: translateY(25px);
-        box-shadow: 0 0 0 rgba(0,0,0,0);
-    }
-    to{
-        opacity:1;
-        transform: translateY(0);
-        box-shadow: 0 20px 40px rgba(0,0,0,0.35);
-    }
-}
+        @keyframes tableFade {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+                box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+            }
 
-@keyframes cellFade{
-    from{
-        opacity:0;
-        transform: translateY(15px);
-    }
-    to{
-        opacity:1;
-        transform: translateY(0);
-    }
-}
+            to {
+                opacity: 1;
+                transform: translateY(0);
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+            }
+        }
+
+        @keyframes cellFade {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         .table-wrapper {
             display: flex;
             justify-content: center;
@@ -437,19 +460,19 @@
         .table-grid {
             display: flex;
             min-width: max-content;
-              opacity: 0;
-    transform: translateY(25px);
-             
+            opacity: 0;
+            transform: translateY(25px);
+
         }
 
         .table-grid.show {
-    animation: tableFade 0.5s ease forwards;
-}
+            animation: tableFade 0.5s ease forwards;
+        }
 
         .table-col {
             display: flex;
             flex-direction: column;
-            
+
         }
 
         .cell-header {
@@ -477,21 +500,41 @@
             position: relative;
             font-size: 16px;
             color: rgba(255, 255, 255, 0.5);
-               opacity: 0;
-    transform: translateY(15px);
+            opacity: 0;
+            transform: translateY(15px);
         }
 
         .table-grid.show .cell-body {
-    animation: cellFade 0.4s ease forwards;
-}
+            animation: cellFade 0.4s ease forwards;
+        }
 
-.table-grid.show .cell-body:nth-child(2) { animation-delay: 0.05s; }
-.table-grid.show .cell-body:nth-child(3) { animation-delay: 0.1s; }
-.table-grid.show .cell-body:nth-child(4) { animation-delay: 0.15s; }
-.table-grid.show .cell-body:nth-child(5) { animation-delay: 0.2s; }
-.table-grid.show .cell-body:nth-child(6) { animation-delay: 0.25s; }
-.table-grid.show .cell-body:nth-child(7) { animation-delay: 0.3s; }
-.table-grid.show .cell-body:nth-child(8) { animation-delay: 0.35s; }
+        .table-grid.show .cell-body:nth-child(2) {
+            animation-delay: 0.05s;
+        }
+
+        .table-grid.show .cell-body:nth-child(3) {
+            animation-delay: 0.1s;
+        }
+
+        .table-grid.show .cell-body:nth-child(4) {
+            animation-delay: 0.15s;
+        }
+
+        .table-grid.show .cell-body:nth-child(5) {
+            animation-delay: 0.2s;
+        }
+
+        .table-grid.show .cell-body:nth-child(6) {
+            animation-delay: 0.25s;
+        }
+
+        .table-grid.show .cell-body:nth-child(7) {
+            animation-delay: 0.3s;
+        }
+
+        .table-grid.show .cell-body:nth-child(8) {
+            animation-delay: 0.35s;
+        }
 
         /* Column Widths */
         .col-no {
@@ -713,7 +756,8 @@
             }
 
             .hero-content2 {
-                z-index: 100;
+                z-index: 1000;
+
             }
 
             .hero-bg-img {
@@ -754,9 +798,10 @@
         }
     </style>
 </head>
+
 <body>
     <header class="header">
-       
+
         <div class="container header-container">
             <div class="header-content">
                 <div class="logo">
@@ -827,6 +872,7 @@
     </div>
     <section id="hero-section2">
         <div class="hero-bg-img">
+            <div class="overlay"></div>
             <div class="hero-content2">
                 <h1 data-translate="navRating" class="hero-title2">Reytinq</h1>
                 <p data-translate="ratingText" class="hero-description">
@@ -856,7 +902,7 @@
         </div>
 
         <div class="tabs-container">
-        
+
             <div class="tab-item" data-game="cs2">
                 <span>Counter Strike 2</span>
             </div>
@@ -1110,98 +1156,98 @@
     <script src="/global.js"></script>
     <script>
 
-const tabs = document.querySelectorAll(".tab-item");
-const table = document.getElementById("leaderboardTable");
+        const tabs = document.querySelectorAll(".tab-item");
+        const table = document.getElementById("leaderboardTable");
 
 
-// 🔥 hər oyun üçün fərqli data
-const leaderboardData = {
+        // 🔥 hər oyun üçün fərqli data
+        const leaderboardData = {
 
-    all: [
-        {rank:1, player:"King of CSGO", kills:220, wr:"85%", tm:"1.76", play:"240h", points:"25640"},
-        {rank:2, player:"Omega Squad", kills:210, wr:"84%", tm:"1.50", play:"120h", points:"21500"},
-        {rank:3, player:"Tech Titans", kills:200, wr:"83%", tm:"1.45", play:"100h", points:"21000"},
-        {rank:4, player:"Tech Titans", kills:200, wr:"83%", tm:"1.45", play:"100h", points:"21000"}
-    ],
+            all: [
+                { rank: 1, player: "King of CSGO", kills: 220, wr: "85%", tm: "1.76", play: "240h", points: "25640" },
+                { rank: 2, player: "Omega Squad", kills: 210, wr: "84%", tm: "1.50", play: "120h", points: "21500" },
+                { rank: 3, player: "Tech Titans", kills: 200, wr: "83%", tm: "1.45", play: "100h", points: "21000" },
+                { rank: 4, player: "Tech Titans", kills: 200, wr: "83%", tm: "1.45", play: "100h", points: "21000" }
+            ],
 
-    cs2: [
-        {rank:1, player:"CS2 Master", kills:500, wr:"90%", tm:"2.10", play:"300h", points:"30000"},
-        {rank:2, player:"Omega Squad", kills:210, wr:"84%", tm:"1.50", play:"120h", points:"21500"},
-        {rank:3, player:"Headshot King", kills:420, wr:"88%", tm:"1.90", play:"260h", points:"28000"},
-        {rank:4, player:"Tech Titans", kills:200, wr:"83%", tm:"1.45", play:"100h", points:"21000"}
-    ],
+            cs2: [
+                { rank: 1, player: "CS2 Master", kills: 500, wr: "90%", tm: "2.10", play: "300h", points: "30000" },
+                { rank: 2, player: "Omega Squad", kills: 210, wr: "84%", tm: "1.50", play: "120h", points: "21500" },
+                { rank: 3, player: "Headshot King", kills: 420, wr: "88%", tm: "1.90", play: "260h", points: "28000" },
+                { rank: 4, player: "Tech Titans", kills: 200, wr: "83%", tm: "1.45", play: "100h", points: "21000" }
+            ],
 
-    valorant: [
-        {rank:1, player:"Radiant Pro", kills:350, wr:"92%", tm:"2.00", play:"200h", points:"27000"},
-        {rank:2, player:"Omega Squad", kills:210, wr:"84%", tm:"1.50", play:"120h", points:"21500"},
-        {rank:3, player:"Spike Lord", kills:300, wr:"86%", tm:"1.70", play:"180h", points:"24000"},
-        {rank:4, player:"Tech Titans", kills:200, wr:"83%", tm:"1.45", play:"100h", points:"21000"}
-    ],
+            valorant: [
+                { rank: 1, player: "Radiant Pro", kills: 350, wr: "92%", tm: "2.00", play: "200h", points: "27000" },
+                { rank: 2, player: "Omega Squad", kills: 210, wr: "84%", tm: "1.50", play: "120h", points: "21500" },
+                { rank: 3, player: "Spike Lord", kills: 300, wr: "86%", tm: "1.70", play: "180h", points: "24000" },
+                { rank: 4, player: "Tech Titans", kills: 200, wr: "83%", tm: "1.45", play: "100h", points: "21000" }
+            ],
 
-    pubg: [
-        {rank:1, player:"Chicken Winner", kills:600, wr:"75%", tm:"1.40", play:"500h", points:"22000"},
-        {rank:2, player:"Omega Squad", kills:210, wr:"84%", tm:"1.50", play:"120h", points:"21500"},
-        {rank:3, player:"Sniper Elite", kills:550, wr:"70%", tm:"1.35", play:"450h", points:"21000"},
-        {rank:4, player:"Tech Titans", kills:200, wr:"83%", tm:"1.45", play:"100h", points:"21000"}
-    ]
+            pubg: [
+                { rank: 1, player: "Chicken Winner", kills: 600, wr: "75%", tm: "1.40", play: "500h", points: "22000" },
+                { rank: 2, player: "Omega Squad", kills: 210, wr: "84%", tm: "1.50", play: "120h", points: "21500" },
+                { rank: 3, player: "Sniper Elite", kills: 550, wr: "70%", tm: "1.35", play: "450h", points: "21000" },
+                { rank: 4, player: "Tech Titans", kills: 200, wr: "83%", tm: "1.45", play: "100h", points: "21000" }
+            ]
 
-};
-
-
-// 🔥 table render function
-function renderTable(game){
-
-    const data = leaderboardData[game];
-
-    // köhnə cell-ləri sil
-    const bodies = table.querySelectorAll(".cell-body");
-    bodies.forEach(el => el.remove());
-
-    const colNo = table.querySelector(".col-no");
-    const colPlayer = table.querySelector(".col-player");
-    const colKills = table.querySelector(".col-kills");
-    const colWr = table.querySelector(".col-wr");
-    const colTm = table.querySelector(".col-tm");
-    const colPlay = table.querySelector(".col-playtime");
-    const colRank = table.querySelector(".col-rank");
-    const colPoints = table.querySelector(".col-points");
+        };
 
 
-    data.forEach((item,index) => {
+        // 🔥 table render function
+        function renderTable(game) {
 
-        // 🔥 TOP 3 style detect
-        let rankClass = "";
-        let rankBorder = "";
-        let rankHTML = `<span class="rank-num">${item.rank}</span>`;
+            const data = leaderboardData[game];
 
-        if(index === 0){
-            rankClass = "rank-1";
-            rankBorder = "rank-1-border";
-            rankHTML = `<span class="rank-num">1</span>
+            // köhnə cell-ləri sil
+            const bodies = table.querySelectorAll(".cell-body");
+            bodies.forEach(el => el.remove());
+
+            const colNo = table.querySelector(".col-no");
+            const colPlayer = table.querySelector(".col-player");
+            const colKills = table.querySelector(".col-kills");
+            const colWr = table.querySelector(".col-wr");
+            const colTm = table.querySelector(".col-tm");
+            const colPlay = table.querySelector(".col-playtime");
+            const colRank = table.querySelector(".col-rank");
+            const colPoints = table.querySelector(".col-points");
+
+
+            data.forEach((item, index) => {
+
+                // 🔥 TOP 3 style detect
+                let rankClass = "";
+                let rankBorder = "";
+                let rankHTML = `<span class="rank-num">${item.rank}</span>`;
+
+                if (index === 0) {
+                    rankClass = "rank-1";
+                    rankBorder = "rank-1-border";
+                    rankHTML = `<span class="rank-num">1</span>
                         <img src="images/753_2944.svg" class="rank-bg">`;
-        }
-        else if(index === 1){
-            rankClass = "rank-2";
-            rankBorder = "rank-2-border";
-            rankHTML = `<span class="rank-num">2</span>
+                }
+                else if (index === 1) {
+                    rankClass = "rank-2";
+                    rankBorder = "rank-2-border";
+                    rankHTML = `<span class="rank-num">2</span>
                         <img src="images/753_2947.svg" class="rank-bg">`;
-        }
-        else if(index === 2){
-            rankClass = "rank-3";
-            rankBorder = "rank-3-border";
-            rankHTML = `<span class="rank-num">3</span>
+                }
+                else if (index === 2) {
+                    rankClass = "rank-3";
+                    rankBorder = "rank-3-border";
+                    rankHTML = `<span class="rank-num">3</span>
                         <img src="images/753_2950.svg" class="rank-bg">`;
-        }
+                }
 
-        // NO column
-        colNo.innerHTML += `
+                // NO column
+                colNo.innerHTML += `
         <div class="cell-body ${rankClass}">
             ${rankHTML}
         </div>`;
 
 
-        // PLAYER
-        colPlayer.innerHTML += `
+                // PLAYER
+                colPlayer.innerHTML += `
         <div class="cell-body ${rankBorder}">
             <div class="player-info">
                 <div class="poly-icon"></div>
@@ -1210,67 +1256,67 @@ function renderTable(game){
         </div>`;
 
 
-        colKills.innerHTML += `<div class="cell-body ${rankBorder}"><span>${item.kills}</span></div>`;
-        colWr.innerHTML += `<div class="cell-body ${rankBorder}"><span>${item.wr}</span></div>`;
-        colTm.innerHTML += `<div class="cell-body ${rankBorder}"><span>${item.tm}</span></div>`;
-        colPlay.innerHTML += `<div class="cell-body ${rankBorder}"><span>${item.play}</span></div>`;
+                colKills.innerHTML += `<div class="cell-body ${rankBorder}"><span>${item.kills}</span></div>`;
+                colWr.innerHTML += `<div class="cell-body ${rankBorder}"><span>${item.wr}</span></div>`;
+                colTm.innerHTML += `<div class="cell-body ${rankBorder}"><span>${item.tm}</span></div>`;
+                colPlay.innerHTML += `<div class="cell-body ${rankBorder}"><span>${item.play}</span></div>`;
 
-        colRank.innerHTML += `
+                colRank.innerHTML += `
         <div class="cell-body ${rankBorder}">
             <img src="images/f52c75d521db6b6e3894f410456af88a7383168e.png" class="rank-icon">
         </div>`;
 
-        colPoints.innerHTML += `<div class="cell-body ${rankBorder}"><span>${item.points}</span></div>`;
+                colPoints.innerHTML += `<div class="cell-body ${rankBorder}"><span>${item.points}</span></div>`;
 
-    });
+            });
 
-}
-
-
-
-// 🔥 tab click
-tabs.forEach(tab => {
-
-    tab.addEventListener("click", ()=>{
-
-        tabs.forEach(t=>t.classList.remove("active"));
-        tab.classList.add("active");
-
-        const game = tab.dataset.game;
-
-        renderTable(game);
-
-    });
-
-});
+        }
 
 
 
+        // 🔥 tab click
+        tabs.forEach(tab => {
+
+            tab.addEventListener("click", () => {
+
+                tabs.forEach(t => t.classList.remove("active"));
+                tab.classList.add("active");
+
+                const game = tab.dataset.game;
+
+                renderTable(game);
+
+            });
+
+        });
 
 
-tabs.forEach(tab => {
-    tab.addEventListener("click", () => {
-
-        tabs.forEach(t => t.classList.remove("active"));
-        tab.classList.add("active");
-
-        /* animasiyanı reset */
-        table.classList.remove("show");
-
-        setTimeout(()=>{
-            table.classList.add("show");
-        },50);
-
-    });
-});
 
 
-window.addEventListener("load",()=>{
-    document.querySelector(".table-grid").classList.add("show");
-});
-</script>
 
-    
+        tabs.forEach(tab => {
+            tab.addEventListener("click", () => {
+
+                tabs.forEach(t => t.classList.remove("active"));
+                tab.classList.add("active");
+
+                /* animasiyanı reset */
+                table.classList.remove("show");
+
+                setTimeout(() => {
+                    table.classList.add("show");
+                }, 50);
+
+            });
+        });
+
+
+        window.addEventListener("load", () => {
+            document.querySelector(".table-grid").classList.add("show");
+        });
+    </script>
+
+
 </body>
 
 </html>
