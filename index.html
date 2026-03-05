@@ -24,8 +24,20 @@
         </div>
         <nav class="nav-bar">
           <div class="header-buttons">
-            <button data-translate="playBtn" class="buy-btn">Oyna</button>
-            <button class="buy-btn">Cyber+ Premium</button>
+
+            <div class="play-btn"><a data-translate="playBtn" class="gamestyle" href="https://dev.cyberplus.az/az/games">OYNA</a></div>
+            <div><a href="https://dev.cyberplus.az/az/plans" class="button-with-icon">
+                <svg style="color: #e4941b;" xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+                  stroke-linejoin="round" class="icon">
+                  <path
+                    d="M11.562 3.266a.5.5 0 0 1 .876 0L15.39 8.87a1 1 0 0 0 1.516.294L21.183 5.5a.5.5 0 0 1 .798.519l-2.834 10.246a1 1 0 0 1-.956.734H5.81a1 1 0 0 1-.957-.734L2.02 6.02a.5.5 0 0 1 .798-.519l4.276 3.664a1 1 0 0 0 1.516-.294z">
+                  </path>
+                  <path d="M5 21h14"></path>
+                </svg>
+                <span class="text" style="font-size: 14px; font-family: 'Roboto', sans-serif; color: #fff;"><b
+                    style="color: #e4941b;">PREMİUM</b></span>
+              </a></div>
           </div>
           <ul class="nav-list">
             <li class="navItem">
@@ -83,10 +95,10 @@
       </div>
     </div>
   </div>
-  <swiper-container  init="false" slides-per-view="1" loop="true" speed="500" css-mode="true">
+  <swiper-container autoplay-delay="6000" init="false" slides-per-view="1" loop="true" speed="500" css-mode="true">
     <swiper-slide>
       <section id="hero-section">
-       
+
         <div class="container hero-content">
           <div>
             <h1 data-translate="heroTitle" class="hero-title text-gradient">Oyna, Qazan, Əylən!</h1>
@@ -136,10 +148,7 @@
     </swiper-slide>
     <swiper-slide>
       <section id="hero-section">
-        <div class="hero-bg">
-          <img src="images/607376f6d0189997ab1e94e06311611f8aabf883.png" alt="Hero Background">
 
-        </div>
         <div class="container hero-content">
           <div>
             <h1 data-translate="heroTitle" class="hero-title text-gradient">Oyna, Qazan, Əylən!</h1>
@@ -192,69 +201,64 @@
   <section class="games-cards">
     <div class="games-cards-overlay"></div>
     <div class="hero-info-card-mob">
-        <p data-translate="heroText" class="info-text">Bir addımlı qiymətləndirməmizdə bacarıqlarınızı nümayiş etdirin
-          və 450 min dollara qədər
-          simulyasiya kapitalı qazanın. Gələcək indidir.</p>
-        <a href="#" class=" info-btn">
-          <span><p>Ətraflı oxu</p> <img src="images/polygon-icon.svg" alt="">
-          </span>
-        </a>
-      </div>
-<div class="slider-wrapper">
-  
-  <button class="slider-btn prev-btn">
-    &#10094;
-  </button>
+      <p data-translate="heroText" class="info-text">Bir addımlı qiymətləndirməmizdə bacarıqlarınızı nümayiş etdirin
+        və 450 min dollara qədər
+        simulyasiya kapitalı qazanın. Gələcək indidir.</p>
+      <a href="#" class=" info-btn">
+        <span>
+          <p>Ətraflı oxu</p> <img src="images/polygon-icon.svg" alt="">
+        </span>
+      </a>
+    </div>
+    <div class="slider-wrapper">
 
-  <swiper-container 
-    class="mySwiper"
-    slides-per-view="5"
-    space-between="24"
-    free-mode="true"
-    navigation='{
+      <button class="slider-btn prev-btn">
+        &#10094;
+      </button>
+
+      <swiper-container class="mySwiper" slides-per-view="5" space-between="24" free-mode="true" navigation='{
       "prevEl": ".prev-btn",
       "nextEl": ".next-btn"
-    }'
-    breakpoints='{
+    }' breakpoints='{
       "0": { "slidesPerView": 1.5 },
       "500": { "slidesPerView": 5 }
     }'>
 
-      <swiper-slide>
-        <a href=""><img src="./images/volorant-card.png" /></a>
-      </swiper-slide>
+        <swiper-slide>
+          <a href=""><img src="./images/volorant-card.png" /></a>
+        </swiper-slide>
 
-      <swiper-slide>
-        <a href=""><img src="./images/l-l-card.png" /></a>
-      </swiper-slide>
+        <swiper-slide>
+          <a href=""><img src="./images/l-l-card.png" /></a>
+        </swiper-slide>
 
-      <swiper-slide>
-        <a href=""><img src="./images/l-l-wild-card.png" /></a>
-      </swiper-slide>
+        <swiper-slide>
+          <a href=""><img src="./images/l-l-wild-card.png" /></a>
+        </swiper-slide>
 
-      <swiper-slide>
-        <a href=""><img src="./images/clash-royal-card.png" /></a>
-      </swiper-slide>
+        <swiper-slide>
+          <a href=""><img src="./images/clash-royal-card.png" /></a>
+        </swiper-slide>
 
-      <swiper-slide>
-        <a href=""><img src="./images/brawl-stars-card.png" /></a>
-      </swiper-slide>
+        <swiper-slide>
+          <a href=""><img src="./images/brawl-stars-card.png" /></a>
+        </swiper-slide>
 
-      <swiper-slide>
-        <a href=""><img src="./images/l-l-wild-card.png" /></a>
-      </swiper-slide>
+        <swiper-slide>
+          <a href=""><img src="./images/l-l-wild-card.png" /></a>
+        </swiper-slide>
 
-  </swiper-container>
+      </swiper-container>
 
-  <button class="slider-btn next-btn">
-    &#10095;
-  </button>
+      <button class="slider-btn next-btn">
+        &#10095;
+      </button>
 
-</div>
+    </div>
   </section>
   <section id="latest-games">
     <div class="container">
-      
+
       <h2 data-translate="latestGames" class="section-title text-gradient">Ən son oyunlar</h2>
       <h2 data-translate="heroTitle" class="section-mobile-title">Oyna, Qazan, Əylən!</h2>
       <div class="games-layout">
@@ -626,8 +630,7 @@
     </div>
   </section>
   <section class="partners-slider">
-<swiper-container class="mySwiper logo-slider"  slides-per-view="9"
-    space-between="30" free-mode="true" breakpoints='{
+    <swiper-container class="mySwiper logo-slider" slides-per-view="9" space-between="30" free-mode="true" breakpoints='{
 "0": {
 "slidesPerView": 3
 },
@@ -635,37 +638,37 @@
 "slidesPerView": 9
 }
 }'>
-    <swiper-slide><a class="slider-logo-link" href="#">
-      <img src="./images/sldier-logo-1.svg" alt="partner-logo">
-    </a></swiper-slide>
-    <swiper-slide><a class="slider-logo-link" href="#">
-      <img src="./images/slider-logo-2.svg" alt="partner-logo">
-    </a></swiper-slide>
-    <swiper-slide><a class="slider-logo-link" href="#">
-      <img src="./images/slider-logo-3.svg" alt="partner-logo">
-    </a></swiper-slide>
-    <swiper-slide><a class="slider-logo-link" href="#">
-      <img src="./images/slider-logo-4.svg" alt="partner-logo">
-    </a></swiper-slide>
-    <swiper-slide><a class="slider-logo-link" href="#">
-      <img src="./images/slider-logo-5.svg" alt="partner-logo">
-    </a></swiper-slide>
-    <swiper-slide><a class="slider-logo-link" href="#">
-      <img src="./images/slider-logo-6.svg" alt="partner-logo">
-    </a></swiper-slide>
-    <swiper-slide><a class="slider-logo-link" href="#">
-      <img src="./images/slider-logo-7.svg" alt="partner-logo">
-    </a></swiper-slide>
-    <swiper-slide><a class="slider-logo-link" href="#">
-      <img src="./images/slider-logo-8.svg" alt="partner-logo">
-    </a></swiper-slide>
-    <swiper-slide><a class="slider-logo-link" href="#">
-      <img src="./images/slider-logo-4.svg" alt="partner-logo">
-    </a></swiper-slide>
-    <swiper-slide><a class="slider-logo-link" href="#">
-      <img src="./images/slider-logo-6.svg" alt="partner-logo">
-    </a></swiper-slide>
-  </swiper-container>
+      <swiper-slide><a class="slider-logo-link" href="#">
+          <img src="./images/sldier-logo-1.svg" alt="partner-logo">
+        </a></swiper-slide>
+      <swiper-slide><a class="slider-logo-link" href="#">
+          <img src="./images/slider-logo-2.svg" alt="partner-logo">
+        </a></swiper-slide>
+      <swiper-slide><a class="slider-logo-link" href="#">
+          <img src="./images/slider-logo-3.svg" alt="partner-logo">
+        </a></swiper-slide>
+      <swiper-slide><a class="slider-logo-link" href="#">
+          <img src="./images/slider-logo-4.svg" alt="partner-logo">
+        </a></swiper-slide>
+      <swiper-slide><a class="slider-logo-link" href="#">
+          <img src="./images/slider-logo-5.svg" alt="partner-logo">
+        </a></swiper-slide>
+      <swiper-slide><a class="slider-logo-link" href="#">
+          <img src="./images/slider-logo-6.svg" alt="partner-logo">
+        </a></swiper-slide>
+      <swiper-slide><a class="slider-logo-link" href="#">
+          <img src="./images/slider-logo-7.svg" alt="partner-logo">
+        </a></swiper-slide>
+      <swiper-slide><a class="slider-logo-link" href="#">
+          <img src="./images/slider-logo-8.svg" alt="partner-logo">
+        </a></swiper-slide>
+      <swiper-slide><a class="slider-logo-link" href="#">
+          <img src="./images/slider-logo-4.svg" alt="partner-logo">
+        </a></swiper-slide>
+      <swiper-slide><a class="slider-logo-link" href="#">
+          <img src="./images/slider-logo-6.svg" alt="partner-logo">
+        </a></swiper-slide>
+    </swiper-container>
 
   </section>
   <section id="footer">

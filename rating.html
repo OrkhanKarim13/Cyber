@@ -54,7 +54,6 @@
             width: 40%;
         }
 
-
         .header-content {
             display: flex;
             align-items: center;
@@ -87,9 +86,6 @@
             padding: 0 72px;
         }
 
-
-
-
         .burger-menu {
             display: none;
             cursor: pointer;
@@ -108,7 +104,6 @@
                 margin-left: auto;
                 color: #fff;
             }
-
 
             .mobile-menu {
                 position: fixed;
@@ -136,7 +131,6 @@
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
-
             }
 
             /* Links */
@@ -174,7 +168,6 @@
             }
         }
 
-
         .buy-btn {
             position: relative;
             padding: 12px 24px;
@@ -198,7 +191,6 @@
             gap: 36px;
         }
 
-
         .nav-links {
             display: flex;
             align-items: center;
@@ -212,14 +204,11 @@
             font-weight: 500;
         }
 
-
-
         .lang-selector {
             padding: 10px;
             background: rgba(255, 255, 255, 0.12);
             border-radius: 8px;
             cursor: pointer;
-
         }
 
         @media (max-width: 1024px) {
@@ -233,23 +222,18 @@
         }
 
         @media (max-width: 768px) {
-
             .nav-links a {
                 display: none;
             }
-
             .header-container {
                 padding: 0 16px;
             }
-
             .main-header {
                 justify-content: center;
             }
-
             .hero-bg-img {
                 height: 500px;
             }
-
             .lang-selector {
                 background: none;
                 width: 100%;
@@ -397,8 +381,55 @@
             backdrop-filter: blur(4px);
         }
 
+        .tab-content {
+    display: none;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.tab-item.active {
+    display: block;
+    animation: tabFade 0.45s ease forwards;
+}
+
+@keyframes tabFade {
+    0%{
+        opacity:0;
+        transform: translateY(20px);
+        box-shadow: 0 0 0 rgba(0,0,0,0);
+    }
+    100%{
+        opacity:1;
+        transform: translateY(0);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+    }
+}
+
+
+@keyframes tableFade{
+    from{
+        opacity:0;
+        transform: translateY(25px);
+        box-shadow: 0 0 0 rgba(0,0,0,0);
+    }
+    to{
+        opacity:1;
+        transform: translateY(0);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+    }
+}
+
+@keyframes cellFade{
+    from{
+        opacity:0;
+        transform: translateY(15px);
+    }
+    to{
+        opacity:1;
+        transform: translateY(0);
+    }
+}
         .table-wrapper {
-            overflow-x: auto;
             display: flex;
             justify-content: center;
         }
@@ -406,11 +437,19 @@
         .table-grid {
             display: flex;
             min-width: max-content;
+              opacity: 0;
+    transform: translateY(25px);
+             
         }
+
+        .table-grid.show {
+    animation: tableFade 0.5s ease forwards;
+}
 
         .table-col {
             display: flex;
             flex-direction: column;
+            
         }
 
         .cell-header {
@@ -438,7 +477,21 @@
             position: relative;
             font-size: 16px;
             color: rgba(255, 255, 255, 0.5);
+               opacity: 0;
+    transform: translateY(15px);
         }
+
+        .table-grid.show .cell-body {
+    animation: cellFade 0.4s ease forwards;
+}
+
+.table-grid.show .cell-body:nth-child(2) { animation-delay: 0.05s; }
+.table-grid.show .cell-body:nth-child(3) { animation-delay: 0.1s; }
+.table-grid.show .cell-body:nth-child(4) { animation-delay: 0.15s; }
+.table-grid.show .cell-body:nth-child(5) { animation-delay: 0.2s; }
+.table-grid.show .cell-body:nth-child(6) { animation-delay: 0.25s; }
+.table-grid.show .cell-body:nth-child(7) { animation-delay: 0.3s; }
+.table-grid.show .cell-body:nth-child(8) { animation-delay: 0.35s; }
 
         /* Column Widths */
         .col-no {
@@ -701,7 +754,6 @@
         }
     </style>
 </head>
-
 <body>
     <header class="header">
        
@@ -1192,6 +1244,30 @@ tabs.forEach(tab => {
 
 });
 
+
+
+
+
+tabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+
+        tabs.forEach(t => t.classList.remove("active"));
+        tab.classList.add("active");
+
+        /* animasiyanı reset */
+        table.classList.remove("show");
+
+        setTimeout(()=>{
+            table.classList.add("show");
+        },50);
+
+    });
+});
+
+
+window.addEventListener("load",()=>{
+    document.querySelector(".table-grid").classList.add("show");
+});
 </script>
 
     
