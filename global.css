@@ -1934,4 +1934,13 @@ h1 .bold {
   .slider-btn {
     display: none;
   }
+
+
+  .partners-slider {
+  margin: 50px 0;
+}
+
+.partners-slider > .logo-slider {
+    padding: 0 10px;
+}
 }
