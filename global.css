@@ -1676,7 +1676,7 @@ h1 .bold {
   .hero-gradient-overlay {
     position: absolute;
     left: 0;
-    bottom: 0px;
+    bottom: -150px;
   }
 
   .hero-bottom {
@@ -1696,7 +1696,6 @@ h1 .bold {
   }
 
   #hero-section {
-    height: auto;
     background-image: url("./images/607376f6d0189997ab1e94e06311611f8aabf883.png");
     background-position: 40%;
     background-repeat: no-repeat;
@@ -1870,7 +1869,6 @@ h1 .bold {
   }
 
   .footer-columns {
-    margin-top: 72px;
     display: flex;
     flex-direction: column;
     gap: 16px;
