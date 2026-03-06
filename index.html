@@ -11,10 +11,8 @@
   <link rel="stylesheet" href="global.css">
   <script src="https://kit.fontawesome.com/85a60fd075.js" crossorigin="anonymous"></script>
 </head>
-
 <body>
   <header class="header">
-
     <div class="container header-container">
       <div class="header-content">
         <div class="logo">
@@ -24,8 +22,8 @@
         </div>
         <nav class="nav-bar">
           <div class="header-buttons">
-
-            <div class="play-btn"><a data-translate="playBtn" class="gamestyle" href="https://dev.cyberplus.az/az/games">OYNA</a></div>
+            <div class="play-btn"><a data-translate="playBtn" class="gamestyle"
+                href="https://dev.cyberplus.az/az/games">OYNA</a></div>
             <div><a href="https://dev.cyberplus.az/az/plans" class="button-with-icon">
                 <svg style="color: #e4941b;" xmlns="http://www.w3.org/2000/svg" width="12" height="12"
                   viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
@@ -95,10 +93,9 @@
       </div>
     </div>
   </div>
-  <swiper-container autoplay-delay="6000" init="false" slides-per-view="1" loop="true" speed="500" css-mode="true">
+  <!-- <swiper-container autoplay-delay="6000" init="false" slides-per-view="1" loop="true" speed="500" css-mode="true">
     <swiper-slide>
       <section id="hero-section">
-
         <div class="container hero-content">
           <div>
             <h1 data-translate="heroTitle" class="hero-title text-gradient">Oyna, Qazan, Əylən!</h1>
@@ -148,7 +145,6 @@
     </swiper-slide>
     <swiper-slide>
       <section id="hero-section">
-
         <div class="container hero-content">
           <div>
             <h1 data-translate="heroTitle" class="hero-title text-gradient">Oyna, Qazan, Əylən!</h1>
@@ -195,9 +191,106 @@
           </div>
         </div>
       </section>
+    </swiper-slide>
+  </swiper-container> -->
+<section id="hero-section">
+ <div class="hero-gradient-overlay"></div>
+  <!-- SLIDER (yalnız üst hissə) -->
+  <swiper-container class="hero-slider"
+    autoplay-delay="6000"
+    slides-per-view="1"
+    loop="true"
+    speed="800"
+  >
+    <swiper-slide>
+      <div class="hero-slide hero-slide-1">
+        <div class=" hero-top">
+          <h1 data-translate="heroTitle" class="hero-title text-gradient">
+            Oyna, Qazan, Əylən!
+          </h1>
+
+          <p data-translate="heroSubtitle" class="hero-subtitle">
+            Turnirlərə qoşul mükafatlar qazan!
+          </p>
+
+          <a data-translate="playBtn" href="./sign-up.html" class="btn btn-gold hero-btn">
+            Oyna
+          </a>
+        </div>
+      </div>
+    </swiper-slide>
+
+    <swiper-slide>
+      <div class="hero-slide hero-slide-2">
+        <div class=" hero-top">
+          <h1 class="hero-title text-gradient">
+            Valorant Turnirləri
+          </h1>
+
+          <p class="hero-subtitle">
+           Turnirlərə qoşul mükafatlar qazan!
+          </p>
+
+          <a href="./sign-up.html" class="btn btn-gold hero-btn">
+            Oyna
+          </a>
+        </div>
+      </div>
     </swiper-slide>
 
   </swiper-container>
+
+
+  <!-- SABİT QALAN HİSSƏ -->
+  <div class="container hero-bottom">
+
+    <div class="hero-links">
+
+      <div class="hero-link-group">
+        <div class="link-header">
+          <span data-translate="cs2Title" class="link-title">CS2 Turnirləri</span>
+          <span data-translate="infoText" class="link-desc">
+            Bacarıqlarınızı nümayiş etdirin
+          </span>
+        </div>
+
+        <div class="link-bar">
+          <div class="bar-bg"></div>
+          <div class="bar-fill"></div>
+        </div>
+      </div>
+
+      <div class="hero-link-group">
+        <div class="link-header">
+          <span data-translate="valorantTitle" class="link-title">Valorant Turnirləri</span>
+          <span data-translate="infoText" class="link-desc">
+            Bacarıqlarınızı nümayiş etdirin
+          </span>
+        </div>
+
+        <div class="link-bar">
+          <div class="bar-bg"></div>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="hero-info-card">
+      <p data-translate="heroText" class="info-text">
+        Bir addımlı qiymətləndirməmizdə bacarıqlarınızı nümayiş etdirin
+        və 450 min dollara qədər kapital qazanın.
+      </p>
+
+      <a href="./sign-up.html" class="btn btn-gold btn-sm info-btn">
+        CYBER+ PRO
+      </a>
+    </div>
+
+  </div>
+
+</section>
+
   <section class="games-cards">
     <div class="games-cards-overlay"></div>
     <div class="hero-info-card-mob">
@@ -211,11 +304,9 @@
       </a>
     </div>
     <div class="slider-wrapper">
-
       <button class="slider-btn prev-btn">
         &#10094;
       </button>
-
       <swiper-container class="mySwiper" slides-per-view="5" space-between="24" free-mode="true" navigation='{
       "prevEl": ".prev-btn",
       "nextEl": ".next-btn"
@@ -223,42 +314,32 @@
       "0": { "slidesPerView": 1.5 },
       "500": { "slidesPerView": 5 }
     }'>
-
         <swiper-slide>
           <a href=""><img src="./images/volorant-card.png" /></a>
         </swiper-slide>
-
         <swiper-slide>
           <a href=""><img src="./images/l-l-card.png" /></a>
         </swiper-slide>
-
         <swiper-slide>
           <a href=""><img src="./images/l-l-wild-card.png" /></a>
         </swiper-slide>
-
         <swiper-slide>
           <a href=""><img src="./images/clash-royal-card.png" /></a>
         </swiper-slide>
-
         <swiper-slide>
           <a href=""><img src="./images/brawl-stars-card.png" /></a>
         </swiper-slide>
-
         <swiper-slide>
           <a href=""><img src="./images/l-l-wild-card.png" /></a>
         </swiper-slide>
-
       </swiper-container>
-
       <button class="slider-btn next-btn">
         &#10095;
       </button>
-
     </div>
   </section>
   <section id="latest-games">
     <div class="container">
-
       <h2 data-translate="latestGames" class="section-title text-gradient">Ən son oyunlar</h2>
       <h2 data-translate="heroTitle" class="section-mobile-title">Oyna, Qazan, Əylən!</h2>
       <div class="games-layout">
@@ -323,33 +404,22 @@
             <div class="battle-wrapper">
               <!-- TEAM 1 -->
               <div class="team-card left">
-
                 <span class="team-name">Team HKA</span>
-
                 <div class="team-logo">
                   <img src="images/teama.svg" alt="">
                 </div>
-
                 <span class="team-score">16</span>
-
                 <img class="frame" src="images/hero-golden-vector.png" alt="">
               </div>
-
-
               <!-- TEAM 2 -->
               <div class="team-card right">
-
                 <span class="team-name">RedLions</span>
-
                 <div class="team-logo red">
                   <img src="images/teamb.svg" alt="">
                 </div>
-
                 <span class="team-score">11</span>
-
                 <img class="frame" src="images/hero-golden-vector.png" alt="">
               </div>
-
             </div>
           </div>
         </div>
@@ -417,7 +487,6 @@
       <div class="leaderboard">
         <h1>
           <span data-translate="bestPlayers" class="light">3 ən yaxşı oyunçu</span>
-
         </h1>
         <div class="player">
           <img src="./images/polygon-icon.svg" class="avatar" />
@@ -669,7 +738,6 @@
           <img src="./images/slider-logo-6.svg" alt="partner-logo">
         </a></swiper-slide>
     </swiper-container>
-
   </section>
   <section id="footer">
     <footer class="site-footer">
@@ -686,7 +754,6 @@
             <a data-translate="navContact" href="./contact.html" class="f-link">Əlaqə</a>
           </div>
         </div>
-
         <div class="footer-socials">
           <span data-translate="followUs" class="social-title">Bizi izləyin</span>
           <div class="social-links">
@@ -721,13 +788,10 @@
 
         firstBar.style.animation = 'none';
         secondBar.style.animation = 'none';
-
         firstBar.style.width = '0%';
         secondBar.style.width = '0%';
-
         firstBar.offsetHeight;
         secondBar.offsetHeight;
-
         firstBar.style.animation = 'loadBar 6s linear forwards';
         secondBar.style.animation = 'loadBarsec 6s linear forwards 6s';
       }
@@ -741,20 +805,17 @@
       document.addEventListener("DOMContentLoaded", () => {
 
         const swiperEl = document.querySelector("swiper-container");
+        const heroSlider = document.querySelector(".hero-slider");
 
+heroSlider.initialize();
         if (!swiperEl) return;
 
         // Swiper hazır olanda
         swiperEl.addEventListener('swiperinit', () => {
-
           const swiper = swiperEl.swiper;
-
           const heroLinks = document.querySelectorAll(".hero-link-group");
-
           heroLinks.forEach((link, index) => {
-
             link.addEventListener("click", () => {
-
               // hansı klik olunubsa o slide-a keç
               swiper.slideToLoop(index);
 
@@ -766,16 +827,10 @@
 
       });
 
-
-
       const swiperEl = document.querySelector('swiper-container');
-
       Object.assign(swiperEl, {
         loop: true
       });
-
-
-
 
       swiperEl.initialize();
 
@@ -786,12 +841,9 @@
           link.addEventListener("click", () => swiper.slideToLoop(index));
         });
 
-
-
       // ================= HEADER SCROLL =================
 
       const header = document.querySelector('.header');
-
       const headerContent = document.querySelector(".header-content")
 
       window.addEventListener('scroll', () => {
@@ -803,25 +855,19 @@
         }
       });
 
-
       // ================= BURGER MENU =================
 
       const burger = document.querySelector('.burger-menu');
       const mobileMenu = document.getElementById('mobileMenu');
 
       if (burger && mobileMenu) {
-
         const icon = burger.querySelector('i');
-
         burger.addEventListener('click', () => {
           mobileMenu.classList.toggle('active');
-
           icon.classList.toggle('fa-bars');
           icon.classList.toggle('fa-xmark');
         });
-
       }
-
 
       // ================= LANGUAGE SYSTEM =================
 
@@ -909,15 +955,11 @@
       function applyLanguage(lang) {
 
         const elements = document.querySelectorAll("[data-translate]");
-
         elements.forEach(el => {
-
           const key = el.dataset.translate;
-
           if (translations[lang] && translations[lang][key]) {
             el.textContent = translations[lang][key];
           }
-
         });
       }
 
@@ -930,15 +972,10 @@
 
         langOptions.forEach(option => {
           option.addEventListener('click', (e) => {
-
             const selectedLang = e.target.dataset.lang;
-
             currentLang.textContent = selectedLang.toUpperCase();
-
             localStorage.setItem("siteLang", selectedLang);
-
             langSelector.classList.remove('active');
-
             applyLanguage(selectedLang);
           });
         });
@@ -948,13 +985,10 @@
       // səhifə açılarkən dili load et
 
       const savedLang = localStorage.getItem("siteLang") || "az";
-
       if (currentLang) {
         currentLang.textContent = savedLang.toUpperCase();
       }
-
       applyLanguage(savedLang);
-
     });
 
     // second slider
@@ -972,8 +1006,6 @@
       });
 
     });
-
-
   </script>
 </body>
 
