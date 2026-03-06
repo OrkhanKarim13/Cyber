@@ -178,15 +178,18 @@
 
         /* Button */
 
-        .accept-btn {
-            background: linear-gradient(180deg, #5b7cff, #4f75ff);
-            border: none;
-            padding: 18px 80px;
-            font-size: 18px;
-            color: white;
-            cursor: pointer;
-            font-weight: 500;
-             clip-path: polygon(
+.accept-btn {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(180deg, #5b7cff, #4f75ff);
+    border: none;
+    padding: 18px 80px;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    font-weight: 500;
+
+    clip-path: polygon(
         0% 0%, 
         100% 0%, 
         100% 75%, 
@@ -195,8 +198,35 @@
         0% 75%
     );
 
-            transition: .3s;
-        }
+    transition: .3s;
+}
+
+
+
+.accept-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -60%;
+    width: 50%;
+    height: 100%;
+    
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.8),
+        transparent
+    );
+
+    transform: skewX(-25deg);
+    transition: 0.6s;
+}
+
+.accept-btn:hover::before {
+    left: 130%;
+}
+
+
 
         .accept-btn:hover {
             box-shadow: 0 0 25px rgba(79, 117, 255, .8);
@@ -235,6 +265,54 @@
             height: 100%;
             object-fit: contain;
         }
+
+
+.accept-btn.accepted{
+    background: linear-gradient(180deg,#33d17a,#26b463);
+    box-shadow: 0 0 30px rgba(51,209,122,.8);
+    transform: scale(1.05);
+}
+
+.accept-btn.accepted::after{
+    content:" ✓";
+}
+
+.accept-btn{
+    transition: .35s;
+}
+
+.players-text.match-start{
+    color:#33d17a;
+    font-weight:bold;
+    font-size:22px;
+}
+.unaccept-btn{
+    margin-top:15px;
+    background: linear-gradient(180deg,#ff5c5c,#e04646);
+    border:none;
+    padding:14px 60px;
+    font-size:16px;
+    color:white;
+    cursor:pointer;
+    font-weight:500;
+
+    clip-path: polygon(
+        0% 0%, 
+        100% 0%, 
+        100% 75%, 
+        92% 100%, 
+        8% 100%, 
+        0% 75%
+    );
+
+    display:none;
+    transition:.3s;
+}
+
+.unaccept-btn:hover{
+    box-shadow:0 0 20px rgba(255,80,80,.7);
+}
+
 
 
         @media(max-width:500px){
@@ -370,13 +448,14 @@
 
                             </div>
 
-                            <div class="count-number">2</div>
+                            <div class="count-number">20</div>
 
                         </div>
 
                         <div data-translate="players" class="players-text">0/10 Players are ready</div>
 
                         <button class="accept-btn">Accept</button>
+                        <button class="unaccept-btn">Unaccept</button>
 
                     </div>
                     <div class="right-video">
@@ -391,7 +470,7 @@
     </footer>
     <script>
         const loader = document.currentScript.parentElement;
-        const total = 16; // only right half
+        const total = 36; // only right half
 
         for (let i = 0; i <= total; i++) {
 
@@ -399,7 +478,7 @@
             tick.classList.add('tick');
 
             // RIGHT SIDE only: -90° (top) → +90° (bottom)
-            let angle = 180 + (i * (180 / total));
+            let angle = 360 + (i * (360 / total));
 
             tick.style.transform = `rotate(${angle}deg)`;
 
@@ -410,9 +489,104 @@
         }
 
 
+const acceptBtn = document.querySelector(".accept-btn");
+const playersText = document.querySelector(".players-text");
+
+let playersReady = 0;
+let totalPlayers = 10;
+let playersInterval;
+
+acceptBtn.addEventListener("click", () => {
+
+  // button animasiya
+  acceptBtn.classList.add("accepted");
+  acceptBtn.textContent = "Accepted";
+  acceptBtn.disabled = true;
+
+  // players sayının artması
+  playersInterval = setInterval(() => {
+
+    playersReady++;
+
+    playersText.textContent = playersReady + "/" + totalPlayers + " Players are ready";
+
+    if(playersReady >= totalPlayers){
+
+      clearInterval(playersInterval);
+
+      playersText.textContent = "Match Starting...";
+      playersText.classList.add("match-start");
+
+    }
+
+  }, 800);
+
+});
+
+
+const unacceptBtn = document.querySelector(".unaccept-btn");
+
+acceptBtn.addEventListener("click", () => {
+
+  acceptBtn.classList.add("accepted");
+  acceptBtn.textContent = "Accepted";
+  acceptBtn.disabled = true;
+
+  unacceptBtn.style.display = "inline-block";
+
+  playersInterval = setInterval(() => {
+
+    playersReady++;
+
+    playersText.textContent = playersReady + "/" + totalPlayers + " Players are ready";
+
+    if(playersReady >= totalPlayers){
+
+      clearInterval(playersInterval);
+
+      playersText.textContent = "Match Starting...";
+      playersText.classList.add("match-start");
+
+    }
+
+  }, 800);
+
+});
+
+
+unacceptBtn.addEventListener("click", () => {
+
+  clearInterval(playersInterval);
+
+  playersReady = 0;
+
+  acceptBtn.classList.remove("accepted");
+  acceptBtn.textContent = "Accept";
+  acceptBtn.disabled = false;
+
+  playersText.textContent = "0/10 Players are ready";
+
+  unacceptBtn.style.display = "none";
+
+});
 
 
 
+const countElement = document.querySelector(".count-number");
+
+let timeLeft = 20;
+
+const countdown = setInterval(() => {
+
+  timeLeft--;
+
+  countElement.textContent = timeLeft;
+
+  if (timeLeft <= 0) {
+    clearInterval(countdown);
+  }
+
+}, 1000);
 
 document.addEventListener("DOMContentLoaded", () => {
 
