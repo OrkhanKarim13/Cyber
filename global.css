@@ -444,7 +444,7 @@ body {
 }
 
 .hero-info-card-mob> swiper-container {
-  height: 170px;
+  height: 200px;
 }
 
 .info-btn {
@@ -1953,7 +1953,7 @@ h1 .bold {
     height: 60%;
     right: 0;
     top: 39%;
-    z-index: 1000;
+    z-index: 100;
     background: linear-gradient(
       to right,
       rgba(0, 0, 0, 0) 30%,
@@ -1967,9 +1967,13 @@ h1 .bold {
     padding: 0 16px;
   }
 
-  .slider-btn {
-    display: none;
-  }
+.prev-btn{
+  left: 10px;
+}
+
+.next-btn{
+  right: 10px;
+}
 
   .partners-slider {
     margin: 50px 0;
