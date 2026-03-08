@@ -112,13 +112,13 @@ body {
   border: 1px solid transparent;
   border-radius: 3px;
   letter-spacing: 1px;
-  padding: 12px 28px;
+  padding: 6px 16px;
   text-align: center;
   width: auto;
   height: auto;
   text-transform: uppercase;
   font-weight: normal;
-  border-radius: 3px;
+  border-radius: 8px;
   outline: none;
   user-select: none;
   font-family: "Roboto", sans-serif;
@@ -145,14 +145,14 @@ body {
 .gamestyle {
   font-size: 24px;
   font-weight: 800;
-  color: #19e5f6;
-  text-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+  color: #fff;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.686);
   transition: all 0.3s ease;
   text-transform: uppercase;
 }
 
 .gamestyle:hover {
-  text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+  text-shadow: 0 0 30px rgba(255, 255, 255, 0.9);
 }
 
 .button-with-icon .icon {
@@ -182,7 +182,7 @@ body {
 .button-with-icon .text {
   transition: all 0.4s ease;
   display: inline-block;
-  margin-left: 20px;
+  margin-left: 30px;
 }
 
 .button-with-icon:hover .text {
@@ -341,7 +341,6 @@ body {
 .hero-links {
   display: flex;
   gap: 12px;
-
 }
 
 .hero-link-group {
@@ -427,16 +426,41 @@ body {
 
 .hero-info-card {
   width: 367px;
+  height: 250px;
   background: rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(4px);
   border-radius: 12px;
-  padding: 20px;
+  padding: 20px 10px 20px 20px;
+}
+
+.swiper-pagination-vertical.swiper-pagination-bullets,
+.swiper-vertical > .swiper-pagination-bullets {
+  top: 40%;
+  transform: translate3d(0px, -75%, 0px);
+}
+
+.hero-info-card > swiper-container {
+  height: 200px;
+}
+
+.hero-info-card-mob> swiper-container {
+  height: 170px;
+}
+
+.info-btn {
+  display: flex;
+  gap: 6px;
+}
+
+.info-btn > a {
+  color: #fff;
 }
 
 .info-text {
   font-size: 16px;
   line-height: 1.5;
   margin-bottom: 16px;
+  margin-right: 24px;
 }
 
 .hero-gradient-overlay {
@@ -448,44 +472,34 @@ body {
   background: linear-gradient(180deg, rgba(13, 33, 89, 0) 0%, #000000 100%);
 }
 
-
-
-.hero-slide{
-height:650px;
-display:flex;
-position:relative;
-padding-left: 72px;
-padding-top: 120px;
-background-size:cover;
-background-position:center;
+.hero-slide {
+  height: 650px;
+  display: flex;
+  position: relative;
+  padding-left: 72px;
+  padding-top: 120px;
+  background-size: cover;
+  background-position: center;
 }
 
-.hero-slide-1{
-background-image:url("./images/cs2-bg.jpg");
+/* .hero-slide-1 {
+  background-image: url("./images/cs2-bg.jp");
 }
 
-.hero-slide-2{
-background-image:url("./images/valorant-bg.jpg");
+.hero-slide-2 {
+  background-image: url("./images/valorant-bg.jpg");
+} */
+
+.hero-bottom {
+  position: absolute;
+  bottom: 100px;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
 }
-
-
-.hero-bottom{
-position:absolute;
-bottom:100px;
-left:0;
-right:0;
-z-index:5;
-display:flex;
-justify-content:space-between;
-align-items:flex-end;
-}
-
-
-
-
-
-
-
 
 /* ============ Games Cards ============== */
 
@@ -499,7 +513,7 @@ align-items:flex-end;
   height: 100%;
   right: 50px;
   top: 0;
-  z-index: 1000;
+  z-index: 100;
   background: linear-gradient(to right, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.75) 75%, rgba(0, 0, 0, 0.95) 100%);
 }
 
@@ -569,14 +583,14 @@ align-items:flex-end;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  border: none;
   backdrop-filter: blur(44px);
   color: #fff;
   font-size: 22px;
   cursor: pointer;
   clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%);
   transition: 0.3s;
-  z-index: 1000;
+  z-index: 150;
 }
 
 .games-cards > .mySwiper {
@@ -816,8 +830,6 @@ swiper-slide img {
 
 /* Positioning */
 
-
-
 /* mobile-------------------------------------- */
 
 /* Mobile */
@@ -884,13 +896,11 @@ swiper-slide img {
     color: #fff;
   }
 
-
   .mobile-buttons {
     display: flex;
     flex-direction: column;
     gap: 16px;
   }
-
 
   .mobile-lang {
     display: flex;
@@ -926,7 +936,6 @@ swiper-slide img {
   padding-top: 154px;
   padding-left: 72px;
 }
-
 
 .hero-bg {
   width: 100%;
@@ -975,11 +984,9 @@ swiper-slide img {
   background-size: contain;
 }
 
-
 .team-logo img {
   width: 120px;
 }
-
 
 .f-team-logo-wrapper {
   width: 155px;
@@ -1714,13 +1721,10 @@ h1 .bold {
     margin: 0;
   }
 
-
-  .hero-slide{
-
-padding-left: 16px;
-padding-top: 120px;
-
-}
+  .hero-slide {
+    padding-left: 16px;
+    padding-top: 120px;
+  }
 
   .hero-links {
     width: 100%;
@@ -1945,7 +1949,7 @@ padding-top: 120px;
 
   .games-cards-overlay {
     position: absolute;
-    width: 200px;
+    width: 130px;
     height: 60%;
     right: 0;
     top: 39%;

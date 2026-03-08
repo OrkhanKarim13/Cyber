@@ -156,7 +156,7 @@
             transform-origin: center -100px;
             border-radius: 2px;
             opacity: .25;
-            animation: activate 5s linear infinite;
+            animation: activate 10s linear infinite;
         }
 
         @keyframes activate {
@@ -470,7 +470,7 @@
     </footer>
     <script>
         const loader = document.currentScript.parentElement;
-        const total = 36; // only right half
+        const total = 16; // only right half
 
         for (let i = 0; i <= total; i++) {
 
@@ -478,7 +478,7 @@
             tick.classList.add('tick');
 
             // RIGHT SIDE only: -90° (top) → +90° (bottom)
-            let angle = 360 + (i * (360 / total));
+            let angle = 180 + (i * (180 / total));
 
             tick.style.transform = `rotate(${angle}deg)`;
 
@@ -565,7 +565,6 @@ unacceptBtn.addEventListener("click", () => {
   acceptBtn.disabled = false;
 
   playersText.textContent = "0/10 Players are ready";
-
   unacceptBtn.style.display = "none";
 
 });
