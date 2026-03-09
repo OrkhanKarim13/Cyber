@@ -1761,7 +1761,7 @@ h1 .bold {
   }
 
   .info-text {
-    width: 100%;
+    width: 80%;
   }
 
   .games-layout {
@@ -1950,9 +1950,9 @@ h1 .bold {
   .games-cards-overlay {
     position: absolute;
     width: 130px;
-    height: 60%;
+    height: 55%;
     right: 0;
-    top: 39%;
+    top: 45%;
     z-index: 100;
     background: linear-gradient(
       to right,
