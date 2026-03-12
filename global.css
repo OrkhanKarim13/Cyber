@@ -440,7 +440,7 @@ body {
 }
 
 .hero-info-card > swiper-container {
-  height: 200px;
+  height: 220px;
 }
 
 .hero-info-card-mob> swiper-container {
@@ -481,14 +481,6 @@ body {
   background-size: cover;
   background-position: center;
 }
-
-/* .hero-slide-1 {
-  background-image: url("./images/cs2-bg.jp");
-}
-
-.hero-slide-2 {
-  background-image: url("./images/valorant-bg.jpg");
-} */
 
 .hero-bottom {
   position: absolute;
@@ -1808,9 +1800,6 @@ h1 .bold {
     padding: 0 16px;
   }
 
-  #top-players {
-    /* padding: 100px 0 0 0; */
-  }
 
   .bg-video {
     position: absolute;

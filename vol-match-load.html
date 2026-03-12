@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            text-decoration: none;
+            list-style: none;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+
+        body {
+            background-color: #000;
+        }
+
+        .header {
+            width: 100%;
+            padding-top: 40px;
+        }
+
+        .container {
+            padding: 0 72px;
+        }
+
+
+        .header-content {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .lang-selector {
+            position: relative;
+            cursor: pointer;
+            user-select: none;
+            font-weight: 600;
+            background: rgba(255, 255, 255, 0.12);
+            padding: 10px;
+            color: #fff;
+            border-radius: 8px;
+        }
+
+        .lang-dropdown {
+            position: absolute;
+            top: 110%;
+            left: 0;
+            background: white;
+            border: 1px solid #ddd;
+            display: none;
+            min-width: 60px;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(4px);
+            border: none;
+            border-radius: 8px;
+        }
+
+        .lang-dropdown div {
+            padding: 6px 10px;
+            color: color;
+        }
+
+        .lang-dropdown div:hover {
+            background: #f2f2f2;    
+            color: #000;
+            border-radius: 8px;
+        }
+
+        .lang-selector.active .lang-dropdown {
+            display: block;
+        }
+
+        .right-buttons {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+        }
+        .lang-selector.active .lang-dropdown {
+  display: block;
+}
+
+        .username {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.12);
+            padding: 10px;
+            color: #fff;
+            border-radius: 8px;
+            gap: 8px;
+
+        }
+
+        .username>img {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+        }
+
+        .match-box {
+    
+            text-align: center;
+        }
+
+        .match-title {
+            color: #fff;
+            font-size: 32px;
+            margin-bottom: 40px;
+        }
+
+        /* ===== Loader Wrapper ===== */
+
+        .loader-wrapper {
+            position: relative;
+            width: 260px;
+            height: 260px;
+            margin: 0 auto 30px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* PERFECT CENTER NUMBER */
+
+        .count-number {
+            position: absolute;
+            color: #fff;
+            font-size: 96px;
+            font-weight: 900;
+            font-family: 'Orbitron', sans-serif;
+            line-height: 1;
+        }
+
+        /* ===== Right Side Segmented Loader ===== */
+
+        .loader {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .tick {
+            position: absolute;
+            width: 4px;
+            height: 20px;
+            background: #333;
+            bottom: 40%;
+            left: 50%;
+            transform-origin: center -100px;
+            border-radius: 2px;
+            opacity: .25;
+            animation: activate 10s linear infinite;
+        }
+
+        @keyframes activate {
+            to {
+                background: white;
+                opacity: 1;
+            }
+        }
+
+        /* Text */
+
+        .players-text {
+            color: #fff;
+            font-size: 20px;
+            letter-spacing: 0%;
+            margin-bottom: 30px;
+            opacity: .8;
+        }
+
+        /* Button */
+
+.accept-btn {
+    position: relative;
+    overflow: hidden;
+     background: linear-gradient(180deg, #c76515, #FA8A00);
+    border: none;
+    padding: 18px 80px;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    font-weight: 500;
+
+    clip-path: polygon(
+        0% 0%, 
+        100% 0%, 
+        100% 75%, 
+        92% 100%, 
+        8% 100%, 
+        0% 75%
+    );
+
+    transition: .3s;
+}
+
+
+
+.accept-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -60%;
+    width: 50%;
+    height: 100%;
+    
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.8),
+        transparent
+    );
+
+    transform: skewX(-25deg);
+    transition: 0.6s;
+}
+
+.accept-btn:hover::before {
+    left: 130%;
+}
+
+
+
+        .accept-btn:hover {
+            box-shadow: 0 0 25px rgba(79, 117, 255, .8);
+        }
+
+
+        .match-load {
+            width: 100%;
+            height: 100vh;
+        }
+
+        .match-load-content {
+            width: 100%;
+            display: flex;
+
+        }
+
+        .left-video {
+            width: 35%;
+            max-height: 620px;
+        }
+
+        .left-video>img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .right-video {
+            width: 35%;
+               max-height: 620px;
+               z-index: -100;
+        }
+
+        .right-video>img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+
+.accept-btn.accepted{
+    background: linear-gradient(180deg,#33d17a,#26b463);
+    box-shadow: 0 0 30px rgba(51,209,122,.8);
+    transform: scale(1.05);
+}
+
+.accept-btn.accepted::after{
+    content:" ✓";
+}
+
+.accept-btn{
+    transition: .35s;
+}
+
+.players-text.match-start{
+    color:#33d17a;
+    font-weight:bold;
+    font-size:22px;
+}
+.unaccept-btn{
+    margin-top:15px;
+    background: linear-gradient(180deg,#ff5c5c,#e04646);
+    border:none;
+    padding:14px 60px;
+    font-size:16px;
+    color:white;
+    cursor:pointer;
+    font-weight:500;
+
+    clip-path: polygon(
+        0% 0%, 
+        100% 0%, 
+        100% 75%, 
+        92% 100%, 
+        8% 100%, 
+        0% 75%
+    );
+
+    display:none;
+    transition:.3s;
+}
+
+.unaccept-btn:hover{
+    box-shadow:0 0 20px rgba(255,80,80,.7);
+}
+
+
+@media(min-width:500px){
+.match-title-mobile{
+    display: none;
+}
+}
+
+
+
+        @media(max-width:500px){
+
+
+            
+     .right-buttons{
+        display: none;
+     }
+
+            .container{
+                padding: 0 16px;
+   
+            }
+            .right-video{
+                display: none;
+            }
+
+            .left-video{
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                z-index: -100;
+            }
+
+            .left-video>video{
+                width: 100%;
+                height: auto;
+            }
+
+            .match-load{
+                width: 100% ;
+                height: 100vh;
+          
+            }
+
+            .match-load-content{
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+              
+            }
+
+            .match-title{
+                display: none;
+            }
+
+            .match-title-mobile{
+                color: #fff;
+    display: block;
+    position:absolute;
+    top: 25%;
+    left: 25%;
+    font-size: 32px;
+}
+            
+        .match-box {
+            width: 90%;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            backdrop-filter: blur(54px);
+        }
+
+        .loader{
+            backdrop-filter: blur(54px);
+      width: 100%;
+            height: 100%;
+        }
+
+        .loader-wrapper{
+              backdrop-filter: blur(54px);
+      width: 100%;
+            height: 100%;
+        }
+
+        .tick {
+            position: absolute;
+            width: 4px;
+            height: 20px;
+            background: #333;
+            top: 61%;
+            left: 50%;
+            transform-origin: center -100px;
+            border-radius: 2px;
+            opacity: .25;
+            animation: activate 5s linear infinite;
+        }
+
+
+        .match-title{
+            margin-bottom: 120px;
+        }
+
+        .players-text{
+            display: none;
+        }
+
+
+        .match-box{
+    position: absolute;
+    top: 32%;
+    height: 400px;
+}
+
+
+.loader-wrapper{
+    width: auto;
+    backdrop-filter: blur(54px);
+    border-radius: 20px;
+    padding-top: 40px;
+}
+
+        }
+
+
+
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="./index.html">
+                        <img src="./images/cyberplus-logo.svg" alt="logo">
+                    </a>
+                </div>
+                <div class="right-buttons">
+                    <div class="lang-selector">
+                        <span class="current-lang">AZ</span>
+                        <div class="lang-dropdown">
+                            <div data-lang="az">AZ</div>
+                            <div data-lang="en">EN</div>
+                            <div data-lang="ru">RU</div>
+                        </div>
+                    </div>
+                    <div class="username">
+                        <img src="./images/userprofil.png" alt="user profil">
+                        <p class="profil-name">username</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="match-load">
+            <div class="container">
+                <div class="match-load-content">
+                    <div class="left-video">
+                        <img src="./images/vol-match-load.png" alt="">
+                    </div>
+                    <h2 class="match-title-mobile">Match found</h2>
+                    <div class="match-box">
+                        <div data-translate="match" class="match-title">Match found</div>
+
+
+
+                        <div class="loader-wrapper">
+
+                            <div class="loader">
+
+                            </div>
+
+                            <div class="count-number">20</div>
+
+                        </div>
+
+                        <div data-translate="players" class="players-text">0/10 Players are ready</div>
+
+                        <button class="accept-btn">Accept</button>
+                        <button class="unaccept-btn">Unaccept</button>
+
+                    </div>
+                    <div class="right-video">
+                        <img src="./images/vol-match-load-2.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+    <script>
+        const loader = document.currentScript.parentElement;
+        const total = 16; // only right half
+
+        for (let i = 0; i <= total; i++) {
+
+            const tick = document.createElement('div');
+            tick.classList.add('tick');
+
+            // RIGHT SIDE only: -90° (top) → +90° (bottom)
+            let angle = 180 + (i * (180 / total));
+
+            tick.style.transform = `rotate(${angle}deg)`;
+
+            // TOP → DOWN animation order
+            tick.style.animationDelay = `${i * (5 / total)}s`;
+
+            loader.appendChild(tick);
+        }
+
+
+const acceptBtn = document.querySelector(".accept-btn");
+const playersText = document.querySelector(".players-text");
+
+let playersReady = 0;
+let totalPlayers = 10;
+let playersInterval;
+
+acceptBtn.addEventListener("click", () => {
+
+  // button animasiya
+  acceptBtn.classList.add("accepted");
+  acceptBtn.textContent = "Accepted";
+  acceptBtn.disabled = true;
+
+  // players sayının artması
+  playersInterval = setInterval(() => {
+
+    playersReady++;
+
+    playersText.textContent = playersReady + "/" + totalPlayers + " Players are ready";
+
+    if(playersReady >= totalPlayers){
+
+      clearInterval(playersInterval);
+
+      playersText.textContent = "Match Starting...";
+      playersText.classList.add("match-start");
+
+    }
+
+  }, 800);
+
+});
+
+
+const unacceptBtn = document.querySelector(".unaccept-btn");
+
+acceptBtn.addEventListener("click", () => {
+
+  acceptBtn.classList.add("accepted");
+  acceptBtn.textContent = "Accepted";
+  acceptBtn.disabled = true;
+
+  unacceptBtn.style.display = "inline-block";
+
+  playersInterval = setInterval(() => {
+
+    playersReady++;
+
+    playersText.textContent = playersReady + "/" + totalPlayers + " Players are ready";
+
+    if(playersReady >= totalPlayers){
+
+      clearInterval(playersInterval);
+
+      playersText.textContent = "Match Starting...";
+      playersText.classList.add("match-start");
+
+    }
+
+  }, 800);
+
+});
+
+
+unacceptBtn.addEventListener("click", () => {
+
+  clearInterval(playersInterval);
+
+  playersReady = 0;
+
+  acceptBtn.classList.remove("accepted");
+  acceptBtn.textContent = "Accept";
+  acceptBtn.disabled = false;
+
+  playersText.textContent = "0/10 Players are ready";
+  unacceptBtn.style.display = "none";
+
+});
+
+
+
+const countElement = document.querySelector(".count-number");
+
+let timeLeft = 20;
+
+const countdown = setInterval(() => {
+
+  timeLeft--;
+
+  countElement.textContent = timeLeft;
+
+  if (timeLeft <= 0) {
+    clearInterval(countdown);
+  }
+
+}, 1000);
+
+document.addEventListener("DOMContentLoaded", () => {
+
+
+
+
+
+
+
+  // ================= LANGUAGE SYSTEM =================
+
+  const langSelector = document.querySelector('.lang-selector');
+  const currentLang = document.querySelector('.current-lang');
+  const langOptions = document.querySelectorAll('.lang-dropdown div');
+
+  const translations = {
+    az: {
+      match:"Qarşılaşma tapıldı"
+
+    },
+    en: {
+     match:"Match found"
+    },
+    ru: {
+      match:"Матч найден"
+
+    }
+  };
+
+  function applyLanguage(lang) {
+
+    const elements = document.querySelectorAll("[data-translate]");
+
+    elements.forEach(el => {
+
+      const key = el.dataset.translate;
+
+      if (translations[lang] && translations[lang][key]) {
+        el.textContent = translations[lang][key];
+      }
+
+    });
+  }
+
+
+  if (langSelector) {
+
+    langSelector.addEventListener('click', () => {
+      langSelector.classList.toggle('active');
+    });
+
+    langOptions.forEach(option => {
+      option.addEventListener('click', (e) => {
+
+        const selectedLang = e.target.dataset.lang;
+
+        currentLang.textContent = selectedLang.toUpperCase();
+
+        localStorage.setItem("siteLang", selectedLang);
+
+        langSelector.classList.remove('active');
+
+        applyLanguage(selectedLang);
+      });
+    });
+
+  }
+
+  // səhifə açılarkən dili load et
+
+  const savedLang = localStorage.getItem("siteLang") || "az";
+
+  if (currentLang) {
+    currentLang.textContent = savedLang.toUpperCase();
+  }
+
+  applyLanguage(savedLang);
+
+});
+
+
+
+        
+    </script>
+</body>
+
+</html>
