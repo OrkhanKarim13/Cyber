@@ -68,7 +68,7 @@
         }
 
         .lang-dropdown div:hover {
-            background: #f2f2f2;    
+            background: #f2f2f2;
             color: #000;
             border-radius: 8px;
         }
@@ -83,9 +83,10 @@
             gap: 12px;
 
         }
+
         .lang-selector.active .lang-dropdown {
-  display: block;
-}
+            display: block;
+        }
 
         .username {
             display: flex;
@@ -105,7 +106,7 @@
         }
 
         .match-box {
-    width: 32%;
+            width: 32%;
             text-align: center;
         }
 
@@ -178,53 +179,49 @@
 
         /* Button */
 
-.accept-btn {
-    position: relative;
-    overflow: hidden;
-     background: linear-gradient(180deg, #c76515, #FA8A00);
-    border: none;
-    padding: 18px 80px;
-    font-size: 18px;
-    color: white;
-    cursor: pointer;
-    font-weight: 500;
+        .accept-btn {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(180deg, #c76515, #FA8A00);
+            border: none;
+            padding: 18px 80px;
+            font-size: 18px;
+            color: white;
+            cursor: pointer;
+            font-weight: 500;
 
-    clip-path: polygon(
-        0% 0%, 
-        100% 0%, 
-        100% 75%, 
-        92% 100%, 
-        8% 100%, 
-        0% 75%
-    );
+            clip-path: polygon(0% 0%,
+                    100% 0%,
+                    100% 75%,
+                    92% 100%,
+                    8% 100%,
+                    0% 75%);
 
-    transition: .3s;
-}
+            transition: .3s;
+        }
 
 
 
-.accept-btn::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -60%;
-    width: 50%;
-    height: 100%;
-    
-    background: linear-gradient(
-        120deg,
-        transparent,
-        rgba(255,255,255,0.8),
-        transparent
-    );
+        .accept-btn::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -60%;
+            width: 50%;
+            height: 100%;
 
-    transform: skewX(-25deg);
-    transition: 0.6s;
-}
+            background: linear-gradient(120deg,
+                    transparent,
+                    rgba(255, 255, 255, 0.8),
+                    transparent);
 
-.accept-btn:hover::before {
-    left: 130%;
-}
+            transform: skewX(-25deg);
+            transition: 0.6s;
+        }
+
+        .accept-btn:hover::before {
+            left: 130%;
+        }
 
 
 
@@ -257,8 +254,8 @@
 
         .right-video {
             width: 35%;
-               max-height: 620px;
-               z-index: -100;
+            max-height: 620px;
+            z-index: -100;
         }
 
         .right-video>img {
@@ -268,183 +265,176 @@
         }
 
 
-.accept-btn.accepted{
-    background: linear-gradient(180deg,#33d17a,#26b463);
-    box-shadow: 0 0 30px rgba(51,209,122,.8);
-    transform: scale(1.05);
-}
+        .accept-btn.accepted {
+            background: linear-gradient(180deg, #33d17a, #26b463);
+            box-shadow: 0 0 30px rgba(51, 209, 122, .8);
+            transform: scale(1.05);
+        }
 
-.accept-btn.accepted::after{
-    content:" ✓";
-}
+        .accept-btn.accepted::after {
+            content: " ✓";
+        }
 
-.accept-btn{
-    transition: .35s;
-}
+        .accept-btn {
+            transition: .35s;
+        }
 
-.players-text.match-start{
-    color:#33d17a;
-    font-weight:bold;
-    font-size:22px;
-}
-.unaccept-btn{
-    margin-top:15px;
-    background: linear-gradient(180deg,#ff5c5c,#e04646);
-    border:none;
-    padding:14px 60px;
-    font-size:16px;
-    color:white;
-    cursor:pointer;
-    font-weight:500;
+        .players-text.match-start {
+            color: #33d17a;
+            font-weight: bold;
+            font-size: 22px;
+        }
 
-    clip-path: polygon(
-        0% 0%, 
-        100% 0%, 
-        100% 75%, 
-        92% 100%, 
-        8% 100%, 
-        0% 75%
-    );
+        .unaccept-btn {
+            margin-top: 15px;
+            background: linear-gradient(180deg, #ff5c5c, #e04646);
+            border: none;
+            padding: 14px 60px;
+            font-size: 16px;
+            color: white;
+            cursor: pointer;
+            font-weight: 500;
 
-    display:none;
-    transition:.3s;
-}
+            clip-path: polygon(0% 0%,
+                    100% 0%,
+                    100% 75%,
+                    92% 100%,
+                    8% 100%,
+                    0% 75%);
 
-.unaccept-btn:hover{
-    box-shadow:0 0 20px rgba(255,80,80,.7);
-}
+            display: none;
+            transition: .3s;
+        }
 
-
-@media(min-width:500px){
-.match-title-mobile{
-    display: none;
-}
-}
+        .unaccept-btn:hover {
+            box-shadow: 0 0 20px rgba(255, 80, 80, .7);
+        }
 
 
+        @media(min-width:500px) {
+            .match-title-mobile {
+                display: none;
+            }
+        }
 
-        @media(max-width:500px){
 
 
-            
-     .right-buttons{
-        display: none;
-     }
+        @media(max-width:500px) {
 
-            .container{
+
+
+            .right-buttons {
+                display: none;
+            }
+
+            .container {
                 padding: 0 16px;
-   
+
             }
-          
 
-           .left-video>img {
-    
-        }
 
-        .left-video{
-width: 100%;
-position: absolute;
-left: 20%   ;
-top: 18%;
-        }
-        
-        .right-video{
-            width: 100%;
-            position: absolute;
-width: 100%;
-bottom: 0;
-left: -10%;
-        }
 
-            .match-load{
-                width: 100% ;
+            .left-video {
+                width: 100%;
+                position: absolute;
+                left: 0;
+                top: 18%;
+            }
+
+            .right-video {
+                width: 100%;
+                position: absolute;
+                width: 100%;
+                bottom: 0;
+                left: -10%;
+            }
+
+            .match-load {
+                width: 100%;
                 height: 100vh;
-          
+
             }
 
-            .match-load-content{
+            .match-load-content {
                 width: 100%;
                 display: flex;
                 flex-direction: column;
                 gap: 30px;
-              
+
             }
 
-            .match-title{
+            .match-title {
                 display: none;
             }
 
-            .match-title-mobile{
+            .match-title-mobile {
                 color: #fff;
-    display: block;
-    position:absolute;
-    top: 25%;
-    left: 25%;
-    font-size: 32px;
-}
-            
-        .match-box {
-            width: 90%;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-            backdrop-filter: blur(54px);
+                display: block;
+                position: absolute;
+                top: 25%;
+                left: 25%;
+                font-size: 32px;
+            }
+
+            .match-box {
+                width: 90%;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+                backdrop-filter: blur(54px);
+            }
+
+            .loader {
+                backdrop-filter: blur(54px);
+                width: 100%;
+                height: 100%;
+            }
+
+            .loader-wrapper {
+                backdrop-filter: blur(54px);
+                width: 100%;
+                height: 100%;
+            }
+
+            .tick {
+                position: absolute;
+                width: 4px;
+                height: 20px;
+                background: #333;
+                top: 73%;
+                left: 50%;
+                transform-origin: center -100px;
+                border-radius: 2px;
+                opacity: .25;
+                animation: activate 5s linear infinite;
+            }
+
+
+            .match-title {
+                margin-bottom: 120px;
+            }
+
+            .players-text {
+                display: none;
+            }
+
+
+            .match-box {
+                position: absolute;
+                top: 32%;
+                height: 400px;
+            }
+
+
+            .loader-wrapper {
+                width: auto;
+                backdrop-filter: blur(54px);
+                border-radius: 20px;
+                padding-top: 40px;
+            }
+
         }
-
-        .loader{
-            backdrop-filter: blur(54px);
-      width: 100%;
-            height: 100%;
-        }
-
-        .loader-wrapper{
-              backdrop-filter: blur(54px);
-      width: 100%;
-            height: 100%;
-        }
-
-        .tick {
-            position: absolute;
-            width: 4px;
-            height: 20px;
-            background: #333;
-            top: 61%;
-            left: 50%;
-            transform-origin: center -100px;
-            border-radius: 2px;
-            opacity: .25;
-            animation: activate 5s linear infinite;
-        }
-
-
-        .match-title{
-            margin-bottom: 120px;
-        }
-
-        .players-text{
-            display: none;
-        }
-
-
-        .match-box{
-    position: absolute;
-    top: 32%;
-    height: 400px;
-}
-
-
-.loader-wrapper{
-    width: auto;
-    backdrop-filter: blur(54px);
-    border-radius: 20px;
-    padding-top: 40px;
-}
-
-        }
-
-
-
     </style>
 </head>
 
@@ -534,105 +524,105 @@ left: -10%;
         }
 
 
-const acceptBtn = document.querySelector(".accept-btn");
-const playersText = document.querySelector(".players-text");
+        const acceptBtn = document.querySelector(".accept-btn");
+        const playersText = document.querySelector(".players-text");
 
-let playersReady = 0;
-let totalPlayers = 10;
-let playersInterval;
+        let playersReady = 0;
+        let totalPlayers = 10;
+        let playersInterval;
 
-acceptBtn.addEventListener("click", () => {
+        acceptBtn.addEventListener("click", () => {
 
-  // button animasiya
-  acceptBtn.classList.add("accepted");
-  acceptBtn.textContent = "Accepted";
-  acceptBtn.disabled = true;
+            // button animasiya
+            acceptBtn.classList.add("accepted");
+            acceptBtn.textContent = "Accepted";
+            acceptBtn.disabled = true;
 
-  // players sayının artması
-  playersInterval = setInterval(() => {
+            // players sayının artması
+            playersInterval = setInterval(() => {
 
-    playersReady++;
+                playersReady++;
 
-    playersText.textContent = playersReady + "/" + totalPlayers + " Players are ready";
+                playersText.textContent = playersReady + "/" + totalPlayers + " Players are ready";
 
-    if(playersReady >= totalPlayers){
+                if (playersReady >= totalPlayers) {
 
-      clearInterval(playersInterval);
+                    clearInterval(playersInterval);
 
-      playersText.textContent = "Match Starting...";
-      playersText.classList.add("match-start");
+                    playersText.textContent = "Match Starting...";
+                    playersText.classList.add("match-start");
 
-    }
+                }
 
-  }, 800);
+            }, 800);
 
-});
+        });
 
 
-const unacceptBtn = document.querySelector(".unaccept-btn");
+        const unacceptBtn = document.querySelector(".unaccept-btn");
 
-acceptBtn.addEventListener("click", () => {
+        acceptBtn.addEventListener("click", () => {
 
-  acceptBtn.classList.add("accepted");
-  acceptBtn.textContent = "Accepted";
-  acceptBtn.disabled = true;
+            acceptBtn.classList.add("accepted");
+            acceptBtn.textContent = "Accepted";
+            acceptBtn.disabled = true;
 
-  unacceptBtn.style.display = "inline-block";
+            unacceptBtn.style.display = "inline-block";
 
-  playersInterval = setInterval(() => {
+            playersInterval = setInterval(() => {
 
-    playersReady++;
+                playersReady++;
 
-    playersText.textContent = playersReady + "/" + totalPlayers + " Players are ready";
+                playersText.textContent = playersReady + "/" + totalPlayers + " Players are ready";
 
-    if(playersReady >= totalPlayers){
+                if (playersReady >= totalPlayers) {
 
-      clearInterval(playersInterval);
+                    clearInterval(playersInterval);
 
-      playersText.textContent = "Match Starting...";
-      playersText.classList.add("match-start");
+                    playersText.textContent = "Match Starting...";
+                    playersText.classList.add("match-start");
 
-    }
+                }
 
-  }, 800);
+            }, 800);
 
-});
+        });
 
 
-unacceptBtn.addEventListener("click", () => {
+        unacceptBtn.addEventListener("click", () => {
 
-  clearInterval(playersInterval);
+            clearInterval(playersInterval);
 
-  playersReady = 0;
+            playersReady = 0;
 
-  acceptBtn.classList.remove("accepted");
-  acceptBtn.textContent = "Accept";
-  acceptBtn.disabled = false;
+            acceptBtn.classList.remove("accepted");
+            acceptBtn.textContent = "Accept";
+            acceptBtn.disabled = false;
 
-  playersText.textContent = "0/10 Players are ready";
-  unacceptBtn.style.display = "none";
+            playersText.textContent = "0/10 Players are ready";
+            unacceptBtn.style.display = "none";
 
-});
+        });
 
 
 
-const countElement = document.querySelector(".count-number");
+        const countElement = document.querySelector(".count-number");
 
-let timeLeft = 20;
+        let timeLeft = 20;
 
-const countdown = setInterval(() => {
+        const countdown = setInterval(() => {
 
-  timeLeft--;
+            timeLeft--;
 
-  countElement.textContent = timeLeft;
+            countElement.textContent = timeLeft;
 
-  if (timeLeft <= 0) {
-    clearInterval(countdown);
-  }
+            if (timeLeft <= 0) {
+                clearInterval(countdown);
+            }
 
-}, 1000);
+        }, 1000);
 
-document.addEventListener("DOMContentLoaded", () => {
+        document.addEventListener("DOMContentLoaded", () => {
 
 
 
@@ -640,80 +630,80 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-  // ================= LANGUAGE SYSTEM =================
+            // ================= LANGUAGE SYSTEM =================
 
-  const langSelector = document.querySelector('.lang-selector');
-  const currentLang = document.querySelector('.current-lang');
-  const langOptions = document.querySelectorAll('.lang-dropdown div');
+            const langSelector = document.querySelector('.lang-selector');
+            const currentLang = document.querySelector('.current-lang');
+            const langOptions = document.querySelectorAll('.lang-dropdown div');
 
-  const translations = {
-    az: {
-      match:"Qarşılaşma tapıldı"
+            const translations = {
+                az: {
+                    match: "Qarşılaşma tapıldı"
 
-    },
-    en: {
-     match:"Match found"
-    },
-    ru: {
-      match:"Матч найден"
+                },
+                en: {
+                    match: "Match found"
+                },
+                ru: {
+                    match: "Матч найден"
 
-    }
-  };
+                }
+            };
 
-  function applyLanguage(lang) {
+            function applyLanguage(lang) {
 
-    const elements = document.querySelectorAll("[data-translate]");
+                const elements = document.querySelectorAll("[data-translate]");
 
-    elements.forEach(el => {
+                elements.forEach(el => {
 
-      const key = el.dataset.translate;
+                    const key = el.dataset.translate;
 
-      if (translations[lang] && translations[lang][key]) {
-        el.textContent = translations[lang][key];
-      }
+                    if (translations[lang] && translations[lang][key]) {
+                        el.textContent = translations[lang][key];
+                    }
 
-    });
-  }
+                });
+            }
 
 
-  if (langSelector) {
+            if (langSelector) {
 
-    langSelector.addEventListener('click', () => {
-      langSelector.classList.toggle('active');
-    });
+                langSelector.addEventListener('click', () => {
+                    langSelector.classList.toggle('active');
+                });
 
-    langOptions.forEach(option => {
-      option.addEventListener('click', (e) => {
+                langOptions.forEach(option => {
+                    option.addEventListener('click', (e) => {
 
-        const selectedLang = e.target.dataset.lang;
+                        const selectedLang = e.target.dataset.lang;
 
-        currentLang.textContent = selectedLang.toUpperCase();
+                        currentLang.textContent = selectedLang.toUpperCase();
 
-        localStorage.setItem("siteLang", selectedLang);
+                        localStorage.setItem("siteLang", selectedLang);
 
-        langSelector.classList.remove('active');
+                        langSelector.classList.remove('active');
 
-        applyLanguage(selectedLang);
-      });
-    });
+                        applyLanguage(selectedLang);
+                    });
+                });
 
-  }
+            }
 
-  // səhifə açılarkən dili load et
+            // səhifə açılarkən dili load et
 
-  const savedLang = localStorage.getItem("siteLang") || "az";
+            const savedLang = localStorage.getItem("siteLang") || "az";
 
-  if (currentLang) {
-    currentLang.textContent = savedLang.toUpperCase();
-  }
+            if (currentLang) {
+                currentLang.textContent = savedLang.toUpperCase();
+            }
 
-  applyLanguage(savedLang);
+            applyLanguage(savedLang);
 
-});
+        });
 
 
 
-        
+
     </script>
 </body>
 
