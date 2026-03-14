@@ -1938,10 +1938,10 @@ h1 .bold {
 
   .games-cards-overlay {
     position: absolute;
-    width: 130px;
+    width: 100px;
     height: 55%;
     right: 0;
-    top: 45%;
+    top: 44%;
     z-index: 100;
     background: linear-gradient(
       to right,

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cyber + Voting</title>
+    <title>Cyber + Map</title>
     <style>
         * {
             padding: 0;
@@ -141,7 +141,7 @@
         .voting {
             width: 100%;
             height: 100vh;
-            background-image: url("./images/cs2.png");
+            background-image: url("./images/vol-page-bg.png");
             background-repeat: no-repeat;
             background-position: top;
             background-size: cover;
@@ -196,8 +196,8 @@
             align-items: center;
             gap: 12px;
             padding: 20px;
-            background: #06011959;
             backdrop-filter: blur(24px);
+            background: #06011959;
             border-radius: 50px;
         }
 
@@ -225,8 +225,9 @@
 
 
         .column {
-            background: #0C0416;
+
             border: 1px solid #332a44;
+            backdrop-filter: blur(24px);
             border-radius: 15px;
             padding: 32px;
             display: flex;
@@ -248,7 +249,7 @@
         }
 
         .row {
-            background: #FFFFFF40;
+            background: #FFFFFF80;
             border-radius: 8px;
             padding: 10px;
             display: flex;
@@ -256,11 +257,20 @@
             height: 45px;
             border: 1px solid #4a405e;
             transition: transform 0.2s;
+            cursor: pointer;
+        }
+
+
+        .gamer {
+            height: 64px;
         }
 
         .row.empty {
-            background: rgba(30, 25, 40, 0.4);
+            background: #FFFFFF40;
             border: 1px solid #2a2238;
+            height: 64px;
+            padding: 0;
+            margin: 0;
         }
 
         .avatar {
@@ -287,19 +297,33 @@
 
 
         .badge {
-            background: #1a1524;
             border-radius: 4px;
-
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
         .badge>img {
-            width: 50px;
-            height: 20px;
+            width: 22px;
+            height: 30px;
         }
 
+
+        .map-image {
+            border-radius: 0px;
+            width: 50px;
+            height: 30px;
+        }
+
+        .map-time {
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 12px;
+        }
+
+        .map-time>p {
+            color: #fff;
+        }
 
         @media(max-width:500px) {
 
@@ -319,9 +343,6 @@
                 display: none;
             }
 
-                    .row.empty{
-                display: none;
-            }
             .time {
                 width: 100%;
                 display: flex;
@@ -395,79 +416,103 @@
                     <div class="teams-content">
                         <div class="left-team">
                             <img src="./images/team.png" alt="">
-                            <p> Team_cs_one</p>
+                            <p> Team_Designervalo</p>
                         </div>
 
                         <div class="time">
-                            <p>Your Turn </p> <img src="./images/point.svg" alt="point">
-                            <p>28 sec. </p>
+                            <p>5v5</p> <img src="./images/point.svg" alt="point">
+                            <p>EU </p><img src="./images/point.svg" alt="point">
+                            <p>Voting...</p>
                         </div>
                         <div class="right-team">
                             <img src="images/team2.png" alt="">
-                            <p>Team_one_two</p>
+                            <p>Team_Testbotalpha</p>
                         </div>
                     </div>
                 </div>
                 <div class="teams-container">
                     <div class="column">
-                        <div class="row">
-                            <div class="avatar"><img src="./images/player-pf.png" alt=""></div>
+                        <div class="row gamer">
+                            <div class="avatar"><img src="./images/valo-profile.png" alt=""></div>
                             <div class="player-username">Gamer_one</div>
-                            <div class="badge"><img src="./images/eagle-icon.png" alt=""></div>
+                            <div class="badge"><img src="./images/vol-vector-1.svg" alt=""></div>
                         </div>
-                        <div class="row">
-                            <div class="avatar"><img src="./images/player-pf.png" alt=""></div>
+                        <div class="row gamer">
+                            <div class="avatar"><img src="./images/valo-profile.png" alt=""></div>
                             <div class="player-username">Gamer_two</div>
-                            <div class="badge"><img src="./images/eagle-icon.png" alt=""></div>
+                            <div class="badge"><img src="./images/vol-vector-3.svg" alt=""></div>
                         </div>
-                        <div class="row empty"></div>
-                        <div class="row empty"></div>
-                        <div class="row empty"></div>
-                    </div>
+                        <div class="row empty">
 
-                    <div class="column">
-                        <div class="row">
-                            <div class="avatar"><img src="./images/player-pf.png" alt=""></div>
-                            <div class="player-username">Gamer_three</div>
-                            <div class="badge"><img src="./images/eagle-icon.png" alt=""></div>
                         </div>
-                        <div class="row">
-                            <div class="avatar"><img src="./images/player-pf.png" alt=""></div>
-                            <div class="player-username">Gamer_four</div>
-                            <div class="badge"><img src="./images/eagle-icon.png" alt=""></div>
+                        <div class="row empty">
+
                         </div>
-                        <div class="row">
-                            <div class="avatar"><img src="./images/player-pf.png" alt=""></div>
-                            <div class="player-username">Gamer_five</div>
-                            <div class="badge"><img src="./images/eagle-icon.png" alt=""></div>
-                        </div>
-                        <div class="row">
-                            <div class="avatar"><img src="./images/player-pf.png" alt=""></div>
-                            <div class="player-username">Gamer_seven</div>
-                            <div class="badge"><img src="./images/eagle-icon.png" alt=""></div>
-                        </div>
-                        <div class="row">
-                            <div class="avatar"><img src="./images/player-pf.png" alt=""></div>
-                            <div class="player-username">Gamer_eight</div>
-                            <div class="badge"><img src="./images/eagle-icon.png" alt=""></div>
-                        </div>
-                        <div class="row">
-                            <div class="avatar"><img src="./images/player-pf.png" alt=""></div>
-                            <div class="player-username">Gamer_nine</div>
-                            <div class="badge"><img src="./images/eagle-icon.png" alt=""></div>
+                        <div class="row empty">
+
                         </div>
                     </div>
 
                     <div class="column">
+                        <div class="map-time">
+                            <p>Your turn...</p>
+                            <p class="second">28 sec</p>
+                        </div>
                         <div class="row">
-                            <div class="avatar"><img src="./images/player-pf.png" alt=""></div>
+                            <div class="avatar map-image"><img src="./images/ancient-map.png" alt="map-image"></div>
+                            <div class="player-username">ABYSS</div>
+
+                        </div>
+                        <div class="row">
+                            <div class="avatar map-image"><img src="./images/dust-2-map.png" alt="map-image   "></div>
+                            <div class="player-username">Dust II</div>
+
+                        </div>
+                        <div class="row">
+                            <div class="avatar map-image"><img src="./images/inferno-map.png" alt="map-image"></div>
+                            <div class="player-username">Inferno</div>
+
+                        </div>
+                        <div class="row">
+                            <div class="avatar map-image"><img src="./images/mirage-map.png" alt="map-image"></div>
+                            <div class="player-username">Mirage</div>
+
+                        </div>
+                        <div class="row">
+                            <div class="avatar map-image"><img src="./images/nuke-map.png" alt="map-image"></div>
+                            <div class="player-username">Nuke</div>
+
+                        </div>
+                        <div class="row">
+                            <div class="avatar map-image"><img src="./images/overpass-map.png" alt="map-image"></div>
+                            <div class="player-username">Overpass</div>
+
+                        </div>
+                        <div class="row">
+                            <div class="avatar map-image    "><img src="./images/train-map.png" alt="map-image"></div>
+                            <div class="player-username">Train</div>
+
+                        </div>
+                    </div>
+
+                    <div class="column">
+                        <div class="row gamer">
+                            <div class="avatar"><img src="./images/valo-profile.png" alt=""></div>
                             <div class="player-username">Gamer_six</div>
-                            <div class="badge"><img src="./images/eagle-icon.png" alt=""></div>
+                            <div class="badge"><img src="./images/vol-vector-1.svg" alt=""></div>
                         </div>
-                        <div class="row empty"></div>
-                        <div class="row empty"></div>
-                        <div class="row empty"></div>
-                        <div class="row empty"></div>
+                        <div class="row empty">
+
+                        </div>
+                        <div class="row empty">
+
+                        </div>
+                        <div class="row empty">
+
+                        </div>
+                        <div class="row empty">
+
+                        </div>
                     </div>
                 </div>
             </div>
@@ -475,6 +520,34 @@
     </main>
     <footer>
     </footer>
+    <script>
+        // ================= SECOND COUNTDOWN =================
+
+const secondElement = document.querySelector(".second");
+
+let startTime = 28;
+let time = startTime;
+
+function startCountdown(){
+
+    secondElement.textContent = time + " sec";
+
+    setInterval(() => {
+
+        time--;
+
+        if(time < 0){
+            time = startTime; // yenidən 28-dən başla
+        }
+
+        secondElement.textContent = time + " sec";
+
+    },1000);
+
+}
+
+startCountdown();
+    </script>
 </body>
 
 </html>

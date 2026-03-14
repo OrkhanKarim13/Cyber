@@ -256,6 +256,7 @@
             height: 45px;
             border: 1px solid #4a405e;
             transition: transform 0.2s;
+            cursor: pointer;
         }
 
 
@@ -456,7 +457,7 @@
 
                     <div class="column">
                         <div class="map-time">
-                            <p>Your turn...</p><p>28 sec</p>
+                            <p>Your turn...</p><p class="second">28 sec</p>
                         </div>
                         <div class="row">
                             <div class="avatar map-image"><img src="./images/ancient-map.png" alt="map-image"></div>
@@ -528,6 +529,35 @@
     </main>
     <footer>
     </footer>
+    <script>
+
+        // ================= SECOND COUNTDOWN =================
+
+const secondElement = document.querySelector(".second");
+
+let startTime = 28;
+let time = startTime;
+
+function startCountdown(){
+
+    secondElement.textContent = time + " sec";
+
+    setInterval(() => {
+
+        time--;
+
+        if(time < 0){
+            time = startTime; // yenidən 28-dən başla
+        }
+
+        secondElement.textContent = time + " sec";
+
+    },1000);
+
+}
+
+startCountdown();
+    </script>
 </body>
 
 </html>             
