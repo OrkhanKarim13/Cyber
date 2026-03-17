@@ -402,6 +402,28 @@
 
 
     </style>
+    <style>
+        .user-dropdown { position: fixed; top: 70px; right: 72px; width: 285px; background: #00000032; backdrop-filter: blur(42px); -webkit-backdrop-filter: blur(42px); border-radius: 14px; padding: 14px; z-index: 99999; display: none; box-shadow: 0 12px 40px rgba(0,0,0,.55); }
+        .header .username.udrop-active .user-dropdown { display: block; }
+        .udrop-rank-box { border: 1.5px solid #e4941b; border-radius: 10px; padding: 12px; margin-bottom: 12px; }
+        .udrop-rank-title { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; font-size: 13px; font-weight: 600; color: #fff; }
+        .udrop-rank-icon { width: 28px; height: 28px; object-fit: contain; }
+        .udrop-progress-row { display: flex; align-items: center; gap: 10px; }
+        .udrop-progress-bar { flex: 1; height: 10px; background: rgba(255,255,255,.2); border-radius: 5px; overflow: hidden; }
+        .udrop-progress-fill { height: 100%; width: 75%; background: linear-gradient(90deg,#e4941b,#f0b84a); border-radius: 5px; }
+        .udrop-ch-label { font-size: 12px; font-weight: 700; color: #e4941b; white-space: nowrap; }
+        .udrop-balance-box { background: rgba(255,255,255,.12); border-radius: 10px; padding: 12px; margin-bottom: 12px; }
+        .udrop-balance-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+        .udrop-bal-label { font-size: 13px; color: rgba(255,255,255,.8); }
+        .udrop-bal-amount { display: flex; align-items: center; gap: 6px; font-size: 16px; font-weight: 700; color: #fff; }
+        .udrop-coin-icon { display: inline-block; width: 18px; height: 18px; border-radius: 50%; background: radial-gradient(circle at 35% 35%,#d0d0d0,#888); border: 2px solid #999; flex-shrink: 0; }
+        .udrop-bal-btn { width: 100%; background: #e4941b; color: #fff; border: none; border-radius: 8px; padding: 10px; font-size: 14px; font-weight: 600; cursor: pointer; }
+        .udrop-bal-btn:hover { background: #cf8218; }
+        .udrop-menu { margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+        .udrop-menu li a { display: flex; align-items: center; padding: 12px 14px; color: #fff; font-size: 14px; font-weight: 500; background: rgba(255,255,255,.1); border-radius: 8px; transition: background .2s; }
+        .udrop-menu li a:hover { background: rgba(255,255,255,.18); }
+        .udrop-exit-item a { justify-content: space-between; }
+    </style>
 </head>
 
 <body>
@@ -425,6 +447,36 @@
                     <div class="username">
                         <img src="./images/userprofil.png" alt="user profil">
                         <p class="profil-name">username</p>
+                        <div class="user-dropdown">
+                            <div class="udrop-rank-box">
+                                <div class="udrop-rank-title">
+                                    <img src="./images/suprememaster.png" alt="rank" class="udrop-rank-icon">
+                                    <span>Supreme Master First Class</span>
+                                </div>
+                                <div class="udrop-progress-row">
+                                    <div class="udrop-progress-bar"><div class="udrop-progress-fill"></div></div>
+                                    <span class="udrop-ch-label">75 CH</span>
+                                </div>
+                            </div>
+                            <div class="udrop-balance-box">
+                                <div class="udrop-balance-row">
+                                    <span class="udrop-bal-label">Balans:</span>
+                                    <span class="udrop-bal-amount">
+                                        <span class="udrop-coin-icon"></span>
+                                        897 CC
+                                    </span>
+                                </div>
+                                <button class="udrop-bal-btn">&#43; Balansı artır</button>
+                            </div>
+                            <ul class="udrop-menu">
+                                <li><a href="./profile.html">Profil</a></li>
+                                <li><a href="#">Inventory</a></li>
+                                <li><a href="#">Match history</a></li>
+                                <li><a href="#">My Team</a></li>
+                                <li><a href="#">My Balance</a></li>
+                                <li class="udrop-exit-item"><a href="#">Exit <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg></a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -669,6 +721,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
         
+    </script>
+    <script>
+        (function() {
+            var u = document.querySelector('.header .username');
+            var d = document.querySelector('.user-dropdown');
+            if (u && d) {
+                u.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    var open = u.classList.toggle('udrop-active');
+                    if (open) {
+                        var r = u.getBoundingClientRect();
+                        d.style.top = (r.bottom + 8) + 'px';
+                        d.style.right = (window.innerWidth - r.right) + 'px';
+                    }
+                });
+                document.addEventListener('click', function(e) {
+                    if (!u.contains(e.target)) u.classList.remove('udrop-active');
+                });
+            }
+        })();
     </script>
 </body>
 

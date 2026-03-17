@@ -1185,6 +1185,160 @@ h1 .bold {
   color: #aaa;
 }
 
+/* ===== USER DROPDOWN ===== */
+.user-dropdown {
+  position: fixed;
+  top: 70px;
+  right: 72px;
+  width: 285px;
+  background: #00000032;
+  backdrop-filter: blur(42px);
+  -webkit-backdrop-filter: blur(42px);
+  border-radius: 14px;
+  padding: 14px;
+  z-index: 99999;
+  display: none;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.55);
+}
+
+.header .username.udrop-active .user-dropdown {
+  display: block;
+}
+
+.udrop-rank-box {
+  border: 1.5px solid #e4941b;
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+.udrop-rank-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.udrop-rank-icon {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.udrop-progress-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.udrop-progress-bar {
+  flex: 1;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.udrop-progress-fill {
+  height: 100%;
+  width: 75%;
+  background: linear-gradient(90deg, #e4941b, #f0b84a);
+  border-radius: 5px;
+}
+
+.udrop-ch-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #e4941b;
+  white-space: nowrap;
+}
+
+.udrop-balance-box {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+.udrop-balance-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.udrop-bal-label {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.udrop-bal-amount {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.udrop-coin-icon {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #d0d0d0, #888);
+  border: 2px solid #999;
+  flex-shrink: 0;
+}
+
+.udrop-bal-btn {
+  width: 100%;
+  background: #e4941b;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.udrop-bal-btn:hover {
+  background: #cf8218;
+}
+
+.udrop-menu {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.udrop-menu li a {
+  display: flex;
+  align-items: center;
+  padding: 12px 14px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.udrop-menu li a:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.udrop-exit-item a {
+  justify-content: space-between;
+}
+
 .vectors-container {
   position: absolute;
   top: 0;

@@ -208,6 +208,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
   }
 
+  // ===== USER DROPDOWN =====
+  const usernameEl = document.querySelector('.header .username');
+  const userDropdown = document.querySelector('.user-dropdown');
+  if (usernameEl && userDropdown) {
+    usernameEl.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = usernameEl.classList.toggle('udrop-active');
+      if (isOpen) {
+        const rect = usernameEl.getBoundingClientRect();
+        userDropdown.style.top = (rect.bottom + 8) + 'px';
+        userDropdown.style.right = (window.innerWidth - rect.right) + 'px';
+      }
+    });
+    document.addEventListener('click', (e) => {
+      if (!usernameEl.contains(e.target)) {
+        usernameEl.classList.remove('udrop-active');
+      }
+    });
+  }
+
   // səhifə açılarkən dili load et
 
   const savedLang = localStorage.getItem("siteLang") || "az";
